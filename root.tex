@@ -357,6 +357,9 @@
 
 \usepackage{pdfpages}
 
+
+\newcommand{\comm}[1]{} % for comment it out by \comm{} https://tex.stackexchange.com/questions/17816/commenting-out-large-sections
+
 % MOST template from https://github.com/kuochuanpan/most_proposal/blob/master/most_proposal.tex
 \begin{document}
 \thispagestyle{titlepage}
@@ -412,7 +415,7 @@ Wan Fang Hospital\unskip, Taipei Medical University}\\
 % ------------------------------------------------------
 %\section{Abstract} % for navigation
 
-\begin{abstract}
+\begin{abstract} %not anymore (as sub project)
 \cntext{二、研究計畫中英文摘要:}
 
 \textbf{Background:}
@@ -422,7 +425,7 @@ Head and neck squamous cell carcinoma (\acrshort{hnscc}) represents a significan
 
 %According to the National Comprehensive Cancer Network (NCCN) guidelines (Version 3.2021~\citep{Pfister2021}), the current treatment of \acrfull{hnscc} should include of surgery alone, radiation therapy alone, or a combination of the two with adjuvant chemotherapy.
 %Despite advancements in these therapies, the five-year survival rate for this disease has only marginally improved over the previous decade, and recurrent disease is seen in up to 50\% of all patients~\citep{Forastiere2001,Warnakulasuriya2009}.
-During 2008 to 2018 in Taiwan, the one-year survival rate for this disease among males is from 79.56\% to 81.62\%~(statistics from Cancer Registry of \acrlong{Thpa}, available at \url{https://cris.hpa.gov.tw/pagepub/Home.aspx}, accessed on August 2021).
+During 2008 to 2018 in Taiwan, the one-year survival rate for this disease among males is from 79.56\% to 81.62\%~(statistics from Cancer Registry of \acrlong{Thpa}, available at \url{https://cris.hpa.gov.tw/pagepub/Home.aspx}, accessed on May 2022).
 The five-year survival rate for this disease among males ranged from 55.13 percent to 56.03 percent between 2009 and 2014.
 
 The survival analysis of the \acrfull{tcga} dataset is a well-known method to discover biomarkers of \acrshort{hnscc}. 
@@ -432,7 +435,7 @@ For example, adjuvant radiation therapy should be done after tumor-ablative surg
 %It guides to determine which further treatment (e.g., ).
 
 Oral verrucous hyperplasia (\acrshort{ovh}) is a pre-malignant  mucosal lesion with a predominantly verrucous or papillary surface; this lesion can subsequently transform into verrucous carcinoma (VC) or squamous cell carcinoma (SCC).
-A predictive biomarker of \acrshort{ovh} gives early alarm before its malignant transformation, which prevents unnecessary biopsy repeatedly, for improvement of patient's survival.
+A predictive biomarker for \acrshort{ovh} could provide early warning before malignant transformation without the need for frequent biopsies.
 %OPMDs include lesions or conditions that involve morphological, color, and consistency changes in the oral mucosa and indicate the risk of malignant progression. 
 %Although visual screening, tactile palpation, tissue biopsy or optical diagnostic adjuncts have been used for definite diagnosis, it is still  a challenge for clinicians to discriminate against the malignant potentials of OPMDs. 
 
@@ -448,7 +451,8 @@ A predictive biomarker of \acrshort{ovh} gives early alarm before its malignant 
 \textbf{Methods:}
 
 R script was used to develop a comprehensive workflow, named "pvalueTex", running on the Rstudio platform. It includes data retrieving and pre-processing, feature selection, cutoff mining engine, Kaplan-Meier survival analysis, Cox proportional hazard modeling to discover prognostic biomarkers.
-We further plan to develop a deep-learning based data mining as well as validation platform. It might incorporate whole-slide images of pathology from the Cancer Imaging Archive (TCIA) and Taipei Medical University (TMU) biobank.
+We further plan to develop a deep-learning based data mining as well as validation platform. It might incorporate whole-slide images of pathology from cohort of Taipei Medical University (TMU).
+%the Cancer Imaging Archive (TCIA) and Taipei Medical University (TMU) biobank.
 %RNA-Seq data of \acrfull{tcga} for survival analysis. 
 Convolutional neural network (CNN) will be used for feature extraction from whole-slide images.
 %Recurrent neural network (RNN) will deal with "holistic features" from electric healthcare records (EHR) of Taipei Medical University Hospital (TMUH).
@@ -456,7 +460,8 @@ These patient's features should include physical, pathological, psychological da
 During their follow-up period, a "survival analysis" should also be used to build a predictive model of malignant transformation. 
 % construction of gene expression network.
 %GNN graph neural network for CNN convolutional neural network
-%The Cancer Imaging Archive (TCIA) whole-slide by Deep learning (ResNet)
+%The Cancer Imaging Archive (TCIA) whole-slide by Deep learning (ResNet) 
+% \acrfull{tcia} and TCGA
 % *** AI: deep learning, machine learning \citep{Huang2020}
 %plot http://iltabiai.github.io/tips/latex/2015/09/15/latex-tikzdevice-r.html
 %***Deep learning-based cancer survival prognosis from RNA-Seq data: approaches and evaluations
@@ -465,68 +470,6 @@ During their follow-up period, a "survival analysis" should also be used to buil
 %save checkpoint, load then deepcopy()
 
 
-% P-value => \textit{P} value
-% Results: the main findings
-\textbf{Preliminary Results:}
-Using pvalueTex on the \acrshort{tcga} \acrshort{hnscc} cohort, we scanned human protein-coding genes (20,500) programmatically. After adjustment with other confounders, we found that the clinical tumor stage and the surgical margin involvement are independent risk factors in patient survival. 
-%According to the resulting tables with Bonferroni adjusted \textit{P} value under optimal cutoff as well as hazard ratio $(>=1.5)$, 
-%There were ten candidate biomarkers, named as DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, and DKC1, which are 
-Overexpression of CAMK2N1 is significantly associated with the poor prognosis of \acrfull{os}. 
-Missensed mutation of FAT1 is also found in progressive \acrshort{ovh} and poor recurrence-free survival of oral cancer.
-%At the same time, the other ten genes were over-expressed in the better survival patients (with hazard ratio $<=0.5$), named as ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, IQCN (previous name as KIAA1683), and NPB.
-
-We assume these biomarkers should be found around the surgical margin of \acrshort{oscc} specimen.
-Oral cancer risk is influenced by the severity of epithelial dysplasia on \acrshort{ovh} samples.
-Clinically helpful biomarkers for dysplasia grading include CK13, CK17, TP53, and Ki67.
-
-% from sp1 研究構想： Dr Wu 吳明恆老師
-Our previous studies demonstrated a high malignant potential of oral verrucous hyperplasia (OVH)  (Head Neck 2018, Head Neck 2020 and Medicine 2021). WES (whole-exome sequencing) analysis  identify that FAT1 genetic mutation rate was strikingly higher in progressive OVH (83.3\%) than in  non-progressive ones (22.2\%) while tp53, the critical genome guardian, was mutated only in one non progressive OVH (6.25\% mutation rate in all OVH samples). Therefore, it is hypothesized that FAT1- mutated OVH is committed to OSCC and tp53 could be a gatekeeper for OVH transformation. A  sequential genetic alteration (from FAT1 to tp53) may drive OVH transformation. 
-In addition, although  no publication exactly indicates the relationships between FAT1 and tp53, the reciprocal crosstalk  between the p53 and FAT1-regulated YAP1/Hippo pathways has been well addressed. 
-As a result, this  project aims to verify FAT1 gene mutation in a large cohort of OVH patients and to investigate the FAT1 and tp53 relationships in OVH transformation.  
-
-
-%*** validated by \acrfull{hpa}.
-Further validation will be conducted by using deep learning of whole-slide pathological images.
-% are warranted 
-
-%%%%%%%%%%%
-
-% *****specific Aims (old SP3 + sp4)	
-\begin{minipage}[t]{5.5in}
-\vspace{0pt}
-\begin{itemize}
-        
-% These are the instructions for the class
-\item \textbf{Aim 1}: To establish an OVH cohort in \acrfull{tmu} affiliated hospitals, and collect clinical and pathological images of those lesions.  
-
-To identify genetic variants associated with malignant transformation of OVH by implementing genome-wide association testing.
-
-\item \textbf{Aim 2}. To construct a deep learning platform of \acrshort{tmu} dataset. A deep-learning-based algorithm might extract features of clinical and pathological whole-slide images of \acrshort{ovh} and \acrshort{hnscc}.
-
-
-
-\item \textbf{Aim 3}: 
-To develop risk prediction model for malignant transformation of OVH by integrating risk factors identified from all subprojects. sp1, sp2, sp3.
-
-
-Deep Learning-based biomarker identifying in depression analysis with holistic healthcare study. The cortisol is one of the most common objective outcomes studied in psychoneuroimmunological (PNI) factors~\citep{Hulett2016}. Interleukin, cytokines, T-lymphocytes ($CD4^+$, $CD8^+$), $CD56^+$ (neural cell adhesion molecule), and heart rate variability (HRV) are included in other PNI studies.
-The subjective psychosocial measurements should include depression, stress, quality of life, anxiety, fatigue, mindfulness, mood, and specific spiritual growth---the meaning of life~\citep{Hsiao2012}. Our hypothesis is that \acrshort{ovh} could be transformed into oral cancer because of the stress, via mind-brain-body network~\citep{Rogers1959}. Thus, besides using those serum biomarkers, we encourage physicians to write their \acrfull{ehr} in a "holistic way".	And the \acrshort{ovh} carriers should use wearable device (e.g., smart watch) to monitor their HRV. Once the \acrshort{ovh} becoming oral cancer, we could early treat the disease as well as analyze the contributing factors of carcinogenesis. That could be a predictive biomarker.
-%\item \textbf{Simplify all answers as much as possible.} This means that you need to need to combine like terms, reduce fractions, etc. (You do not need to rationalize denominators.)
-
-% from sp1
-\item Aim 1. To verify the FAT1 gene mutation in an independent cohort of progressive and non progressive OVH samples using targeted gene NGS 
-
-\item Aim 2. To compare the transcriptome of FAT1 wild-type and mutant OVH tissues. 
-
-\item Aim 3. To dissect the cooperative effect of FAT1 and tp53 gene mutation on OVH  transformation. 
-\item Aim 4. To analyze the effect of mutated FAT1 on the reciprocal relationship of YAP1 and tp53  pathways in progressive OVH cells by the analysis of YAP1 and p53-regulated transcriptome and genome-binding regions.
-
-
-\end{itemize}
-
-\vspace{3em}
-\end{minipage}
-%%%%%%%%%
 
 
 %\thispagestyle{titlepage}
@@ -534,8 +477,9 @@ The subjective psychosocial measurements should include depression, stress, qual
 \textbf{Conclusions:}
 %Those 11 validated biomarkers (DKK1, CAMK2N1, STC2, PGK1, SURF4, NDFIP1, STIP1, DKC1, ZNF557, ZNF266, and FCGBP), 
 The candidate biomarkers, clinical tumor size, and surgical margin status are suggested prognosis factors in \acrshort{hnscc} through TCGA analysis.
-The transcriptomic representation of \acrfull{tcia} and TCGA could be applied to validate those candidates by independent TMU cohort (n=46, obtained at TMU Joint Biobank).
-We conclude that expression data of \acrshort{rnaseq} with associated pathological images and holistic features will help to facilitate the biomarker discovery in terms of tumor-agnostic therapy.
+Using those biomarkers, we will analyze the transcriptomic representation of \acrshort{ovh} in TMU cohort. 
+%could be applied to validate those candidates by independent TMU cohort (n=46, obtained at TMU Joint Biobank).
+We will conclude that combining \acrshort{rnaseq} expression data with pathological images will aid in the development of a predictive model for early detection of \acrshort{oscc}.
 % pvalueTex, equipped with an optimal cutoff finder, 
 
 %Survival analysis using the Cancer Genome Atlas (TCGA) dataset is a well-known method to discover gene expression-based prognostic biomarkers of head and neck squamous cell carcinoma (HNSCC). It is necessary to determine a cutoff point by patients' dichotomization for the continuous gene expression. Usually, an optimization algorithm for cutoff determination has been set at the median or quantiles of RNA sequencing value.
@@ -551,12 +495,13 @@ We conclude that expression data of \acrshort{rnaseq} with associated pathologic
 \textbf{Keyword:}
 %\keyword{
 Head and Neck Squamous Cell Carcinoma (HNSCC);
+Oral Verrucous Hyperplasia (\acrshort{ovh});
 %Genome Database\sep
-the Cancer Genome Atlas (TCGA);
-the Cancer Imaging Archive (TCIA);
+%the Cancer Genome Atlas (TCGA);
+%the Cancer Imaging Archive (TCIA);
 RNA-sequencing;
 Survival Analysis;
-Optimal Cutoff;
+%Optimal Cutoff;
 Biomarker Discovery; %\sep
 %Tumor Type-agnostic Therapy\sep
 %Immuno-Oncology\sep
@@ -567,10 +512,10 @@ Deep Learning;
 Graph Neural Network (GNN);
 Graph Convolutional Neural Network (GCNN);
 Recurrent Neural Network (RNN); 
-Electric Healthcare Records (EHR);
+%Electric Healthcare Records (EHR);
 Holistic Cancer Care;
-Therapeutic Relationship;
-Mindfulness Meditation\\[1cm]
+%Therapeutic Relationship;
+%Mindfulness Meditation\\[1cm]
 %}
 
 \clearpage
@@ -693,7 +638,7 @@ Mindfulness Meditation\\[1cm]
 
 
 
-\subsection{Etiology}
+\subsection{Cancer Initiation}
 The main risk factors for HNSCC include carcinogens in tobacco and betel nut, alcohol, oncogenic viruses.
 In Asian population, \acrfull{aldh2} mutation plays a very important rule to enhance HNSCC\citep{Chien2019} by alcohol consumption.
 The oncogenic viruses such as \acrfull{hpv} and Epstein–Barr virus play a major carcinogenic role in tumors of the oropharynx and nasopharynx, respectively\citep{Ferrarotto2017}.
@@ -744,7 +689,7 @@ From the intrinsic factors (such as age and gender), the accumulated genetic alt
 %Overview of HNSCC (Indian)
 %https://www.intechopen.com/books/oral-cancer/oral-cancer-an-overview
 
-% ALDH2 mutaion 戒酒有理
+% ALDH2 mutaion 戒酒有理 05/09
 % 在美國北加州參加演講。
 % 很棒！心得是：該戒酒了，至少要去檢測 ALDH2 基因是否突變影響解酒酵素→ 因為乙醛堆積致癌！
 % 菸與酒在全身癌症的貢獻度是可以相比的。只有壞處沒有好處
@@ -808,7 +753,7 @@ From the intrinsic factors (such as age and gender), the accumulated genetic alt
 %Further, compared to women randomized to ACC, MBSR women exhibited trajectories demonstrating significantly more rapid restoration of NKCA, accompanied by 
 %lower circulating TNF-alpha levels, lower IL-6 production =>  pro-inflammatory cytokines
 %and greater IFN-gamma production => IFN gamma supports an immune-mediated response against cancer and this may be important during the transition following cancer treatment
-A randomized clinical trial with active control proved that early provision of MBSR for women newly diagnosed with breast cancer provides psychological benefits (reduction of stress, fatigue, sleep disturbance, and depressive symptoms), and also optimizes immune functions (higher natural killer cell activity, higher \acrshort{ifng}, lower TNF-alpha, lower IL-6) supportive of cancer survival\citep{WitekJanusek2019}.
+%A randomized clinical trial with active control proved that early provision of MBSR for women newly diagnosed with breast cancer provides psychological benefits (reduction of stress, fatigue, sleep disturbance, and depressive symptoms), and also optimizes immune functions (higher natural killer cell activity, higher \acrshort{ifng}, lower TNF-alpha, lower IL-6) supportive of cancer survival\citep{WitekJanusek2019}.
 
 % IL-6 in Covid-19 infection 
 
@@ -994,17 +939,67 @@ The possible molecular mechanisms could be also related with the mind-brain-body
 %%%%%
 
 
+ 
+%%% from Chi2022 Ph.D. dissertation ***************
+%Prognostic significance of p53 mutation has been reported.
+%% **** TP53 gene => p53 protein; mutation of TP53 ***
+Accumulative knowledge shows that some driver genes could facilitate carcinogenesis in \acrshort{oscc}.
+For example, p53 is a tumour suppressor protein encoded by the TP53 gene.
+TP53 mutations are comprised of eight classes: missense, nonsense, frame-shift deletion, frame-shift insertion, in-frame deletion, in-frame insertion, silent and splice-site.
+Immunohistochemical (IHC) staining for p53 is used as a surrogate for TP53 missense mutation in cancer cells. 
+%Usually, wild-type TP53 could be found in 1--10\% of IHC; 0 or 50--100\% in missense mutation of TP53. [\url{https://www.nature.com/articles/modpathol201185/tables/1}]
+% *** p53 is a tumour suppressor protein encoded by the TP53 gene. This protein is expressed and regulates the transition from G1 to S phase in cell cycle division. P53 is the key mediator of cell cycle arrest for induction of DNA repair. If failed in the repair, p53 might trigger apoptosis leading programmed cell death, as a response to cellular stress (ref). p53 is often referred to as the "guardian of the genome". Its prime function is to put cells, which has aberrant DNA, into repairment or apoptosis, and thereby prevent malignant transformation. P53 is mutated(?) presenting in more than 50\% of all cancers and found by IHC.
+%The node-negative \acrshort{hnscc} patients with overexpression of mutated-TP53 were found to have poor prognosis~\citep{DeVicente2004}.
+The mutations of TP53 are one of the most frequent abnormalities in \acrshort{hnscc} found within up to 70\% of surgical specimen~\citep{Alsner2001, Singh2016, Wang2017, WARD2018}.
+I is also found in severe dysplasia of \acrshort{ovh}.
+Overexpression of Ki-67 (encoded by MKI67 gene)~\citep{Perisanidis2012,Szentkuti2015} impacts on poor overall survival of HNSCC.
+%*** biomarkers for radio-resistance or proton therapy? Concurrent systemic therapy:~\citep{Brockstein2020} (UpToDate database)
+%It was found that radiation resistance of HNSCC is correlated with overexpression of hypoxia-inducible factor (HIF)-1 alpha~\citep{Aebersold2001} or Ki-67~\citep{Couture2002}. 
+
+% from sp1 研究構想： Dr Wu 吳明恆老師 FAT1 versus TP53 **********
+%   (Head Neck 2018, Head Neck 2020 and Medicine 2021). 
+Wu and his colleagues [Wu et al., 2018, 2020, 2021] have serial studies for \acrshort{ovh} through whole-exome sequencing to identify a biomarker. 
+They found that FAT1 genetic mutation rate is significantly higher in progressive \acrshort{ovh} (83.3\%) than in their non-progressive counter partner (22.2\%), while 6.25\% of TP53 is mutated in \acrshort{ovh}. 
+As a result, we believe that FAT1-regulated YAP1/Hippo pathway drives malignant transformation in \acrshort{ovh}.
+%FAT1-regulated YAP1/Hippo pathways has been well addressed. 
+%As a result, this  project aims to verify FAT1 gene mutation in a large cohort of OVH patients and to investigate the FAT1 and tp53 relationships in OVH transformation. 
+
 \section{Preliminary Results}
+% P-value => \textit{P} value
+% Results: the main findings
+\textbf{Preliminary Results:}
+Using pvalueTex on the \acrshort{tcga} \acrshort{hnscc} cohort, we scanned human protein-coding genes (20,500) programmatically. After adjustment with other confounders, we found that the clinical tumor stage and the surgical margin involvement are independent risk factors in patient survival. 
+%According to the resulting tables with Bonferroni adjusted \textit{P} value under optimal cutoff as well as hazard ratio $(>=1.5)$, 
+%There were ten candidate biomarkers, named as DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, and DKC1, which are 
+Overexpression of CAMK2N1 is significantly associated with the poor prognosis of \acrfull{os}. 
+Missense mutation of FAT1 is also found in progressive \acrshort{ovh} and poor recurrence-free survival of oral cancer.
+%At the same time, the other ten genes were over-expressed in the better survival patients (with hazard ratio $<=0.5$), named as ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, IQCN (previous name as KIAA1683), and NPB.
+We assume these biomarkers should be found around the surgical margin of \acrshort{oscc} specimen.
+
+Oral cancer risk is influenced by the severity of epithelial dysplasia on \acrshort{ovh} samples.
+Clinically helpful biomarkers for dysplasia grading include KRT13 (type I cytoskeletal 13, encoding CK13), KRT17 (type I cytoskeletal 17, encoding CK17), TP53 (encoding p53), MKI67 (Marker Of Proliferation Ki-67, encoding Ki-67).
+%CK13, CK17, p53, and Ki-67.
+%  KRT13 (type I cytoskeletal 13, aka. CK13), KRT17 (type I cytoskeletal 17, aka. CK17), TP53 (p53), MKI67 Marker Of Proliferation Ki-67 (Ki-67)
+
+%*** validated by \acrfull{hpa}.
+Further validation will be conducted by using deep learning of whole-slide pathological images.
+% are warranted 
+
+%%%%%%%%%%%
+
+
+
+%%%%%%%% xxxx
 In our previous transtriptomics study\citep{Chi2020}, %\citep{Tai2007},
 % from pvalueTex
 the 9416 Kaplan-Meier plots with associated Cox's univariate and multivariate tables were generated by Cox modeling %(see Figure \ref{fig:figure1}) 
 and justified by the ranking of hazard ratios.
 The 967 genes were kept by criteria of uncorrected \textit{P} value (below 0.05) and \acrfull{hr} (greater than 1.5 or less than 0.5). %(see Figure \ref{fig:figure2}(a) univariate, and Figure \ref{fig:figure2}(b) multivariate plots). 
-At the final step, a stringent criteria (Bonferroni \textit{P} value correction) was used to yield twenty candidates. %(see Figure \ref{fig:figure2}(c), (d)). 
+At the final step, a stringent criteria (Bonferroni \textit{P} value correction) was used to yield a candidates: CAMK2N1. %(see Figure \ref{fig:figure2}(c), (d)). 
 % before validation
-Among these candidates, ten overexpressed genes (symbol as DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, and DKC1) are associated with a poor prognosis of  \acrshort{os}.% (see Table \ref{table:table1}). 
-The other ten overexpressed genes (symbol as ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, IQCN - former symbol as KIAA1683, and NPB) are correlated with better survival.% (see Table \ref{table:table3}, with their gene name).
-We made a volcano plot for 9416 genes by Kaplan-Meier \textit{P} value (less than 0.05, obtained during cutoff finding procedure) against the Cox hazard ratio (see Figure \ref{fig:figure3}). The plot reveals that the most significant (Bonferroni-adjusted \textit{P} $< 0.05$) candidate genes are located above the dotted line. At the same time, Cox's HR separated them on the two-side with prognostic impact.
+%Among these candidates, ten overexpressed genes (symbol as DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, and DKC1) are associated with a poor prognosis of  \acrshort{os}.% (see Table \ref{table:table1}). 
+%The other ten overexpressed genes (symbol as ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, IQCN - former symbol as KIAA1683, and NPB) are correlated with better survival.% (see Table \ref{table:table3}, with their gene name).
+%We made a volcano plot for 9416 genes by Kaplan-Meier \textit{P} value (less than 0.05, obtained during cutoff finding procedure) against the Cox hazard ratio (see Figure \ref{fig:figure3}). The plot reveals that the most significant (Bonferroni-adjusted \textit{P} $< 0.05$) candidate genes are located above the dotted line. At the same time, Cox's HR separated them on the two-side with prognostic impact.
 % => after validation: The result showed six overexpressed genes (symbol as CAMK2N1, PGK1, SURF4, USP10, NDFIP1, FOXA2) are significantly associated with a poor prognosis of overall survival. Furthermore, the four overexpressed genes (symbol as IL19, FCGBP, IQCN - former symbol as KIAA1683, and NPB) are correlated with better survival.
 
 %注意 強調GSE2837: 
@@ -1013,21 +1008,21 @@ We made a volcano plot for 9416 genes by Kaplan-Meier \textit{P} value (less tha
 %\subsubsection*{GSE2837} % non-TCGA
 % from Anwser2-2
 %by GEO GSE2837 HNSCC dataset (PrognoScan)
-We validated the those 20 genes in the other independent \acrshort{hnscc} cohort (GSE2837).
-The survival significance (Kaplan-Meier \textit{P} value) is in the following probes among 10 genes:\\
-1) poor prognosis: CAMK2N1 (0.048214), PGK1 (0.009978), SURF4 (0.023127), USP10 (0.017768), NDFIP1 (0.022758), FOXA2 (0.001587);\\ % FOXA2 (0.038125)
-2) better prognosis: IL19 (0.049731), FCGBP (0.005658), KIAA1683 (IQCN, 0.005886), NPB (0.014177);\\
+%We validated the those 20 genes in the other independent \acrshort{hnscc} cohort (GSE2837).
+%The survival significance (Kaplan-Meier \textit{p} value) is in the following probes among 10 genes:\\
+%1) poor prognosis: CAMK2N1 (0.048214), PGK1 (0.009978), SURF4 (0.023127), USP10 (0.017768), NDFIP1 (0.022758), FOXA2 (0.001587);\\ % FOXA2 (0.038125)
+%2) better prognosis: IL19 (0.049731), FCGBP (0.005658), KIAA1683 (IQCN, 0.005886), NPB (0.014177);\\
 %17 out of 20 candidates
 %?DKK1 (0.253635), 
 %Nevertheless, PrognoScan has group separation cut by a skewed manner, and the GSE2837 has far fewer participants than the TCGA cohort.
 %DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, DKC1;
 %ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, KIAA1683 (IQCN), NPB
 %Those 11 genes achieve similar positive and negative prognostic effect comparable with our proposed candidate genes. 
-Thus, these 10 candidates have been confirmed by a comparative study using the GSE2837 dataset other than the TCGA cohort.
+%Thus, these 10 candidates have been confirmed by a comparative study using the GSE2837 dataset other than the TCGA cohort.
 %Please see Kaplan-Meier plots in Supplementary Figure S1.%\ref{fig:fig_GSE2837}.
 
 
-
+\comm{
 %\subsubsection{Figure 2:h}
 \begin{figure}[hp]
 \centering
@@ -1042,10 +1037,6 @@ Thus, these 10 candidates have been confirmed by a comparative study using the G
 % Table1
 % wide table \usepackage{tabularx}
 % makecell{}
-
-
-
-
 
 
 %\subsubsection{Figure 3:h}
@@ -1063,14 +1054,15 @@ Dotted line: significant Bonferroni corrected \textit{P} value.
 % X axis: "frequency" (number of uncorrected P-values less than 0.05 during Kaplan-Meier cutoff finding procedure). X axis: adjusted Kaplan-Meier P-value.
 
 \clearpage
+} % end of \comm
 
-
-After validated by GSE2837, our top 1 candidate is \acrfull{CAMK2N1}. The Kaplan-Meier curve reveals 152 patients bearing the higher expression of \acrshort{CAMK2N1} were suffered from only 35\% of 5-year \acrshort{os} rate. In comparison, the other 262 patients with lower expression (the cutoff at 0.027(RSEM)) had a better prognosis (adjusted \textit{P} = $0.002$) (see Figure \ref{fig:figure4}(a)).
-Figure \ref{fig:figure4}(b)'s cumulative \textit{P} value plot shows that the uncorrected 147 \textit{P} values ($< 0.05$) have been estimated by a serial cut from 144 to 290 persons for grouping the cohort in our cutoff finding procedure (cutofFinder\_func.R, see Figure \ref{fig:figure1}, cutoff engine). The smallest \textit{P} value (\num{2.97e-7}), when cut on n=262 (63.3\% of 414), has been defined as an optimal \textit{P} value.
-Conversely, the most associated gene with better survival is \acrfull{IL19}. In Figure \ref{fig:figure4}(c), a Kaplan-Meier curve reveals 215 patients bearing the higher expression of \acrshort{IL19} had 60\% of 5-year OS survival rate (adjusted \textit{P} = $0.002$). The cutoff finding procedure (cutofFinder\_func.R) generated cumulative \textit{P} value plot in Figure \ref{fig:figure4}(d). The 161 uncorrected \textit{P} values were estimated by a serial cut from 125 to 286 for grouping the cohort. The smallest \textit{P} value (\num{3.73e-7}), when cut on n=199 (48.1\% of total cohort 414), has been defined as an optimal \textit{P} value with a cutoff value -0.147(RSEM) of \acrshort{rnaseq}.
+%After validated by GSE2837, our top 1 candidate is \acrfull{CAMK2N1}. The Kaplan-Meier curve reveals 152 patients bearing the higher expression of \acrshort{CAMK2N1} were suffered from only 35\% of 5-year \acrshort{os} rate. In comparison, the other 262 patients with lower expression (the cutoff at 0.027(RSEM)) had a better prognosis (adjusted \textit{P} = $0.002$) (see Figure \ref{fig:figure4}(a)).
+%Figure \ref{fig:figure4}(b)'s cumulative \textit{P} value plot shows that the uncorrected 147 \textit{P} values ($< 0.05$) have been estimated by a serial cut from 144 to 290 persons for grouping the cohort in our cutoff finding procedure (cutofFinder\_func.R, see Figure \ref{fig:figure1}, cutoff engine). The smallest \textit{P} value (\num{2.97e-7}), when cut on n=262 (63.3\% of 414), has been defined as an optimal \textit{P} value.
+%Conversely, the most associated gene with better survival is \acrfull{IL19}. In Figure \ref{fig:figure4}(c), a Kaplan-Meier curve reveals 215 patients bearing the higher expression of \acrshort{IL19} had 60\% of 5-year OS survival rate (adjusted \textit{P} = $0.002$). The cutoff finding procedure (cutofFinder\_func.R) generated cumulative \textit{P} value plot in Figure \ref{fig:figure4}(d). The 161 uncorrected \textit{P} values were estimated by a serial cut from 125 to 286 for grouping the cohort. The smallest \textit{P} value (\num{3.73e-7}), when cut on n=199 (48.1\% of total cohort 414), has been defined as an optimal \textit{P} value with a cutoff value -0.147(RSEM) of \acrshort{rnaseq}.
 %The second candidate, which improving patient survival, is ZNF266.
 %\subsubsection{Tables} in main article
 
+\comm{
 %\subsubsection{Figure 4:h}
 \begin{figure}[hp]
 \centering
@@ -1081,15 +1073,17 @@ Conversely, the most associated gene with better survival is \acrfull{IL19}. In 
 \end{figure}
 
 \clearpage
+} % end of \comm{}
+
 
 %Table \ref{table:table1} shows ten overexpressed genes are associated with poor prognosis in \acrshort{hnscc}, ranked by adjusted Kaplan-Meier \textit{P} value.
-Six out of ten preliminary candidates has been validated by using GSE2837.
-We found those six candidates have the Cox's univariate and multivariate HR above 1.914.
+%Six out of ten preliminary candidates has been validated by using GSE2837.
+%We found those six candidates have the Cox's univariate and multivariate HR above 1.914.
 %There were few published articles of \acrfull{SURF4} and \acrfull{NDFIP1} (\acrshort{NEDD4}: \acrlong{NEDD4}), which were related to cancer research.
 In Table \ref{table:table2}, % table 3
-after adjustment of confounders, \acrshort{CAMK2N1} overexpression is the independent prognostic factor (multivariate HR 2.007 [95\% CI: 1.490-2.704, \textit{P} $<$ 0.001]), as well as clinical T stage (HR 1.982 [95\% CI: 1.048-3.745, \textit{P} = 0.035]) and surgical margins status (HR 1.631 [95\% CI: 1.182-2.250, \textit{P} = 0.003]). 
-Older age (more than 65) also worse the survival (HR 1.391 [95\% CI: 1.025-1.888, \textit{P} = 0.034]). 
-The M stage could be ignored in this cohort due to only 3 out of 414 patients with distant metastasis.
+after adjustment of confounders, \acrshort{CAMK2N1} overexpression is the independent prognostic factor (multivariate HR 2.007 [95\% CI: 1.490-2.704, \textit{p} $<$ 0.001]), as well as clinical T stage (HR 1.982 [95\% CI: 1.048-3.745, \textit{p} = 0.035]) and surgical margins status (HR 1.631 [95\% CI: 1.182-2.250, \textit{p} = 0.003]). 
+Older age (more than 65) also worse the survival (HR 1.391 [95\% CI: 1.025-1.888, \textit{p} = 0.034]). 
+%The M stage could be ignored in this cohort due to only 3 out of 414 patients with distant metastasis.
 
 
 
@@ -1101,74 +1095,98 @@ The M stage could be ignored in this cohort due to only 3 out of 414 patients wi
 %(P-value Significant codes is denoted as  0.01 mark as *; 0.001 mark as **; if $<$0.001  mark as ***)
 \begin{table}[hp]
 \centering
-\caption{Univariate/multivariate Cox's proportional hazards regression analyses on OS time of CAMK2N1 gene expression in HNSCC}
+%\caption{Univariate/multivariate Cox's proportional hazards regression analyses on OS time of CAMK2N1 gene expression in HNSCC}
+
+%\begin{table}[H] 
+%\centering
+%\captionsetup{labelformat=empty}
+\captionabove{%Univariate/multivariate Cox proportional hazard regression analyses on overall survival time of \hl{CAMK2N1} gene expression in HNSCC. 
+Clinical (T)umor size, positive surgical margin, and CAMK2N1 expression are independent prognostic factors in HNSCC (TCGA) cohort.}
+
+%%%\label{table:table2}
 \arrayrulecolor[rgb]{0.255,0.255,0.255}
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{|l|l|l|l|l|l|l|l|} 
+
+
+\resizebox{0.55\linewidth}{!}{%
+\begin{tabular}{|l|l|c|c|c|c|c|c|} 
+\noalign{\hrule height 1.0pt}
 %\begin{tabularx}{\textwidth}{|p{2.5cm}|l|l|l|l|l|l|l|} 
-\arrayrulecolor{black}\cline{1-2}\arrayrulecolor[rgb]{0.255,0.255,0.255}\cline{3-8}
-\multicolumn{2}{|l!{\color{black}\vrule}}{\multirow{2}{*}{Features}}                                                          & \multicolumn{3}{c|}{Univariate}                                                                                                                                                                                                                & \multicolumn{3}{c|}{Multivariate}                                                                                                                                                                                                               \\ 
+%\arrayrulecolor{black}\cline{1-2}
+\arrayrulecolor[rgb]{0.255,0.255,0.255}
 \cline{3-8}
-\multicolumn{2}{|l!{\color{black}\vrule}}{}                                                                                   & \multicolumn{1}{l!{\color{black}\vrule}}{HR}                                   & \multicolumn{1}{c!{\color{black}\vrule}}{CI95\%}                              & \multicolumn{1}{l!{\color{black}\vrule}}{\textit{P}~value}                    & \multicolumn{1}{l!{\color{black}\vrule}}{HR}                                   & \multicolumn{1}{c!{\color{black}\vrule}}{CI95\%}                              & \multicolumn{1}{l!{\color{black}\vrule}}{\textit{P}~value}                     \\ 
+\multicolumn{2}{|l!{\color{black}\vrule}}{\multirow{2}{*}{\textbf{Features}}}                                                          & \multicolumn{3}{c|}{\textbf{Univariate}}                                                                                                                                                                                                                & \multicolumn{3}{c|}{\textbf{Multivariate}}                                                                                                                                                                                                               \\ 
+\cline{3-8}
+\multicolumn{2}{|l!{\color{black}\vrule}}{}                                                                                   & \multicolumn{1}{l!{\color{black}\vrule}}{\textbf{HR}}                                   & \multicolumn{1}{c!{\color{black}\vrule}}{\textbf{CI95\%}}                              & \multicolumn{1}{l!{\color{black}\vrule}}{\textbf{\protect\textit{p}~Value}}                    & \multicolumn{1}{l!{\color{black}\vrule}}{\textbf{HR}}                                   & \multicolumn{1}{c!{\color{black}\vrule}}{\textbf{CI95\%}}                              & \multicolumn{1}{l!{\color{black}\vrule}}{\textbf{\protect\textit{p}~Value}}                     \\ 
 \arrayrulecolor{black}\hline
 \multirow{2}{*}{Gender}                 & \multicolumn{1}{l!{\color{black}\vrule}}{{\cellcolor[rgb]{0.62,0.812,0.878}}Female} & \multicolumn{1}{l!{\color{black}\vrule}}{{\cellcolor[rgb]{0.62,0.812,0.878}}1} & \multicolumn{1}{l!{\color{black}\vrule}}{{\cellcolor[rgb]{0.62,0.812,0.878}}} & \multicolumn{1}{l!{\color{black}\vrule}}{{\cellcolor[rgb]{0.62,0.812,0.878}}} & \multicolumn{1}{l!{\color{black}\vrule}}{{\cellcolor[rgb]{0.62,0.812,0.878}}1} & \multicolumn{1}{l!{\color{black}\vrule}}{{\cellcolor[rgb]{0.62,0.812,0.878}}} & \multicolumn{1}{l!{\color{black}\vrule}}{{\cellcolor[rgb]{0.62,0.812,0.878}}}  \\ 
 \cline{2-8}
-                                        & Male                                                                                & 1.157                                                                          & 0.843-1.587                                                                   & 0.367                                                                         & 1.076                                                                          & 0.767-1.510                                                                   & 0.671                                                                          \\ 
+                                        & Male                                                                                & 1.157                                                                          & 0.843--1.587                                                                   & 0.367                                                                         & 1.076                                                                          & 0.767--1.510                                                                   & 0.671                                                                          \\ 
 \arrayrulecolor[rgb]{0.255,0.255,0.255}\hline
-\multirow{2}{*}{Age at diagnosis}       & {\cellcolor[rgb]{0.62,0.812,0.878}}=65y                                             & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
+\multirow{2}{*}{Age at diagnosis}       & {\cellcolor[rgb]{0.62,0.812,0.878}}$<=65y$                                             & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
-                                        & 65y                                                                                 & 1.329                                                                          & 0.990-1.784                                                                   & 0.058                                                                         & 1.391                                                                          & 1.025-1.888                                                                   & \textcolor{red}{0.034}                                                         \\ 
+                                        & $>65y$                                                                                 & 1.329                                                                          & 0.990--1.784                                                                   & 0.058                                                                         & 1.391                                                                          & 1.025--1.888                                                                   & \textcolor{red}{0.034}                                                         \\ 
 \hline
-\multirow{2}{*}{Clinical T Status}      & {\cellcolor[rgb]{0.62,0.812,0.878}}T1+T2                                            & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
+\multirow{2}{*}{\textcolor{red}{Clinical T Status}}      & {\cellcolor[rgb]{0.62,0.812,0.878}}T1+T2                                            & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
-                                        & T3+T4                                                                               & 1.409                                                                          & 1.028-1.931                                                                   & \textcolor{red}{0.033}                                                        & 1.982                                                                          & 1.048-3.745                                                                   & \textcolor{red}{0.035}                                                         \\ 
+                                        & T3+T4                                                                               & 1.409                                                                          & 1.028--1.931                                                                   & \textcolor{red}{0.033}                                                        & 1.982                                                                          & 1.048--3.745                                                                   & \textcolor{red}{0.035}                                                         \\ 
 \hline
 \multirow{2}{*}{Clinical N Status}      & {\cellcolor[rgb]{0.62,0.812,0.878}}N0                                               & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
-                                        & N1-3                                                                                & 1.185                                                                          & 0.890-1.577                                                                   & 0.246                                                                         & 1.145                                                                          & 0.801-1.636                                                                   & 0.457                                                                          \\ 
+                                        & N1-3                                                                                & 1.185                                                                          & 0.890--1.577                                                                   & 0.246                                                                         & 1.145                                                                          & 0.801--1.636                                                                   & 0.457                                                                          \\ 
 \hline
 \multirow{2}{*}{Clinical M Status}      & {\cellcolor[rgb]{0.62,0.812,0.878}}M0                                               & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
-                                        & M1                                                                                  & 4.097                                                                          & 1.009-16.644                                                                  & \textcolor{red}{0.049}                                                        & 7.314                                                                          & 1.590-33.631                                                                  & \textcolor{red}{0.011}                                                         \\ 
+                                        & M1                                                                                  & 4.097                                                                          & 1.009--16.644                                                                  & \textcolor{red}{0.049}                                                        & 7.314                                                                          & 1.590--33.631                                                                  & \textcolor{red}{0.011}                                                         \\ 
 \hline
 \multirow{2}{*}{Clinical Stage}         & {\cellcolor[rgb]{0.62,0.812,0.878}}Stage I+II                                       & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
-                                        & Stage III+IV                                                                        & 1.245                                                                          & 0.882-1.759                                                                   & 0.213                                                                         & 0.621                                                                          & 0.287-1.343                                                                   & 0.226                                                                          \\ 
+                                        & Stage III+IV                                                                        & 1.245                                                                          & 0.882--1.759                                                                   & 0.213                                                                         & 0.621                                                                          & 0.287--1.343                                                                   & 0.226                                                                          \\ 
 \hline
-\multirow{2}{*}{Surgical Margin status} & {\cellcolor[rgb]{0.62,0.812,0.878}}Negative                                         & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
+\multirow{2}{*}{\textcolor{red}{Surgical Margin status}} & {\cellcolor[rgb]{0.62,0.812,0.878}}Negative                                         & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
-                                        & Positive                                                                            & 1.591                                                                          & 1.155–2.191                                                                   & \textcolor{red}{0.004}                                                        & 1.631                                                                          & 1.182-2.250                                                                   & \textcolor{red}{0.003}                                                         \\ 
+                                        & Positive                                                                            & 1.591                                                                          & 1.155--2.191                                                                   & \textcolor{red}{0.004}                                                        & 1.631                                                                          & 1.182--2.250                                                                   & \textcolor{red}{0.003}                                                         \\ 
 \hline
 \multirow{2}{*}{Tobacco Exposure}       & {\cellcolor[rgb]{0.62,0.812,0.878}}Low                                              & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
-                                        & High                                                                                & 1.364                                                                          & 1.008-1.844                                                                   & \textcolor{red}{0.044}                                                        & 1.363                                                                          & 0.990-1.875                                                                   & 0.058                                                                          \\ 
+                                        & High                                                                                & 1.364                                                                          & 1.008--1.844                                                                   & \textcolor{red}{0.044}                                                        & 1.363                                                                          & 0.990--1.875                                                                   & 0.058                                                                          \\ 
 \hline
-\multirow{2}{*}{RNA-Seq}                & {\cellcolor[rgb]{0.62,0.812,0.878}}Low                                              & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
+\multirow{2}{*}{\textcolor{red}{Gene Expression}}                & {\cellcolor[rgb]{0.62,0.812,0.878}}Low                                              & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
-                                        & High                                                                                & 2.101                                                                          & 1.572-2.809                                                                   & \multicolumn{1}{c|}{\textcolor{red}{***}}                                     & 2.007                                                                          & 1.490-2.704                                                                   & \multicolumn{1}{c|}{\textcolor{red}{***}}                                      \\ 
-\hline
-\multicolumn{8}{|l|}{}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ 
-\hline
-\multicolumn{8}{|l|}{(\textit{P}~value significant codes is denoted: red \textless{} 0.05; *** \textless{} 0.001)}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               \\
-\hline
+                                        & High                                                                                & \textcolor{red}{2.101}                                                                                        & 1.572--2.809                                                                   & \multicolumn{1}{c|}{\textcolor{red}{\num{5.324E-07}}}       % 5.323587E-07
+                                        & 2.007                                                                          & 1.490--2.704                                                                   & \multicolumn{1}{c|}{\textcolor{red}{\num{4.565E-06}}}       % 4.565120E-06
+                                        \\ 
+%\hline
+%\multicolumn{8}{|l|}{}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ 
+%\hline
+% \\
+%\noalign{\hrule height 1.0pt}
 \end{tabular}
 } % end of \resizebox
-\arrayrulecolor{black}
+
+\pbox{0.6\columnwidth}{\footnotesize {
+(OS: overall survival;
+HR: hazard ratio;
+CI95\%: 95\% confidence interval;
+\protect\textit{p}~value significant code is denoted: \textcolor{red}{red \textless{} 0.05}).} %; *** \textless{} 0.001).}                              
+}
+%\arrayrulecolor{black}
+%\end{table}
+
+
 \label{table:table2}
 \end{table}
 
 
 
-
+% IL19
 %In Table \ref{table:table3}, the other ten overexpressed genes have been found in better prognosis of \acrshort{hnscc} patients. Cox's univariate and multivariate HR is under 0.5.
 %Four out of ten has been validated by using GSE2837.
-In Table \ref{table:table4},
-after adjustment of confounders, prognosis is influenced by advance clinical T Status (HR 1.961 [95\% CI: 1.035-3.714, \textit{P} = 0.039] ), positive surgical margin involvement (HR 1.631 [95\% CI: 1.18-2.254, \textit{P} = 0.003]) , and higher tobacco exposure (HR 1.453 [95\% CI: 1.055-2.000, \textit{P} = 0.022]).
-Overexpressed \acrshort{IL19} gene could has a protective influencce on prognosis (HR 0.499 [95\% CI: 0.372-0.669, \textit{P} $<$ 0.001]).
+%In Table \ref{table:table4}, after adjustment of confounders, prognosis is influenced by advance clinical T Status (HR 1.961 [95\% CI: 1.035-3.714, \textit{P} = 0.039] ), positive surgical margin involvement (HR 1.631 [95\% CI: 1.18-2.254, \textit{P} = 0.003]) , and higher tobacco exposure (HR 1.453 [95\% CI: 1.055-2.000, \textit{P} = 0.022]).
+%Overexpressed \acrshort{IL19} gene could has a protective influencce on prognosis (HR 0.499 [95\% CI: 0.372-0.669, \textit{P} $<$ 0.001]).
 
 
-In summary, those ten candidate biomarkers, clinical T stage, and surgical margin are independent prognosis factors in \acrshort{hnscc}.
-Thus, the prognosis model with coefficients is established from \acrshort{tcga} \acrshort{hnscc} cohort. 
+%In summary, those ten candidate biomarkers, clinical T stage, and surgical margin are independent prognosis factors in \acrshort{hnscc}.
+%Thus, the prognosis model with coefficients is established from \acrshort{tcga} \acrshort{hnscc} cohort. 
 %The important input $X_1...X_n$ should be patients' features: age, specific ten gene expressions, clinical T stage, and surgical margin.
 %\\[0.5cm]
 % total 6+4 =10
@@ -1177,7 +1195,7 @@ Thus, the prognosis model with coefficients is established from \acrshort{tcga} 
 
 
 
-
+\comm{
 %\subsubsection{Table4/legend} Table 4
 \begin{table}[!hp]
 \centering
@@ -1236,7 +1254,7 @@ Thus, the prognosis model with coefficients is established from \acrshort{tcga} 
 \label{table:table4}
 \end{table}
 
-
+} % end of \comm{}
 
 % end of result
 
@@ -1424,6 +1442,43 @@ or more
 \subsection*{\cntext{計畫主體內容}} 
 %[proposal main body] %(計畫的主體內容)” 解釋每個 aim 要怎麼做，著重策略之邏輯性鋪陳，盡量使論述具有說服力。
 %新創一個方法或技術平台，須要詳細交代步驟
+
+% *****specific Aims (=old SP3 + sp4)	
+\begin{minipage}[t]{5.5in}
+\vspace{0pt}
+\begin{itemize}
+        
+% These are the instructions for the class
+\item \textbf{Aim 1}: To establish an OVH cohort in \acrfull{tmu} affiliated hospitals, and collect clinical and pathological images of those lesions.  
+
+To identify genetic variants associated with malignant transformation of OVH by implementing genome-wide association testing.
+
+\item \textbf{Aim 2}. To construct a deep learning platform of \acrshort{tmu} dataset. A deep-learning-based algorithm might extract features of clinical and pathological whole-slide images of \acrshort{ovh} and \acrshort{hnscc}.
+
+
+
+\item \textbf{Aim 3}: 
+To develop risk prediction model for malignant transformation of OVH by integrating risk factors identified from all subprojects. sp1, sp2, sp3.
+
+
+Deep Learning-based biomarker identifying in depression analysis with holistic healthcare study. The cortisol is one of the most common objective outcomes studied in psychoneuroimmunological (PNI) factors~\citep{Hulett2016}. Interleukin, cytokines, T-lymphocytes ($CD4^+$, $CD8^+$), $CD56^+$ (neural cell adhesion molecule), and heart rate variability (HRV) are included in other PNI studies.
+The subjective psychosocial measurements should include depression, stress, quality of life, anxiety, fatigue, mindfulness, mood, and specific spiritual growth---the meaning of life~\citep{Hsiao2012}. Our hypothesis is that \acrshort{ovh} could be transformed into oral cancer because of the stress, via mind-brain-body network~\citep{Rogers1959}. Thus, besides using those serum biomarkers, we encourage physicians to write their \acrfull{ehr} in a "holistic way".	And the \acrshort{ovh} carriers should use wearable device (e.g., smart watch) to monitor their HRV. Once the \acrshort{ovh} becoming oral cancer, we could early treat the disease as well as analyze the contributing factors of carcinogenesis. That could be a predictive biomarker.
+%\item \textbf{Simplify all answers as much as possible.} This means that you need to need to combine like terms, reduce fractions, etc. (You do not need to rationalize denominators.)
+
+% from sp1
+\item Aim 1. To verify the FAT1 gene mutation in an independent cohort of progressive and non progressive OVH samples using targeted gene NGS 
+
+\item Aim 2. To compare the transcriptome of FAT1 wild-type and mutant OVH tissues. 
+
+\item Aim 3. To dissect the cooperative effect of FAT1 and tp53 gene mutation on OVH  transformation. 
+\item Aim 4. To analyze the effect of mutated FAT1 on the reciprocal relationship of YAP1 and tp53  pathways in progressive OVH cells by the analysis of YAP1 and p53-regulated transcriptome and genome-binding regions.
+
+
+\end{itemize}
+
+\vspace{3em}
+\end{minipage}
+%%%%%%%%%
 
 %\begin{outline}
 \subsubsection*{Aim 1:} Construct a Deep Learning Platform of TCGA/TCIA and TMU dataset\\[0.5cm]
