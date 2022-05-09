@@ -5,6 +5,7 @@
 \documentclass[12pt, a4paper]{article}
 
 \usepackage{pdfpages} % for more pages of PDF \includegraphics
+\usepackage{pbox} 
 
 %\usepackage[table,xcdraw]{xcolor}
 \usepackage{xcolor}
@@ -951,7 +952,7 @@ Immunohistochemical (IHC) staining for p53 is used as a surrogate for TP53 misse
 % *** p53 is a tumour suppressor protein encoded by the TP53 gene. This protein is expressed and regulates the transition from G1 to S phase in cell cycle division. P53 is the key mediator of cell cycle arrest for induction of DNA repair. If failed in the repair, p53 might trigger apoptosis leading programmed cell death, as a response to cellular stress (ref). p53 is often referred to as the "guardian of the genome". Its prime function is to put cells, which has aberrant DNA, into repairment or apoptosis, and thereby prevent malignant transformation. P53 is mutated(?) presenting in more than 50\% of all cancers and found by IHC.
 %The node-negative \acrshort{hnscc} patients with overexpression of mutated-TP53 were found to have poor prognosis~\citep{DeVicente2004}.
 The mutations of TP53 are one of the most frequent abnormalities in \acrshort{hnscc} found within up to 70\% of surgical specimen~\citep{Alsner2001, Singh2016, Wang2017, WARD2018}.
-I is also found in severe dysplasia of \acrshort{ovh}.
+It is also found in severe dysplasia of \acrshort{ovh}.
 Overexpression of Ki-67 (encoded by MKI67 gene)~\citep{Perisanidis2012,Szentkuti2015} impacts on poor overall survival of HNSCC.
 %*** biomarkers for radio-resistance or proton therapy? Concurrent systemic therapy:~\citep{Brockstein2020} (UpToDate database)
 %It was found that radiation resistance of HNSCC is correlated with overexpression of hypoxia-inducible factor (HIF)-1 alpha~\citep{Aebersold2001} or Ki-67~\citep{Couture2002}. 
@@ -1089,25 +1090,26 @@ Older age (more than 65) also worse the survival (HR 1.391 [95\% CI: 1.025-1.888
 
 
 
-
+% CAMK2N1
 %\subsubsection{Table3/legend} Table 3
 %Table 2. Univariate/Multivariate Cox's proportional hazards regression analyses on OS time of DKK1 gene expression in HNSCC.
 %(P-value Significant codes is denoted as  0.01 mark as *; 0.001 mark as **; if $<$0.001  mark as ***)
 \begin{table}[hp]
 \centering
-%\caption{Univariate/multivariate Cox's proportional hazards regression analyses on OS time of CAMK2N1 gene expression in HNSCC}
+\caption{Clinical (T)umor size, positive surgical margin, and CAMK2N1 expression are independent prognostic factors in HNSCC (TCGA) cohort.}
+%Univariate/multivariate Cox's proportional hazards regression analyses on OS time of CAMK2N1 gene expression in HNSCC}
 
 %\begin{table}[H] 
 %\centering
 %\captionsetup{labelformat=empty}
-\captionabove{%Univariate/multivariate Cox proportional hazard regression analyses on overall survival time of \hl{CAMK2N1} gene expression in HNSCC. 
-Clinical (T)umor size, positive surgical margin, and CAMK2N1 expression are independent prognostic factors in HNSCC (TCGA) cohort.}
+%\captionabove{%Univariate/multivariate Cox proportional hazard regression analyses on overall survival time of \hl{CAMK2N1} gene expression in HNSCC.}
+
 
 %%%\label{table:table2}
 \arrayrulecolor[rgb]{0.255,0.255,0.255}
 
 
-\resizebox{0.55\linewidth}{!}{%
+\resizebox{0.8\linewidth}{!}{%
 \begin{tabular}{|l|l|c|c|c|c|c|c|} 
 \noalign{\hrule height 1.0pt}
 %\begin{tabularx}{\textwidth}{|p{2.5cm}|l|l|l|l|l|l|l|} 
@@ -1150,7 +1152,7 @@ Clinical (T)umor size, positive surgical margin, and CAMK2N1 expression are inde
 \cline{2-8}
                                         & High                                                                                & 1.364                                                                          & 1.008--1.844                                                                   & \textcolor{red}{0.044}                                                        & 1.363                                                                          & 0.990--1.875                                                                   & 0.058                                                                          \\ 
 \hline
-\multirow{2}{*}{\textcolor{red}{Gene Expression}}                & {\cellcolor[rgb]{0.62,0.812,0.878}}Low                                              & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
+\multirow{2}{*}{\textcolor{red}{CAMK2N1 Expression}}                & {\cellcolor[rgb]{0.62,0.812,0.878}}Low                                              & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}1                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                           & {\cellcolor[rgb]{0.62,0.812,0.878}}                                            \\ 
 \cline{2-8}
                                         & High                                                                                & \textcolor{red}{2.101}                                                                                        & 1.572--2.809                                                                   & \multicolumn{1}{c|}{\textcolor{red}{\num{5.324E-07}}}       % 5.323587E-07
                                         & 2.007                                                                          & 1.490--2.704                                                                   & \multicolumn{1}{c|}{\textcolor{red}{\num{4.565E-06}}}       % 4.565120E-06
@@ -1159,11 +1161,13 @@ Clinical (T)umor size, positive surgical margin, and CAMK2N1 expression are inde
 %\multicolumn{8}{|l|}{}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \\ 
 %\hline
 % \\
-%\noalign{\hrule height 1.0pt}
+\noalign{\hrule height 1.0pt}
 \end{tabular}
 } % end of \resizebox
 
-\pbox{0.6\columnwidth}{\footnotesize {
+% \usepackage{pbox} 
+
+\pbox{0.8\columnwidth}{\footnotesize {
 (OS: overall survival;
 HR: hazard ratio;
 CI95\%: 95\% confidence interval;
@@ -1879,7 +1883,10 @@ We sincerely want to express our thanks to the \acrshort{hnscc} patients who don
 %%%
 % https://docs.google.com/file/d/15QxU4ok7jpN9jVl0h3w10b2mSDUmxt8o/edit?usp=docslist_api&filetype=msexcel
 
+% ************ from Dr Wang and Dr Chi
 %TWB2.0 DNAchip 192000, 抽DNA 34560, TWB2.0 DNAchip檢體送樣前QC 9600, 資料儲存硬碟 9890, 國網運算資源 86630; 生物資料庫使用費(切片費) 9900, 生物資料庫使用費(染色費) 42000, IHC 免疫染色抗體 78000, Aperio ScanScope數位病理切片掃描 31500, 文具雜支 5920.
+
+% antibody x 6: p53, CAMK2N1, FAT1, CK13, CK17, Ki-67
 
 %業務費
 %(臨時工資及耗材、物品及雜支)
