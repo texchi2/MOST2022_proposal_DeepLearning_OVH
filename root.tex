@@ -145,6 +145,12 @@
 \newcommand{\todo}[1]{{\color{red}$\blacksquare$~\textsf{[TODO: #1]}}}
 \newcommand{\doctitle}{Deep Learning in Verrucous Hyperplasia} % *** Project Short Title ***
 
+% *** specific aim 1 2 3 4:
+\newcommand{\aimone}{To construct \acrshort{ovh} and leukoplakia datasets from Chi-Mei Hospital and \acrfull{tmuh}}
+\newcommand{\aimtwo}{To identify genetic variants associated with malignant transformation of \acrshort{ovh} by implementing genome-wide association testing (GWAS)}
+\newcommand{\aimthree}{To construct a deep learning platform of genomics (mutation and expression) from pathology images}
+\newcommand{\aimfour}{To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: sp1, sp2, and sp3}
+
 
 % --------------------------------------------------------------------------------
 %%% for abbreviations, or acronyms
@@ -483,7 +489,8 @@ During their follow-up period, a "survival analysis" should also be used to buil
 The candidate biomarkers, clinical tumor size, and surgical margin status are suggested prognosis factors in \acrshort{hnscc} through TCGA analysis.
 Using those biomarkers, we will analyze the transcriptomic representation of \acrshort{ovh} in TMU cohort. 
 %could be applied to validate those candidates by independent TMU cohort (n=46, obtained at TMU Joint Biobank).
-We will conclude that combining \acrshort{rnaseq} expression data with pathological images will aid in the development of a predictive model for early detection of \acrshort{oscc}.
+We will conclude that combining \acrshort{rnaseq} expression data with pathology images will aid in the development of a predictive model for early detection of \acrshort{oscc}.
+% pathology images (by NCI)
 % pvalueTex, equipped with an optimal cutoff finder, 
 
 %Survival analysis using the Cancer Genome Atlas (TCGA) dataset is a well-known method to discover gene expression-based prognostic biomarkers of head and neck squamous cell carcinoma (HNSCC). It is necessary to determine a cutoff point by patients' dichotomization for the continuous gene expression. Usually, an optimization algorithm for cutoff determination has been set at the median or quantiles of RNA sequencing value.
@@ -1284,7 +1291,7 @@ Missense mutation of FAT1 is also significantly associated with poor recurrence-
 As a result, we believe that FAT1-regulated YAP1/Hippo pathway drives malignant transformation in \acrshort{ovh}.
 We assume those biomarkers, CK13, CK17, p53, Ki-67, EGFR, $\alpha$-SMA, CAMK2N1, and FAT1, should be found within surgical margin (dysplasia zone) of \acrshort{oscc} specimen and \acrshort{ovh}.
 %*** validated by \acrfull{hpa}.
-Further investigation will be conducted by using deep learning of whole-slide pathological images.
+Further investigation will be conducted by using deep learning of whole-slide pathology images.
 % are warranted 
 
 %%%%%%%%%%%
@@ -1299,7 +1306,7 @@ Further investigation will be conducted by using deep learning of whole-slide pa
 \section{Deep Learning in Bioinformatics}
 
 %why deep learning?
-According to the recommendation of \acrfull{nci} (accessed at https://www.cancer.gov/\\research/areas/diagnosis/artificial-intelligence), 
+According to the recommendation of \acrfull{nci} (accessed March 2022, at \url{https://www.cancer.gov/\\research/areas/diagnosis/artificial-intelligence}), 
 \begin{outline}
 \1 Artificial Intelligence (AI) is helpful to create opportunities in cancer research
 \1 Image-based phenotype of cancer could be correlated with their underlying genomics data by deep learning methods
@@ -1308,12 +1315,12 @@ According to the recommendation of \acrfull{nci} (accessed at https://www.cancer
 \end{outline}
 
 %== NCI deep learning could predict commonly mutated genes from the images:
-Deep learning can be used to identify specific gene mutations and mRNA expression from tumor pathology images instead of using traditional genomic sequencing. 
-For instance, NCI-funded researchers\citep{Coudray2018} at New York University used deep learning to analyze pathology images of lung tumors obtained from \acrfull{tcia}.
+Deep learning (advanced machine learning algorithm in AI) can be used to identify specific gene mutations and mRNA expression from hyperplasia/tumor pathology images instead of using traditional genomic sequencing. 
+For instance, NCI-funded researchers~\citep{Coudray2018} at New York University used deep learning to analyze pathology images of lung tumors obtained from \acrfull{tcia}.
 % Michael Snyder, Ph.D., chair of genetics at Stanford University, sees AI as the future of diagnosis. “I think we need to shift to using machine learning rather than rely on pathologists alone to do all the work,” he said. “Algorithms won’t replace pathologists, but they will assist them in making classifications. They will reduce the errors that pathologists would otherwise make.”
 %The code developed for the project is available for other researchers to use for other diagnostic applications. The NYU team has already started applying the code to learn to diagnose kidney, breast, and other cancers.
 The \acrshort{tcia} archives pathology images of tumor specimens available as a quality control measure for researchers studying the genetic sequence data collected in the \acrshort{tcga} project.
-Coudray and his colleagues found that the deep learning method could accurately distinguish between lung adenocarcinoma and lung squamous cell carcinoma from the images\citep{Coudray2018}.
+Coudray and his colleagues found that the deep learning method could accurately distinguish between lung adenocarcinoma and lung squamous cell carcinoma from the images~\citep{Coudray2018}.
 %how machine learning could help us?
 % OFA:   The Cancer Imaging Archive (TCIA) whole-slide by Deep learning (ResNet)
 %https://www.deeplearningbook.org/
@@ -1322,9 +1329,9 @@ Coudray and his colleagues found that the deep learning method could accurately 
 %https://www.cancer.gov/research/areas/diagnosis/artificial-intelligence
 Since a deep learning algorithm could potentially extract molecular phenotype from pathology images, 
 mRNA expression could also be predicted from the images.
-A HE2RNA model, developed by Schmauch and his colleagues\citep{Schmauch2020},  could predict RNA-Seq profiles from whole-slide images of \acrshort{tcia}. 
+A HE2RNA model, developed by Schmauch and his colleagues~\citep{Schmauch2020}, could predict RNA-Seq profiles from whole-slide images of \acrshort{tcia}. 
 It has been validated by CD3- and CD20-\acrshort{ihc} staining. 
-The transcriptomic representation learned by HE2RNA can also be transferred on other datasets.
+The transcriptomic representation learned by HE2RNA can also be transferred on other datasets (i.e., transfer learning).
 %MKI67 is a well-known marker of cell proliferation, expressed both by tumor and adjacent normal cells, clinically determined by MIB1 or Ki67 IHC staining of whole-slide images. 
 %  its surrounding cancerous area 
 %Its overexpression around "surgical margin?" has been found to correlate with tumor growth, histological grade, and tumor recurrence.
@@ -1337,14 +1344,18 @@ The transcriptomic representation learned by HE2RNA can also be transferred on o
 
 \section{Conclusion}
 High-throughput RNA-sequencing (RNA-Seq) is a powerful tool to characterize and quantify transcriptomes. Even the cost of RNA-Seq is continuously dropping, 
-the budget of whole-genome transcriptomics study for survival analysis is still very high (USD350 to 500 per sample; 46 participants of HNSCC in TMU Joint Biobank, accessed on \today at http://ohr.tmu.edu.tw/front/jbb1/CaseNumber/pages.php?\\ID=dG11X29ociZDYXNlTnVtYmVy).
+the budget of whole-genome transcriptomics study for survival analysis is still very high (USD350 to 500 per sample). %; 46 participants of HNSCC in TMU Joint Biobank, accessed on \today at http://ohr.tmu.edu.tw/front/jbb1/CaseNumber/pages.php?\\ID=dG11X29ociZDYXNlTnVtYmVy).
 % NCI HE2RNA
-By using the transcriptomic representation of RNA-Seq learned by NCI's HE2RNA project\citep{Schmauch2020},
+By using the transcriptomic representation of RNA-Seq learned by NCI's HE2RNA project~\citep{Schmauch2020}, ST-Net (He et al., 2020) and HistoGene (Pang et al., 2021),
 %TCIA for whole-slide deep learning
-we could validate and find more biomarkers from holistic \acrshort{ehr} and pathology images by the way of deep learning under R/Pytorch/Keras framework.\\[2.5cm]
+we could find and validate predictive biomarkers from pathology images by deep learning platform under R/Pytorch/Keras framework.\\[2.5cm]
 
+%To further improve the quality of spatial transcriptomics data, methods have been developed to leverage other data types in addition to scRNA-seq data. For example, xFuse [49] is a deep generative model that integrates in situ RNA capturing data with histology image data to infer transcriptome-wide expression maps. 
+%The quantification of gene expression both within and between the original capture locations enhances the resolution of spatial transcriptomics data. 
+%HistoGene [62] is another deep learning model to leverage information learned from spatial transcriptomics data to predict gene expression for tissue sections where only histology images are available. HistoGene [62] outperforms other approaches that were designed to predict gene expression profiles from whole-slide images, including % **a multilayer perceptron-based method HE2RNA [79] and 
+% **a supervised convolutional neural network-based approach ST-Net [80].
 
-%\clearpage
+\clearpage
 
 
 
@@ -1356,15 +1367,26 @@ we could validate and find more biomarkers from holistic \acrshort{ehr} and path
 % 科技部鼓勵研究主題的系統性，也鼓勵具研究能力者從事較大型但 可能是較困難的長期研究。在建立研究架構的同時，要審慎考慮如何適當分配 每一年的執行進度。例如，容易有具體成果的部分可能要先放在前面作為基 礎，較困難的部分便可以逐年按部就班地進行調查分析。
 
 
+% since 2022/05/10
 \begin{outline}
 
 Specific Aims %特定研究目標 (specific aims), 執行策略不能互相綁在一起, go paralleling, and equally balanced
-\1 Aim 1: Construct a Deep Learning Platform of TCGA/TCIA and TMU dataset\\
+\1 Aim 1: \aimone
+% 祁力行醫師與吳家佑醫師協助建立北醫OPMD cohort(白斑和OVH為主)、IRB申請及切片染色影像AI開發，收案檢體包含:切片、血漿、口水、冷凍組織、buffy coat，建議收案時間為手術後確認非OSCC再與病患溝通收案，收案人力需再協調
+%TCGA/TCIA and TMU dataset\\
 %Survival Analysis\\
-\1 Aim 2: Construct a Deep Learning Platform of Survival Analysis with EHR\\
-\1 Aim 3: Biomarkers Discovery from RNA-Seq, Whole-slide Images, and EHR from TMU dataset\\
 
-or more
+\1 Aim 2: \aimtwo 
+%To identify genetic variants associated with malignant transformation of \acrshort{ovh} by implementing genome-wide association testing (GWAS)
+
+%王紋璋老師需要buffy coat檢體抽DNA進行GWAS分析，一片chip可做96檢體，希望盡量湊足200個檢體的量來做分析。
+
+\1 Aim 3: \aimthree
+%To construct a deep learning platform of genomics (mutation and expression) from pathology images
+
+\1 Aim 4: \aimfour
+%To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: sp1, sp2, and sp3
+
 \end{outline}
 
 %\clearpage
@@ -1418,50 +1440,73 @@ or more
     group height=.3,
     group peaks height=.2,
     bar incomplete/.append style={fill=green}
-   ]{2021-04}{2022-06}
+   ]{2023-01}{2024-05} % {2026-12}
    
    \gantttitlecalendar{year, month}\\ %=name
    \ganttbar[
-    progress=100,
+    progress=10,
     bar progress label font=\small\color{barblue},
     bar progress label node/.append style={right=4pt},
     bar label font=\normalsize\color{barblue},
     name=pp
-   ]{Preliminary Biomarker Discovery}{2021-04}{2021-06} \\ % name=pp
+   ]{IRB application}{2022-08}{2023-01} \\ % name=pp
    
 \ganttset{progress label text={}, link/.style={black, -to}}
+
 % aim1
-\ganttgroup{Aim 1}{2021-07}{2021-12} \\
-\ganttbar[progress=10, name=T1A]{Process of pathology images}{2021-07}{2021-10} \\
-\ganttlinkedbar[progress=0, name=T1B]{Training deep learning model (CNN)}{2021-10}{2021-12} \\
+% \textcircled{\raisebox{-0.9pt}{1}}
+\ganttgroup{Aim 1}{2023-01}{2024-05} \\
+%\ganttbar[progress=0, name=T1A]{Construct \acrshort{ovh} and leukoplakia cohorts}{2023-01}{2023-01} \\
+% ganttlinkedbar
+\ganttbar[progress=30, name=T1A]{Retrospective cohorts \textcircled{\raisebox{-0.9pt}{A}} and \textcircled{\raisebox{-0.9pt}{B}}
+}{2023-01}{2023-07} \\
+\ganttbar[progress=0, name=T1B]{Prospective cohort \textcircled{\raisebox{-0.8pt}{C}}}{2023-01}{2024-04} \\
+
+\ganttnewline
 
 % aim2
-\ganttgroup{Aim 2}{2021-07}{2021-12} \\
-\ganttbar[progress=2, name=T2A]{\cntext{Biobank specimen linking to EHR data(*)}}{2021-07}{2021-10} \\ % 因Covid-19，臨床研究資料庫獨立作業區2021.05.19暫停服務
+\ganttgroup{Aim 2}{2023-01}{2023-12} \\
+\ganttbar[progress=2, name=T2A]{Implementing genome-wide association testing (GWAS)}{2023-02}{2023-12} \\ % 因Covid-19，臨床研究資料庫獨立作業區2021.05.19暫停服務
+
+%\ganttnewline
+%\ganttlinkedbar[progress=0, name=T2B]{Development of source code (RNN)}{2023-02}{2023-12} \\
+
 
 \ganttnewline
-\ganttlinkedbar[progress=0, name=T2B]{Development of source code (RNN)}{2021-10}{2021-12} \\
-
-
-\ganttnewline
-% aim3
-\ganttgroup{Aim 3}{2021-09}{2022-06} \\
-  \ganttbar[progress=0, name=T3A]{Development of GCNN $\&$ survival/validation}{2021-09}{2022-06}
+% aim3  of genomics $\&$ (mutation and expression)
+\ganttgroup{Aim 3}{2023-01}{2024-05} \\
+  \ganttbar[progress=0, name=T3A]{Construct a deep learning platform for pathology images}{2023-04}{2024-04}
   \ganttnewline
-%\ganttgroup{Aim 4}{2021-12}{2022-06} \\ %[group top shift =2] to avoid vertically overlap of bars
-%  \ganttbar[progress=0]{Analysis of Experimental Data $\&$ Validation}{2021-12}{2022-06}
-  % , bar top shift =1.8
-  \ganttset{link/.style={green}}
-  \ganttlink[link mid=.4]{pp}{T1A}
-  \ganttlink[link mid=.159]{pp}{T2A}
+  \ganttnewline
   
-  \ganttset{link/.style={black}}
-  \ganttlink[link mid=.4]{T1B}{T3A}
-  \ganttlink[link mid=.159]{T2B}{T3A}
+% aim4
+\ganttgroup{Aim 4}{2023-01}{2024-05} \\ %[group top shift =2] to avoid vertically overlap of bars
+  \ganttbar[progress=0, name=T4A]{Integration data $\&$ development of risk prediction models}{2023-07}{2024-05}
+  % , bar top shift =1.8
+  
+
+% linkers
+% ***[link bulge=1, link mid=0.3] H and V
+
+%  \ganttset{link/.style={green}}
+%  \ganttlink[link mid=.4]{pp}{T1A}
+%  \ganttlink[link mid=.159]{pp}{T1B}
+  
+\ganttset{link/.style={black}}
+  \ganttlink[link mid=0.4]{T1A}{T2A}
+  \ganttlink[link mid=0.22]{T1B}{T2A}
+\ganttset{link/.style={brown}}
+  \ganttlink[link mid=0.7]{T1A}{T3A}
+  \ganttlink[link mid=0.65]{T1B}{T3A}
+\ganttset{link/.style={red}}
+  \ganttlink[link mid=0.6]{T2A}{T4A} % .159
+  \ganttlink[link mid=0.2]{T3A}{T4A}
+%  \ganttlink[link mid=.159]{T2A}{T4A}
 \end{ganttchart}
 
-    \caption{\cntext{執行進度}
-    \cntext{(*因Covid-19 pandemic in Taiwan，臨床研究資料庫獨立作業區2021.05.19起暫停服務)}}
+    \caption{\cntext{執行進度} (OVH and leukoplakia cohorts from \textcircled{\raisebox{-0.9pt}{A}} Chi-Mei Hospital, \textcircled{\raisebox{-0.9pt}{B}} and \textcircled{\raisebox{-0.8pt}{C}} Taipei Medical University Hospital)
+%    \cntext{(*因Covid-19 pandemic in Taiwan，臨床研究資料庫獨立作業區2021.05.19起暫停服務)}
+}
     \label{fig:gantt}
 \end{figure}
 
@@ -1471,35 +1516,35 @@ or more
 %[proposal main body] %(計畫的主體內容)” 解釋每個 aim 要怎麼做，著重策略之邏輯性鋪陳，盡量使論述具有說服力。
 %新創一個方法或技術平台，須要詳細交代步驟
 
-% *****specific Aims (=old SP3 + sp4)	
+% *****specific Aims (SP3 = old SP3 + old sp4)	
 \begin{minipage}[t]{5.5in}
 \vspace{0pt}
 \begin{itemize}
         
 % These are the instructions for the class
-\item \textbf{Aim 1}: To establish an OVH cohort in \acrfull{tmu} affiliated hospitals, and collect clinical and pathological images of those lesions.  
-
-To identify genetic variants associated with malignant transformation of OVH by implementing genome-wide association testing.
-
-\item \textbf{Aim 2}. To construct a deep learning platform of \acrshort{tmu} dataset. A deep-learning-based algorithm might extract features of clinical and pathological whole-slide images of \acrshort{ovh} and \acrshort{hnscc}.
+\item \textbf{Aim 1}: \aimone, 
+and collect clinical data and bio-specimen (i.g., pathological specimen, saliva, and serum).
+% buffy coat; frozen specimen and paraffin block
 
 
+\item \textbf{Aim 2}: \aimtwo. 
+% (GWAS) Dr Wang
 
-\item \textbf{Aim 3}: 
-To develop risk prediction model for malignant transformation of OVH by integrating risk factors identified from all subprojects. sp1, sp2, sp3.
+
+\item \textbf{Aim 3}: \aimthree.
+A deep-learning-based algorithm might extract clinical features and pathology whole-slide images from \acrshort{ovh} and \acrshort{oscc}.
+
+%Deep Learning-based biomarker identifying in depression analysis with holistic healthcare study. The cortisol is one of the most common objective outcomes studied in psychoneuroimmunological (PNI) factors~\citep{Hulett2016}. Interleukin, cytokines, T-lymphocytes ($CD4^+$, $CD8^+$), $CD56^+$ (neural cell adhesion molecule), and heart rate variability (HRV) are included in other PNI studies.
+%The subjective psychosocial measurements should include depression, stress, quality of life, anxiety, fatigue, mindfulness, mood, and specific spiritual growth---the meaning of life~\citep{Hsiao2012}. Our hypothesis is that \acrshort{ovh} could be transformed into oral cancer because of the stress, via mind-brain-body network~\citep{Rogers1959}. Thus, besides using those serum biomarkers, we encourage physicians to write their \acrfull{ehr} in a "holistic way".	And the \acrshort{ovh} carriers should use wearable device (e.g., smart watch) to monitor their HRV. Once the \acrshort{ovh} becoming oral cancer, we could early treat the disease as well as analyze the contributing factors of carcinogenesis. That could be a predictive biomarker.
 
 
-Deep Learning-based biomarker identifying in depression analysis with holistic healthcare study. The cortisol is one of the most common objective outcomes studied in psychoneuroimmunological (PNI) factors~\citep{Hulett2016}. Interleukin, cytokines, T-lymphocytes ($CD4^+$, $CD8^+$), $CD56^+$ (neural cell adhesion molecule), and heart rate variability (HRV) are included in other PNI studies.
-The subjective psychosocial measurements should include depression, stress, quality of life, anxiety, fatigue, mindfulness, mood, and specific spiritual growth---the meaning of life~\citep{Hsiao2012}. Our hypothesis is that \acrshort{ovh} could be transformed into oral cancer because of the stress, via mind-brain-body network~\citep{Rogers1959}. Thus, besides using those serum biomarkers, we encourage physicians to write their \acrfull{ehr} in a "holistic way".	And the \acrshort{ovh} carriers should use wearable device (e.g., smart watch) to monitor their HRV. Once the \acrshort{ovh} becoming oral cancer, we could early treat the disease as well as analyze the contributing factors of carcinogenesis. That could be a predictive biomarker.
+\item \textbf{Aim 4}: 
+\aimfour
+
 %\item \textbf{Simplify all answers as much as possible.} This means that you need to need to combine like terms, reduce fractions, etc. (You do not need to rationalize denominators.)
 
-% from sp1
-\item Aim 1. To verify the FAT1 gene mutation in an independent cohort of progressive and non progressive OVH samples using targeted gene NGS 
 
-\item Aim 2. To compare the transcriptome of FAT1 wild-type and mutant OVH tissues. 
 
-\item Aim 3. To dissect the cooperative effect of FAT1 and tp53 gene mutation on OVH  transformation. 
-\item Aim 4. To analyze the effect of mutated FAT1 on the reciprocal relationship of YAP1 and tp53  pathways in progressive OVH cells by the analysis of YAP1 and p53-regulated transcriptome and genome-binding regions.
 
 
 \end{itemize}
@@ -1509,11 +1554,19 @@ The subjective psychosocial measurements should include depression, stress, qual
 %%%%%%%%%
 
 %\begin{outline}
-\subsubsection*{Aim 1:} Construct a Deep Learning Platform of TCGA/TCIA and TMU dataset\\[0.5cm]
+% Dr Rich Wu and Dr Chi
+
+\subsubsection*{Aim 1:} Construct the \acrshort{ovh} and leukoplakia datasets\\[0.5cm]
+
+% 祁力行醫師與吳家佑醫師協助建立北醫OPMD cohort(白斑和OVH為主)、IRB申請及切片染色影像AI開發，收案檢體包含:切片、血漿、口水、冷凍組織、buffy coat，建議收案時間為手術後確認非OSCC再與病患溝通收案
 %\end{outline}
 %central issue 1 with preliminary data (key data); fallback approaches %先以概要式的背景介紹破題，點出研究目標的重要性，然後用邏輯之陳述將如何達成目標的策略和方法講清楚。請務必注意：每個研究目標基本上需具備其獨立性 (Independence)，但其重要性卻要在目標之間有所連結，且要能回應總體目標之研究顯著性
-Our preliminary data (biomarker candidates) could be served as the bridge between the prognosis of patients and their pathological images of specimen.
-We will develop a deep-learning-based data mining as well as a validation platform. It might incorporate whole-slide images of pathology of \acrshort{hnscc} from the Cancer Imaging Archive (TCIA) and from Joint Biobank of Taipei Medical University (TMU dataset).
+
+
+\clearpage
+
+% Dr Chi
+\paragraph*{Cohort} Construct Chi-Mei and TMUH datasets\\[0.5cm]
 
 %Ethics Statement\\
 %***TMU Joint IRB approval\\
@@ -1521,9 +1574,30 @@ Data analysis will be waived review and consent by the TMU Joint Institutional R
 with TMU Joint Institutional Review Board, and all experiments will be carried out in accordance with approved guidelines.
 %In the TMU cohort, the patient ages ranged from 25 to 81 (average age 58 \± 10). Patient specific information pertaining to race, tumor grade, and outcome were not explicitly recorded for this study.
 
-%  an independent dataset of 369 slides from 194 patients with LIHC43 from hospital Henri Mondor (Mondor dataset)
-%RNA-Seq data of \acrfull{tcga} for survival analysis. 
+\subparagraph*{Patient and Tissue Samples} % tissue microarray
+%% KVGH-IRB-XXXXX and TMU-IRB 99049; Written informed consent was obtained from all participants and was also reviewed by IRB Committee.
+% (demographic data in Supplementary Table S1)
+The normal (N) and tumor (T) paired samples were obtained from thirty-five consecutive \acrshort{hnscc} patients at the Department of Dentistry or Head and Neck Surgery Clinics, Kaohsiung Veterans General Hospital (KVGH). 
+Written informed consent was obtained from all participants and was also reviewed by the Institutional Review Board (IRB) Committee of KVGH. Tissues were preserved in liquid nitrogen for RNA extraction. 
+Second HNSCC cohort was obtained from \acrfull{tmuh}, which contains total 86 patients including 79 men and 7 women with 31 NT-paired samples. Written informed consent was obtained from all participants and was also reviewed by TMU joint-IRB Committee.
+Their mean age was 53 year-old, range 30-88 years. The 45 patients were diagnosed in early stages (stage I or II) and 41 in late stages (stage III or IV) of HNSCC. %Clinical samples were carried out with the approval of the Institutional Review Boards. 
+Formalin-fixed paraffin embedded tissues (FFPE) were organized into a set of serial tissue microarray (TMA) blocks while each samples contained one normal part and three tumor part derived from different tumor regions to represent its heterogeneity.  All participants underwent a series of clinical evaluations then to be treatment according to NCCN guidelines~\citep{Pfishter2019}. The clinicopathological data was carefully recorded. The clinical staging was registered based on the American Joint Committee on Cancer (AJCC) TNM classification of \acrshort{hnscc}.
+The survival analysis was evaluated by the Kaplan--Meier estimates and compared by the log-rank test.
 
+
+
+\subparagraph*{Tissue Sample Preparation} % for HE and IHC
+
+The fresh frozen tissue samples (KVGH cohort) were maintained with the desired orientation on the cutting block using Optimum Cutting Temperature (OCT) polymer. A thin frozen section was cut at -$15\,^{\circ}\mathrm{C}$ by using a cryostat (Thermo Electron) and deposited on cold indium tin oxide (ITO)-coated conductive glass slides (Bruker Daltonics). The slide and tissue section were then quickly warmed, which let the tissue thaw-mounted onto the slide. Tissue sections were fixed by immersion in 70\% then 95\% ethanol bath each for 30 sec and allowed to dry for 40 min in a desiccator.
+
+%%
+
+\subparagraph{Immunohistochemistry (IHC) Staining}
+
+The blocks of FFPE tissue microarray (from TMUH cohort) were sectioned at 3-\si{\um} slice thickness. Slides were heated for 1 hour at $60\,^{\circ}\mathrm{C}$ to deparaffinize in xylene, rehydrated in graded alcohol, and rinsed in distilled water. Antigen retrieval and immunohistochemistry staining were performed by using a Benchmark XT automated immunohistochemistry system (Ventana Medical Systems). Tissue microarray slides were stained with primary TMSB4X antibodies (Proteintech) at 1:400 dilution. Primary antibodies were detected by using an indirect biotin streptavidin system (iVIEW DAB Detection Kit, Ventana Medical Systems, Inc.) and tissue was counterstained in haematoxylin and eosin. Images of stained slides were retrieved by digital scanner (ScanScope Systems Aperio, CA, USA) and scored manually by one pathologist, Dr. Michael Hsiao.
+
+%%%
+\paragraph*{Whole-slide imaging} Construct a Deep Learning Platform of TCGA/TCIA and Taiwan datasets\\[0.5cm]
 
 There is 98 slides from 46 patients with HNSCC in TMU dataset.
 %Slide Digitization and Pathologists Ground Truth for TMU dataset:
@@ -1539,7 +1613,7 @@ m/pixel resolution.
 
 NCI's \acrfull{gdc} stores pathology SVS image.
 An SVS file is a digital slide image file created by an Aperio ScanScope slide scanner.
-The TCGA's HNSCC images is available at https://github.com/texchi2/HE2RNA\_code/blob/master/gdc\_manifests/gdc\_manifest.2018-06-26\_diagnostic\\\_TCGA-HNSC.txt.
+The TCGA's HNSCC images is available at \url{https://github.com/texchi2/HE2RNA_code/blob/master/gdc_manifests/gdc_manifest.2018-06-26_diagnostic_TCGA-HNSC.txt}.
 
 
 %https://portal.gdc.cancer.gov/image-viewer?caseId=b843df7e-db06-4d29-b00d-6a93effd9191&filters=%7B%22op%22%3A%22and%22%2C%22content%22%3A%5B%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22cases.project.project_id%22%2C%22value%22%3A%5B%22TCGA-HNSC%22%5D%7D%7D%2C%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22files.experimental_strategy%22%2C%22value%22%3A%5B%22Tissue%20Slide%22%5D%7D%7D%5D%7D&selectedId=45fffd2f-e282-4198-8c49-0247507ebb8a
@@ -1550,10 +1624,39 @@ The TCGA's HNSCC images is available at https://github.com/texchi2/HE2RNA\_code/
 % detailed introduction
 %*** A deep learning model to predict RNA-Seq expression of tumours from whole-slide images\cite{Schmauch2020}.
 %A HE2RNA model should be trained to systematically predict RNA-Seq profiles from whole-slide images\cite{Schmauch2020}.
-% . The application of deep-learning algo- rithms to histological
+% . The application of deep-learning algorithms to histological
 The whole-slide images of pathology data has the high dimensionality (up to 100,000 × 100,000 pixels for a single image).
+
+
+
+\clearpage
+
+%%%%
+%%%%%%%%%%%%%%%%
+% Dr Wang's GWAS
+\subsubsection*{Aim 2:}
+%To identify genetic variants associated with malignant transformation of \acrshort{ovh} by implementing genome-wide association testing (GWAS)
+
+%王紋璋老師需要buffy coat檢體抽DNA進行GWAS分析，一片chip可做96檢體，希望盡量湊足200個檢體的量來做分析。
+
+
+%%%%%%%%%%%%%%%%%
+
+
+
+\clearpage
+
+
+%%%%%%%%
+%\begin{outline}
+% Dr Chi Transfer learning
+\subsubsection*{Aim 3:} Construct a deep learning platform to predict genomics \\[0.5cm]
+
+\paragraph{Transfer Learning}
+% deep learning model building
+
 %The small size of available datasets. => small case number
-HE2RNA workflow could divide the whole-slide images into squares of 112 × 112 $\mu$m (224 × 224 pixels) called "tiles", and use the Otsu algorithm\citep{Otsu1979} (as implemented in python package scikit-image, available at https://scikit-image.org/docs/dev/api/skimage.html) to select only those containing tissue, excluding the white background. 
+HE2RNA workflow could divide the whole-slide images into squares of 112 × 112 $\mu$m (224 × 224 pixels) called "tiles", and use the Otsu algorithm\citep{Otsu1979} (as implemented in python package scikit-image, available at \url{https://scikit-image.org/docs/dev/api/skimage.html}) to select only those containing tissue, excluding the white background. 
 A maximum of 8000 such tiles from each slide are sampled then extracted 2048 features with a 50-layer ResNet model\citep{He2016a}  pretrained on the ImageNet dataset (available at https://www.image-net.org/challenges/LSVRC/index.php).
 The ResNet and HE2RNA model are developed by using the TensorFlow/Keras implementation with a architecture of \acrfull{cnn}.
 %Graph convolutional neural network (GCNN).
@@ -1561,7 +1664,7 @@ The AI-driven computer program analyzes tissue by creating a map of thousands of
 A pathology slide could be represented as a 8000 × 2048 matrix.
 %For the first phase of this work (transcriptome prediction), we accelerated the training of our models through a simple preprocessing step inspired by simple linear iterative clustering (SLIC)65: 
 We use the k-means algorithm (as implemented in python package libkmcuda) to create 100 clusters (supertiles) of tiles on the basis of tile location on the slide, and we average the features of the tiles within each cluster. The use of these supertiles could reduce the dimensions of a slide to 100 × 2048. % training supertiles
-Transcriptome prediction model will be first trained on this reduced dataset, with all the TCGA data. Then, fine-tuning of "hyperparameters" will be achieved with full-scale data from \acrshort{hnscc} dataset by Bayesian optimization technique (Sequential Model-Based Optimization algorithms, SMBO)\citep{Hutter2011}.
+Transcriptome prediction model will be first trained on this reduced dataset, with all the TCGA data. Then, fine-tuning of "hyperparameters" will be achieved with full-scale data from \acrshort{hnscc} dataset by Bayesian optimization technique (Sequential Model-Based Optimization algorithms, SMBO)~\citep{Hutter2011}.
 The similar procedure of image process will be applied on TMU dataset.\\[0.5cm]
 
 %Graph convolutional neural network (GCNN) will be used for feature extraction from whole-slide images.
@@ -1686,12 +1789,24 @@ RNA-Seq: \acrlong{rnaseq};
 \clearpage
 
 
-%%%%
-%\begin{outline}
-\subsubsection*{Aim 2:} Construct a Deep Learning Platform of Survival Analysis with EHR\\[0.5cm]
+
+%%%
+\paragraph{Biomarkers CAMK2N1}
 %\end{outline}
 %central issue 2 with preliminary data (Cox model); fallback approaches % 需有充分的文獻分析和縝密的論述來補足，使得 “convincing power” 依然強而有力
 
+%To construct a deep learning platform of genomics (mutation and expression) from pathology images
+
+Our preliminary data (biomarker candidates) could be served as the bridge between the prognosis of patients and their pathology images of specimen.
+We will develop a deep-learning-based data mining as well as a validation platform. It might incorporate whole-slide images of pathology of \acrshort{hnscc} from the Cancer Imaging Archive (TCIA) and from Joint Biobank of Taipei Medical University (TMU dataset).
+
+
+***From sp1 Dr Wu\\
+Aim 1. To verify the FAT1 gene mutation in an independent cohort of progressive and non progressive OVH samples using targeted gene NGS.
+deep learning might help) mutation representatives by "HE2DNA" model.\\
+Aim 2. To compare the transcriptome of FAT1 wild-type and mutant OVH tissues. \\
+Aim 3. To dissect the cooperative effect of FAT1 and tp53 gene mutation on OVH  transformation. \\
+Aim 4. To analyze the effect of mutated FAT1 on the reciprocal relationship of YAP1 and tp53  pathways in progressive OVH cells by the analysis of YAP1 and p53-regulated transcriptome and genome-binding regions.
 
 
 %% TCGA new holistic features %%%%%
@@ -1796,7 +1911,11 @@ The "SUB\_DESC", coded by the coding book (data schema) of TMUCRD, should store 
 
 
 
-\subsubsection*{Aim 3:} Biomarkers Discovery from RNA-Seq, Whole-slide Images, and EHR from TMU dataset\\[0.5cm]
+
+
+
+
+%\subsubsection*{Aim 3':} Biomarkers Discovery from RNA-Seq, Whole-slide Images, and EHR from TMU dataset\\[0.5cm]
 
 %\1 Aim 3: RNA-Seq Incorporated with Whole-slide Images models from TCIA and TMU\\
 %central issue 3 without preliminary data; fallback approaches
@@ -1841,18 +1960,21 @@ The \acrfull{fdr} ($< 0.05$) could be used to pick up the optimal \textit{P} val
 
 
 
-The candidate biomarkers, clinical tumor size, surgical margin status and some holistic features will be suggested as prognosis factors in \acrshort{hnscc} through analysis of TCGA and TMU datasets.
+
 %The transcriptomic representation of \acrfull{tcia} and TCGA could be applied to validate those candidates by independent TMU cohort.
 
-%We will find that \acrshort{rnaseq} (or \acrshort{rnaseq} representation with associated pathological images) and holistic features will help to facilitate the biomarker discovery in \acrshort{hnscc}.
+%We will find that \acrshort{rnaseq} (or \acrshort{rnaseq} representation with associated pathology images) and holistic features will help to facilitate the biomarker discovery in \acrshort{hnscc}.
 %\end{outline}
 
 
 
 
+\clearpage
+% by Dr Wang's and Dr Chi's Integration and modelling
+\subsubsection*{Aim 4:}
+%To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: sp1, sp2, and sp3
 
-
-
+The candidate biomarkers, clinical tumor size, surgical margin status and some holistic features will be suggested as prognosis factors in \acrshort{oscc} through analysis of Chi-Mei and TMUH datasets.
 
 
 \clearpage
@@ -1872,16 +1994,16 @@ The candidate biomarkers, clinical tumor size, surgical margin status and some h
 \begin{outline}
 
 
-\1 Validation of candidate biomarkers of HNSCC by TCGA and TMU datasets.
+\1 Validation of candidate biomarkers of \acrshort{ovh}.
 %2.對於學術研究、國家發展及其他應用方面預期之貢獻
-It will be submitted for further drug development of systemic therapy of HNSCC as personalized medicine.
+It will be submitted for further diagnostic method for personalized medicine of \acrshort{ovh}.
 % 分析\acrshort{tcia}和TMU的癌細胞基因表現量、數位病理影像和全人照護特徵，將有助於驗證候選基因對預後的影響，以發展未來頭頸部鱗狀細胞癌的精準治療計劃。
 
 %) or \cntext{精準醫療}
 %3.對於參與之工作人員，預期可獲之訓練
 \1 We will improve our programming skill of R, PyTorch(Python) and C ++.
 %4.預期完成之研究成果及績效(如期刊論文、研討會論文、專書、技術報告、專利或技術移轉等質與量之預期績效)。請詳述其必要性以及預期成果等。
-\1 We will finish Dr Chi's Ph.D. dissertation as well as manuscript for SCI publication.
+\1 We will finish manuscripts for journal publication.
 
 % 致謝詞 acknowledgments in US
 % acknowledgements in British
@@ -1889,7 +2011,7 @@ It will be submitted for further drug development of systemic therapy of HNSCC a
 The results shown here are in whole based upon data generated by the \acrshort{tcga} Research Network: https://www.cancer.gov/tcga.
 The tables were generated by latex code with the help from https://www.tablesgenerator.com/latex\_tables\#.
 %https://github.com/JDMCreator/LaTeXTableEditor (accessed at https://www.latex-tables.com/v1/\\index.html).
-We sincerely want to express our thanks to the \acrshort{hnscc} patients who donated their data to TMU Joint Biobank.
+We sincerely want to express our thanks to the \acrshort{ovh} patients who donated their data, and help from TMU Joint Institute Review Board.
 % *** URL Accessed 20 May 2013.
 
 
