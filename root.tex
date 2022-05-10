@@ -143,7 +143,7 @@
 
 % --- additional stuff --------------------------------------------------------------------------------------
 \newcommand{\todo}[1]{{\color{red}$\blacksquare$~\textsf{[TODO: #1]}}}
-\newcommand{\doctitle}{Deep Learning in HNSCC} % *** Project Short Title ***
+\newcommand{\doctitle}{Deep Learning in Verrucous Hyperplasia} % *** Project Short Title ***
 
 
 % --------------------------------------------------------------------------------
@@ -160,6 +160,9 @@
 
 
 \makeglossaries %https://tex.stackexchange.com/questions/110095/list-of-acronyms-is-not-displayed
+
+\newacronym{fat1}{FAT1}{FAT atypical cadherin 1}
+\newacronym{acta2}{ACTA2}{actin alpha 2, smooth muscle} % or alias as alpha smooth muscle actin,  (α-SMA, SMactin, alpha-SM-actin, ASMA)
 
 \newacronym{cnn}{CNN}{Convolutional Neural Network}
 \newacronym{gnn}{GNN}{Graph Neural Network}
@@ -385,7 +388,7 @@
 %\author{Li-Hsing Chi}
 %\date{May 2021}
 
-\author{\small PI: Li-Hsing Chi (\cntext{祁力行})$^{1,2}$\\
+\author{\small Co-PI: Li-Hsing Chi (\cntext{祁力行})$^{1,2}$\\
 {\footnotesize $^{1}$ \quad Division of Oral and Maxillofacial Surgery, Department of Dentistry\unskip, 
 %    Taipei Municipal Wanfang Hospital\unskip, Taipei\unskip, Taiwan\\
 Wan Fang Hospital\unskip, Taipei Medical University}\\
@@ -640,12 +643,12 @@ Holistic Cancer Care;
 
 
 \subsection{Cancer Initiation}
-The main risk factors for HNSCC include carcinogens in tobacco and betel nut, alcohol, oncogenic viruses.
-In Asian population, \acrfull{aldh2} mutation plays a very important rule to enhance HNSCC\citep{Chien2019} by alcohol consumption.
-The oncogenic viruses such as \acrfull{hpv} and Epstein–Barr virus play a major carcinogenic role in tumors of the oropharynx and nasopharynx, respectively\citep{Ferrarotto2017}.
-Moreover, physical irritations, ionized radiation and host susceptibility may also contribute to the etiology of HNSCC\citep{Ko1995,Znaori2003} (Figure \ref{fig:DAG_etiology}).
+The main risk factors for \acrshort{oscc} include carcinogens in tobacco and betel nut, alcohol, oncogenic viruses.
+In Asian population, \acrfull{aldh2} mutation plays a very important rule to enhance \acrshort{oscc}~\citep{Chien2019} by alcohol consumption.
+The oncogenic viruses such as \acrfull{hpv} and Epstein–Barr virus play a major carcinogenic role in tumors of the oropharynx and nasopharynx, respectively~\citep{Ferrarotto2017}.
+Moreover, physical irritations, ionized radiation and host susceptibility may also contribute to the etiology of \acrshort{oscc}~\citep{Ko1995,Znaori2003} (Figure~\ref{fig:DAG_etiology}).
 Primary prevention by minimizing exposure to known carcinogens is promising, but limited success is achieved due to addiction, economic, social or spiritual issues.
-
+The possible molecular mechanisms could be also related with the mind-brain-body axis~\citep{Berens2017}.
 
 % This code uses the tikz package
 %\begin{frame}[fragile]
@@ -657,7 +660,7 @@ Primary prevention by minimizing exposure to known carcinogens is promising, but
 \node (v1) at (0.705,1.42) {Alcohol/Betel/Cigarette};
 \node (v2) at (-1.18,-1.38) {Healthy Food/Exercise};
 \node (v3) at (-0.167,0.515) {Other Risky Behavior};
-\node (v4) at (1.19,-1.52) {\large \acrshort{hnscc}};
+\node (v4) at (1.19,-1.52) {\large \acrshort{oscc}};
 
 \draw [-latexnew, arrowhead=0.5cm, line width=4pt, ultra thick, dashed] (v0) .. controls (-0.408,1.72) and (0.325,1.64) .. (v1);
 \draw [-latexnew, arrowhead=1cm, line width=4pt, ultra thick, green, dashed] (v0) edge (v2);
@@ -669,10 +672,10 @@ Primary prevention by minimizing exposure to known carcinogens is promising, but
 \draw [-latexnew, arrowhead=1cm, line width=4pt, ultra thick, red] (v3) edge (v4);
 \end{tikzpicture}
 
-\bcaption{HNSCC will be caused by carcinogen or other factors.}
+\bcaption{OSCC will be caused by carcinogen or other factors.}
 {
-From the intrinsic factors (such as age and gender), the accumulated genetic alteration will be part of etiology of cancer. Carcinogen from alcohol, betel nut and/or cigarette will definitely induce \acrshort{hnscc} by time passes. People usually learn "risky" or "healthy" behaviors by many reasons, which modify their possibility to get cancer.\\
-(\textcolor{red}{red line}: increasing the chance of getting HNSCC; \textcolor{green}{green line} will reduce it; black dot: indicate unknown reasons for taking those habits)
+From the intrinsic factors (such as age and gender), the accumulated genetic alteration will be part of etiology of cancer. Carcinogen from alcohol, betel nut and/or cigarette will definitely induce \acrshort{oscc} by time passes. People usually learn "risky" or "healthy" behaviors by many reasons, which modify their possibility to get cancer.\\
+(\textcolor{red}{red line}: increasing the chance of getting \acrshort{oscc}; \textcolor{green}{green line} will reduce it; black dot: indicate unknown reasons for taking those habits)
 }
 \label{fig:DAG_etiology}
 \end{figure}
@@ -935,68 +938,72 @@ From the intrinsic factors (such as age and gender), the accumulated genetic alt
 %Moreover, long-term stress could be correlated with cancer metastasis\citep{Lutgendorf2010}\citep{Moreno-Smith2010}\citep{Du2020}\citep{Xu2021},
 %and cancer initiation\citep{Lutgendorf2010}\citep{Powell2013}\citep{Iftikhar2021}.(see Figure \ref{fig:figure5}) %HNSCC
 %A%dverse psychosocial experiences in early life, such as child maltreatment, caregiver stress, and community violence, have been associated in epidemiological studies with an increased risk of diabetes, heart disease, cancers, and psychiatric illnesses. 
-The possible molecular mechanisms could be also related with the mind-brain-body axis\citep{Berens2017}.
+%The possible molecular mechanisms could be also related with the mind-brain-body axis\citep{Berens2017}.
 %Additional work has shed light on the potential molecular mechanisms by which early adversity becomes "biologically embedded" in altered physiology across body systems.\citep{Berens2017}
 %%%%%
 
 
- 
+\subsection{Molecular Oncology}
 %%% from Chi2022 Ph.D. dissertation ***************
 %Prognostic significance of p53 mutation has been reported.
 %% **** TP53 gene => p53 protein; mutation of TP53 ***
-Accumulative knowledge shows that some driver genes could facilitate carcinogenesis in \acrshort{oscc}.
+Accumulative knowledge shows that some drivers could facilitate carcinogenesis in \acrshort{oscc}.
 For example, p53 is a tumour suppressor protein encoded by the TP53 gene.
+The transcription factor, p53, that is activated by many genotoxic insults and induces cellular apoptosis. 
+The gene TP53 is frequently mutated or functionally inactivated in cancer cells.
 TP53 mutations are comprised of eight classes: missense, nonsense, frame-shift deletion, frame-shift insertion, in-frame deletion, in-frame insertion, silent and splice-site.
 Immunohistochemical (IHC) staining for p53 is used as a surrogate for TP53 missense mutation in cancer cells. 
 %Usually, wild-type TP53 could be found in 1--10\% of IHC; 0 or 50--100\% in missense mutation of TP53. [\url{https://www.nature.com/articles/modpathol201185/tables/1}]
 % *** p53 is a tumour suppressor protein encoded by the TP53 gene. This protein is expressed and regulates the transition from G1 to S phase in cell cycle division. P53 is the key mediator of cell cycle arrest for induction of DNA repair. If failed in the repair, p53 might trigger apoptosis leading programmed cell death, as a response to cellular stress (ref). p53 is often referred to as the "guardian of the genome". Its prime function is to put cells, which has aberrant DNA, into repairment or apoptosis, and thereby prevent malignant transformation. P53 is mutated(?) presenting in more than 50\% of all cancers and found by IHC.
 %The node-negative \acrshort{hnscc} patients with overexpression of mutated-TP53 were found to have poor prognosis~\citep{DeVicente2004}.
-The mutations of TP53 are one of the most frequent abnormalities in \acrshort{hnscc} found within up to 70\% of surgical specimen~\citep{Alsner2001, Singh2016, Wang2017, WARD2018}.
-It is also found in severe dysplasia of \acrshort{ovh}.
-Overexpression of Ki-67 (encoded by MKI67 gene)~\citep{Perisanidis2012,Szentkuti2015} impacts on poor overall survival of HNSCC.
+The mutations of TP53 are one of the most frequent abnormalities in \acrshort{oscc} found within up to 70\% of surgical specimen~\citep{Alsner2001, Singh2016, Wang2017, WARD2018}. It is also found in severe dysplasia of \acrshort{ovh}.
+Ki-67, encoded by MKI67 gene, is a measurement of the proliferative rate of \acrshort{oscc}~\citep{Silva2004}.
+%Diagnostic biomarkers don't predict prognosis or aggressiveness in HNSCC~\citep{Chatzkel2017}.
+Overexpression of Ki-67 impacts on poor overall survival of \acrshort{oscc}~\citep{Perisanidis2012,Szentkuti2015}.
 %*** biomarkers for radio-resistance or proton therapy? Concurrent systemic therapy:~\citep{Brockstein2020} (UpToDate database)
 %It was found that radiation resistance of HNSCC is correlated with overexpression of hypoxia-inducible factor (HIF)-1 alpha~\citep{Aebersold2001} or Ki-67~\citep{Couture2002}. 
+The epidermal growth factor receptor (EGFR) is found in 70\% of \acrshort{oscc}~\citep{O-Charoenrat2000, Bentzen2005}.
+It is involved in cancer cells evading immunosurveillance~\citep{Stefanidakis2006}.
+% **** ACTA2 and myofibroblastic CAF (myCAF)
+% ACTA2: alpha-SMA
+% The local fibroblasts within tissues are considered the predominant source of myofibroblasts. The myofibroblasts have the expression of alpha smooth muscle actin (α-SMA) and fibronectin during during wound healing and organ fibrosis (or oral submucous fibrosis).
+% 1. Joshi RS, Kanugula SS, Sudhir S, Pereira MP, Jain S, Aghi MK. The role of cancer-associated fibroblasts in tumor progression. Cancers (Basel). 2021;13(6):1-27. doi:10.3390/cancers13061399
+% some common CAF markers that have been identified include alpha smooth mus- cle actin (α-SMA), vimentin, fibroblast activation protein (FAP), fibroblast-specific protein 1 (FSP1), and platelet-derived growth factor receptor alpha/beta (PDGFR-α/β) => in HNSCC: α-SMA, PDPN, FAP, PDGFR-α, PDGFR-β, FSP1, NG2
+% α-SMA—alpha smooth muscle actin, FAP—fibroblast activation protein, PDGFRα—platelet derived growth factor receptor alpha, PDGFRβ—platelet derived growth factor receptor beta, NG2—neural/glial antigen 2, FSP1— fibroblast specific protein 1, PDPN—podoplanin, MFAP5—microfibrillar associated protein 5, POSTN—periostin, FGF-1—fibroblast growth factor 1.
+Chronic mechanical and chemical irritation from betel nut chewing could increase myofibroblasts in terms of developing oral submucous fibrosis~\citep{Angadi2011} and \acrshort{oscc}.
+Myofibroblasts are contractile cells expressing \acrfull{acta2} (encoding alpha-smooth muscle actin, $\alpha$-SMA) when is stimulated by betel nut extract---arecoline---\textit{\fontfamily{lmss}\selectfont in vitro}~\citep{Chang2014}.
+A elevated \acrshort{acta2} expression is also associated with poor overall survival in \acrshort{oscc}~\citep{Marsh2011}.
+Moreover, overexpression of \acrshort{acta2} in myofibroblastic cancer-associated fibroblast (myCAF) could promote stemness of \acrshort{oscc}~\citep{Patel2018, Joshi2021}.
 
-% from sp1 研究構想： Dr Wu 吳明恆老師 FAT1 versus TP53 **********
-%   (Head Neck 2018, Head Neck 2020 and Medicine 2021). 
-Wu and his colleagues [Wu et al., 2018, 2020, 2021] have serial studies for \acrshort{ovh} through whole-exome sequencing to identify a biomarker. 
-They found that FAT1 genetic mutation rate is significantly higher in progressive \acrshort{ovh} (83.3\%) than in their non-progressive counter partner (22.2\%), while 6.25\% of TP53 is mutated in \acrshort{ovh}. 
-As a result, we believe that FAT1-regulated YAP1/Hippo pathway drives malignant transformation in \acrshort{ovh}.
-%FAT1-regulated YAP1/Hippo pathways has been well addressed. 
-%As a result, this  project aims to verify FAT1 gene mutation in a large cohort of OVH patients and to investigate the FAT1 and tp53 relationships in OVH transformation. 
-
-\section{Preliminary Results}
-% P-value => \textit{P} value
-% Results: the main findings
-\textbf{Preliminary Results:}
-Using pvalueTex on the \acrshort{tcga} \acrshort{hnscc} cohort, we scanned human protein-coding genes (20,500) programmatically. After adjustment with other confounders, we found that the clinical tumor stage and the surgical margin involvement are independent risk factors in patient survival. 
-%According to the resulting tables with Bonferroni adjusted \textit{P} value under optimal cutoff as well as hazard ratio $(>=1.5)$, 
-%There were ten candidate biomarkers, named as DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, and DKC1, which are 
-Overexpression of CAMK2N1 is significantly associated with the poor prognosis of \acrfull{os}. 
-Missense mutation of FAT1 is also found in progressive \acrshort{ovh} and poor recurrence-free survival of oral cancer.
-%At the same time, the other ten genes were over-expressed in the better survival patients (with hazard ratio $<=0.5$), named as ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, IQCN (previous name as KIAA1683), and NPB.
-We assume these biomarkers should be found around the surgical margin of \acrshort{oscc} specimen.
-
-Oral cancer risk is influenced by the severity of epithelial dysplasia on \acrshort{ovh} samples.
-Clinically helpful biomarkers for dysplasia grading include KRT13 (type I cytoskeletal 13, encoding CK13), KRT17 (type I cytoskeletal 17, encoding CK17), TP53 (encoding p53), MKI67 (Marker Of Proliferation Ki-67, encoding Ki-67).
+The possibility of malignant transformation is influenced by the severity of epithelial dysplasia on \acrshort{ovh} samples.
+%Clinically helpful biomarkers for dysplasia grading include KRT13 (type I cytoskeletal 13, encoding Cytokeratin13---CK13), KRT17 (type I cytoskeletal 17, encoding Cytokeratin 17---CK17), TP53 (encoding p53), MKI67 (Marker Of Proliferation Ki-67, encoding Ki-67).
 %CK13, CK17, p53, and Ki-67.
 %  KRT13 (type I cytoskeletal 13, aka. CK13), KRT17 (type I cytoskeletal 17, aka. CK17), TP53 (p53), MKI67 Marker Of Proliferation Ki-67 (Ki-67)
-
-%*** validated by \acrfull{hpa}.
-Further validation will be conducted by using deep learning of whole-slide pathological images.
-% are warranted 
-
-%%%%%%%%%%%
+Diagnostic biomarkers, such as KRT13 (type I cytoskeletal 13, encoding Cytokeratin13---CK13), KRT17 (type I cytoskeletal 17, encoding Cytokeratin 17---CK17), TP53 (encoding p53), and MKI67 (Marker Of Proliferation Ki-67, encoding Ki-67), are applied in routine pathological examination for dysplasia grading (semi quantitative).
+The expressions for CK17 and CK13 are reciprocal in oral dysplasia lesions and that the CK17/p53 emergence is helpful to confirm a diagnosis of \acrshort{oscc}~\citep{Mikami2011}.
 
 
 
+\section{Preliminary Results}
+% P-value => \textit{p}~value
+% Results: the main findings
+%\textbf{Preliminary Results:}
+Using pvalueTex~\citep{Chi2021} on the \acrshort{tcga} \acrshort{hnscc} cohort, we scanned human protein-coding genes (20,500) programmatically. After adjustment with other confounders, the clinical tumor stage and the surgical margin involvement are independent risk factors in patient survival. 
+%According to the resulting tables with Bonferroni adjusted \textit{P} value under optimal cutoff as well as hazard ratio $(>=1.5)$, 
+%There were ten candidate biomarkers, named as DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, and DKC1, which are 
+And overexpression of CAMK2N1 is significantly associated with the poor prognosis of \acrfull{os} (Table~\ref{table:table2}). 
+
+
+\comm{
 %%%%%%%% xxxx
-In our previous transtriptomics study\citep{Chi2020}, %\citep{Tai2007},
+In our previous transtriptomics study~\citep{Chi2020}, %\citep{Tai2007},
 % from pvalueTex
 the 9416 Kaplan-Meier plots with associated Cox's univariate and multivariate tables were generated by Cox modeling %(see Figure \ref{fig:figure1}) 
 and justified by the ranking of hazard ratios.
 The 967 genes were kept by criteria of uncorrected \textit{P} value (below 0.05) and \acrfull{hr} (greater than 1.5 or less than 0.5). %(see Figure \ref{fig:figure2}(a) univariate, and Figure \ref{fig:figure2}(b) multivariate plots). 
 At the final step, a stringent criteria (Bonferroni \textit{P} value correction) was used to yield a candidates: CAMK2N1. %(see Figure \ref{fig:figure2}(c), (d)). 
+} % end of \comm{}
+
 % before validation
 %Among these candidates, ten overexpressed genes (symbol as DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, and DKC1) are associated with a poor prognosis of  \acrshort{os}.% (see Table \ref{table:table1}). 
 %The other ten overexpressed genes (symbol as ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, IQCN - former symbol as KIAA1683, and NPB) are correlated with better survival.% (see Table \ref{table:table3}, with their gene name).
@@ -1081,9 +1088,9 @@ Dotted line: significant Bonferroni corrected \textit{P} value.
 %Six out of ten preliminary candidates has been validated by using GSE2837.
 %We found those six candidates have the Cox's univariate and multivariate HR above 1.914.
 %There were few published articles of \acrfull{SURF4} and \acrfull{NDFIP1} (\acrshort{NEDD4}: \acrlong{NEDD4}), which were related to cancer research.
-In Table \ref{table:table2}, % table 3
-after adjustment of confounders, \acrshort{CAMK2N1} overexpression is the independent prognostic factor (multivariate HR 2.007 [95\% CI: 1.490-2.704, \textit{p} $<$ 0.001]), as well as clinical T stage (HR 1.982 [95\% CI: 1.048-3.745, \textit{p} = 0.035]) and surgical margins status (HR 1.631 [95\% CI: 1.182-2.250, \textit{p} = 0.003]). 
-Older age (more than 65) also worse the survival (HR 1.391 [95\% CI: 1.025-1.888, \textit{p} = 0.034]). 
+%In Table \ref{table:table2}, % table 3
+%after adjustment of confounders, \acrshort{CAMK2N1} overexpression is the independent prognostic factor (multivariate HR 2.007 [95\% CI: 1.490-2.704, \textit{p} $<$ 0.001]), as well as clinical T stage (HR 1.982 [95\% CI: 1.048-3.745, \textit{p} = 0.035]) and surgical margins status (HR 1.631 [95\% CI: 1.182-2.250, \textit{p} = 0.003]). 
+%Older age (more than 65) also worse the survival (HR 1.391 [95\% CI: 1.025-1.888, \textit{p} = 0.034]). 
 %The M stage could be ignored in this cohort due to only 3 out of 414 patients with distant metastasis.
 
 
@@ -1263,7 +1270,24 @@ CI95\%: 95\% confidence interval;
 % end of result
 
 
+% from sp1 研究構想： Dr Wu 吳明恆老師 FAT1 versus TP53 **********
+%   (Head Neck 2018, Head Neck 2020 and Medicine 2021). 
+Wu and his colleagues (Wu et al., 2018, 2020, 2021) have serial studies for \acrshort{ovh} through whole-exome sequencing to identify a biomarker. 
+They found a candidate biomarker for malignant transformation: \acrfull{fat1}.
+The \acrshort{fat1} missense mutation rate is higher in progressive \acrshort{ovh} (83.3\%) than in their non-progressive counter partner (22.2\%), while 6.25\% of TP53 is mutated in \acrshort{ovh}. 
+Missense mutation of FAT1 is also significantly associated with poor recurrence-free survival (RFS) of \acrshort{oscc}.
 
+%FAT1-regulated YAP1/Hippo pathways has been well addressed. 
+%As a result, this  project aims to verify FAT1 gene mutation in a large cohort of OVH patients and to investigate the FAT1 and tp53 relationships in OVH transformation. 
+%At the same time, the other ten genes were over-expressed in the better survival patients (with hazard ratio $<=0.5$), named as ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, IQCN (previous name as KIAA1683), and NPB.
+
+As a result, we believe that FAT1-regulated YAP1/Hippo pathway drives malignant transformation in \acrshort{ovh}.
+We assume those biomarkers, CK13, CK17, p53, Ki-67, EGFR, $\alpha$-SMA, CAMK2N1, and FAT1, should be found within surgical margin (dysplasia zone) of \acrshort{oscc} specimen and \acrshort{ovh}.
+%*** validated by \acrfull{hpa}.
+Further investigation will be conducted by using deep learning of whole-slide pathological images.
+% are warranted 
+
+%%%%%%%%%%%
 
 
 %%%%%
