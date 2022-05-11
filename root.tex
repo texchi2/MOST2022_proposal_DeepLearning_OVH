@@ -111,7 +111,7 @@
 \pagestyle{fancy} % for header and footer
 \fancyhf{} % clears the header and footer,
 \lhead{\fancyplain{}{\doctitle}}
-\rhead{\fancyplain{}{PI: Li-Hsing Chi}} % *** Fill your name here ***
+\rhead{\fancyplain{}{co-PI: Li-Hsing Chi}} % *** Fill your name here ***
 \cfoot{\fancyplain{}{\cntext{共} \pageref*{LastPage} \cntext{頁}~~~~\cntext{第} \thepage \cntext{頁}}}
 \lfoot{\underline{\cntext{表} C003}}
 
@@ -651,6 +651,7 @@ Holistic Cancer Care;
 
 \subsection{Cancer Initiation}
 The main risk factors for \acrshort{oscc} include carcinogens in tobacco and betel nut, alcohol, oncogenic viruses.
+The betel-nut chewing, alcohol \acrfull{aldh2} mutation should be the major concern as a variety of \acrshort{oscc} in Taiwan.
 In Asian population, \acrfull{aldh2} mutation plays a very important rule to enhance \acrshort{oscc}~\citep{Chien2019} by alcohol consumption.
 The oncogenic viruses such as \acrfull{hpv} and Epstein–Barr virus play a major carcinogenic role in tumors of the oropharynx and nasopharynx, respectively~\citep{Ferrarotto2017}.
 Moreover, physical irritations, ionized radiation and host susceptibility may also contribute to the etiology of \acrshort{oscc}~\citep{Ko1995,Znaori2003} (Figure~\ref{fig:DAG_etiology}).
@@ -986,7 +987,8 @@ The possibility of malignant transformation is influenced by the severity of epi
 %Clinically helpful biomarkers for dysplasia grading include KRT13 (type I cytoskeletal 13, encoding Cytokeratin13---CK13), KRT17 (type I cytoskeletal 17, encoding Cytokeratin 17---CK17), TP53 (encoding p53), MKI67 (Marker Of Proliferation Ki-67, encoding Ki-67).
 %CK13, CK17, p53, and Ki-67.
 %  KRT13 (type I cytoskeletal 13, aka. CK13), KRT17 (type I cytoskeletal 17, aka. CK17), TP53 (p53), MKI67 Marker Of Proliferation Ki-67 (Ki-67)
-Diagnostic biomarkers, such as KRT13 (type I cytoskeletal 13, encoding Cytokeratin13---CK13), KRT17 (type I cytoskeletal 17, encoding Cytokeratin 17---CK17), TP53 (encoding p53), and MKI67 (Marker Of Proliferation Ki-67, encoding Ki-67), are applied in routine pathological examination for dysplasia grading (semi quantitative).
+Diagnostic markers are those that distinguish between different categories of lesions. They are obtained by comparing cross-sectional samples taken from various patients.
+Diagnostic biomarkers, such as KRT13 (type I cytoskeletal 13, encoding Cytokeratin13---CK13), KRT17 (type I cytoskeletal 17, encoding Cytokeratin 17---CK17), TP53 (encoding p53), and MKI67 (Marker Of Proliferation Ki-67, encoding Ki-67), are applied in routine pathological examination for dysplasia grading (semi quantitative) , and a confirmation of \acrshort{oscc}.
 The expressions for CK17 and CK13 are reciprocal in oral dysplasia lesions and that the CK17/p53 emergence is helpful to confirm a diagnosis of \acrshort{oscc}~\citep{Mikami2011}.
 
 
@@ -1343,6 +1345,9 @@ The transcriptomic representation learned by HE2RNA can also be transferred on o
 
 
 \section{Conclusion}
+
+Predictive markers are those that can suggest the risk of cancer without intervention. We will identify them by comparing pre-cancerous samples with follow-up results revealing malignant transformation.
+
 High-throughput RNA-sequencing (RNA-Seq) is a powerful tool to characterize and quantify transcriptomes. Even the cost of RNA-Seq is continuously dropping, 
 the budget of whole-genome transcriptomics study for survival analysis is still very high (USD350 to 500 per sample). %; 46 participants of HNSCC in TMU Joint Biobank, accessed on \today at http://ohr.tmu.edu.tw/front/jbb1/CaseNumber/pages.php?\\ID=dG11X29ociZDYXNlTnVtYmVy).
 % NCI HE2RNA
@@ -1523,7 +1528,7 @@ Specific Aims %特定研究目標 (specific aims), 執行策略不能互相綁�
         
 % These are the instructions for the class
 \item \textbf{Aim 1}: \aimone, 
-and collect clinical data and bio-specimen (i.g., pathological specimen, saliva, and serum).
+with collection of clinical data and bio-specimen (i.g., pathological specimen, saliva, and serum).
 % buffy coat; frozen specimen and paraffin block
 
 
@@ -1532,7 +1537,8 @@ and collect clinical data and bio-specimen (i.g., pathological specimen, saliva,
 
 
 \item \textbf{Aim 3}: \aimthree.
-A deep-learning-based algorithm might extract clinical features and pathology whole-slide images from \acrshort{ovh} and \acrshort{oscc}.
+From \acrshort{ovh} and \acrshort{oscc}, a deep-learning-based algorithm could extract clinical features and interpret pathology whole-slide images.
+%A deep-learning-based algorithm might extract clinical features, and read pathology whole-slide images from \acrshort{ovh} and \acrshort{oscc}.
 
 %Deep Learning-based biomarker identifying in depression analysis with holistic healthcare study. The cortisol is one of the most common objective outcomes studied in psychoneuroimmunological (PNI) factors~\citep{Hulett2016}. Interleukin, cytokines, T-lymphocytes ($CD4^+$, $CD8^+$), $CD56^+$ (neural cell adhesion molecule), and heart rate variability (HRV) are included in other PNI studies.
 %The subjective psychosocial measurements should include depression, stress, quality of life, anxiety, fatigue, mindfulness, mood, and specific spiritual growth---the meaning of life~\citep{Hsiao2012}. Our hypothesis is that \acrshort{ovh} could be transformed into oral cancer because of the stress, via mind-brain-body network~\citep{Rogers1959}. Thus, besides using those serum biomarkers, we encourage physicians to write their \acrfull{ehr} in a "holistic way".	And the \acrshort{ovh} carriers should use wearable device (e.g., smart watch) to monitor their HRV. Once the \acrshort{ovh} becoming oral cancer, we could early treat the disease as well as analyze the contributing factors of carcinogenesis. That could be a predictive biomarker.
@@ -1556,9 +1562,9 @@ A deep-learning-based algorithm might extract clinical features and pathology wh
 %\begin{outline}
 % Dr Rich Wu and Dr Chi
 
-\subsubsection*{Aim 1:} Construct the \acrshort{ovh} and leukoplakia datasets\\[0.5cm]
+\subsubsection*{Aim 1:} Construct \acrshort{ovh} and leukoplakia datasets\\[0.5cm]
 
-% 祁力行醫師與吳家佑醫師協助建立北醫OPMD cohort(白斑和OVH為主)、IRB申請及切片染色影像AI開發，收案檢體包含:切片、血漿、口水、冷凍組織、buffy coat，建議收案時間為手術後確認非OSCC再與病患溝通收案
+
 %\end{outline}
 %central issue 1 with preliminary data (key data); fallback approaches %先以概要式的背景介紹破題，點出研究目標的重要性，然後用邏輯之陳述將如何達成目標的策略和方法講清楚。請務必注意：每個研究目標基本上需具備其獨立性 (Independence)，但其重要性卻要在目標之間有所連結，且要能回應總體目標之研究顯著性
 
@@ -1566,54 +1572,108 @@ A deep-learning-based algorithm might extract clinical features and pathology wh
 \clearpage
 
 % Dr Chi
-\paragraph*{Cohort} Construct Chi-Mei and TMUH datasets\\[0.5cm]
+\paragraph*{Cohort collection} Construct %Chi-Mei and TMUH
+\acrshort{ovh} and leukoplakia datasets\\[0.5cm]
 
+\subparagraph{Study design for cohort (A) and (B)}
 %Ethics Statement\\
 %***TMU Joint IRB approval\\
-Data analysis will be waived review and consent by the TMU Joint Institutional Review Board (IRB), as all data will being analyzed retrospectively, after de-identification. All experimental protocols will be applied for approval under the IRB protocol %(No. Version1.0/20210531)
-with TMU Joint Institutional Review Board, and all experiments will be carried out in accordance with approved guidelines.
-%In the TMU cohort, the patient ages ranged from 25 to 81 (average age 58 \± 10). Patient specific information pertaining to race, tumor grade, and outcome were not explicitly recorded for this study.
-
-\subparagraph*{Patient and Tissue Samples} % tissue microarray
-%% KVGH-IRB-XXXXX and TMU-IRB 99049; Written informed consent was obtained from all participants and was also reviewed by IRB Committee.
-% (demographic data in Supplementary Table S1)
-The normal (N) and tumor (T) paired samples were obtained from thirty-five consecutive \acrshort{hnscc} patients at the Department of Dentistry or Head and Neck Surgery Clinics, Kaohsiung Veterans General Hospital (KVGH). 
-Written informed consent was obtained from all participants and was also reviewed by the Institutional Review Board (IRB) Committee of KVGH. Tissues were preserved in liquid nitrogen for RNA extraction. 
-Second HNSCC cohort was obtained from \acrfull{tmuh}, which contains total 86 patients including 79 men and 7 women with 31 NT-paired samples. Written informed consent was obtained from all participants and was also reviewed by TMU joint-IRB Committee.
-Their mean age was 53 year-old, range 30-88 years. The 45 patients were diagnosed in early stages (stage I or II) and 41 in late stages (stage III or IV) of HNSCC. %Clinical samples were carried out with the approval of the Institutional Review Boards. 
-Formalin-fixed paraffin embedded tissues (FFPE) were organized into a set of serial tissue microarray (TMA) blocks while each samples contained one normal part and three tumor part derived from different tumor regions to represent its heterogeneity.  All participants underwent a series of clinical evaluations then to be treatment according to NCCN guidelines~\citep{Pfishter2019}. The clinicopathological data was carefully recorded. The clinical staging was registered based on the American Joint Committee on Cancer (AJCC) TNM classification of \acrshort{hnscc}.
-The survival analysis was evaluated by the Kaplan--Meier estimates and compared by the log-rank test.
+First retrospective cohort will applied from biobank of Chi-Mei Hospital (CMH) as cohort (A). Data should include clinical features and bio-specimen (i.g., pathological specimen, saliva, and serum).
+The \acrshort{ovh} and leukoplakia samples will be obtained from 150 consecutive participants at Chi-Mei Hospital. 
+Written informed consent was obtained from all participants and was also reviewed by the Institutional Review Board Committee of CMH. 
+Tissues, saliva and, serum were preserved in liquid nitrogen for DNA extraction.
+Formalin-fixed paraffin embedded tissues (FFPE) will be used for pathological imaging.
 
 
-
-\subparagraph*{Tissue Sample Preparation} % for HE and IHC
-
-The fresh frozen tissue samples (KVGH cohort) were maintained with the desired orientation on the cutting block using Optimum Cutting Temperature (OCT) polymer. A thin frozen section was cut at -$15\,^{\circ}\mathrm{C}$ by using a cryostat (Thermo Electron) and deposited on cold indium tin oxide (ITO)-coated conductive glass slides (Bruker Daltonics). The slide and tissue section were then quickly warmed, which let the tissue thaw-mounted onto the slide. Tissue sections were fixed by immersion in 70\% then 95\% ethanol bath each for 30 sec and allowed to dry for 40 min in a desiccator.
-
+Second retrospective cohort (B) will retrieve the clinical data and FFPE from \acrshort{tmuh}. Data analysis will be waived review and consent by the TMU Joint Institutional Review Board (IRB), as all data will being analyzed after de-identification.
+%Clinical samples were carried out with the approval of the Institutional Review Boards. 
+% Written informed consent was obtained from all participants and was also reviewed by TMU joint-IRB Committee.
+%\textcircled{\raisebox{-0.9pt}{A}} and \textcircled{\raisebox{-0.9pt}{B}}
+The cohort (B) contains total 200 patients including xx men and xx women with their mean age at 53 year-old, range 30-88 years. The xx patients were diagnosed in non- or mild, and xx in moderate/sever oral epithelial dysplasia.
+Pathological imaging will be performed on FFPE samples.
 %%
 
-\subparagraph{Immunohistochemistry (IHC) Staining}
+\subparagraph*{Study design for cohort (C)}
+%  A STROBE-compliant retrospective/prospective cohort study.
+% a good methodology: 1. Crawford M, Johnson EH, Liu KYP, Poh C, Tsai RYL. On the Cutting Edge of Oral Cancer Prevention: Finding Risk-Predictive Markers in Precancerous Lesions by Longitudinal Studies. Cells. 2022;11(6). doi:10.3390/cells11061033
+According the STROKE statement~\citep{VonElm2008} for observational studies, one prospective cohort (C) study will be conducted.
 
-The blocks of FFPE tissue microarray (from TMUH cohort) were sectioned at 3-\si{\um} slice thickness. Slides were heated for 1 hour at $60\,^{\circ}\mathrm{C}$ to deparaffinize in xylene, rehydrated in graded alcohol, and rinsed in distilled water. Antigen retrieval and immunohistochemistry staining were performed by using a Benchmark XT automated immunohistochemistry system (Ventana Medical Systems). Tissue microarray slides were stained with primary TMSB4X antibodies (Proteintech) at 1:400 dilution. Primary antibodies were detected by using an indirect biotin streptavidin system (iVIEW DAB Detection Kit, Ventana Medical Systems, Inc.) and tissue was counterstained in haematoxylin and eosin. Images of stained slides were retrieved by digital scanner (ScanScope Systems Aperio, CA, USA) and scored manually by one pathologist, Dr. Michael Hsiao.
+
+% 祁力行醫師與 ***吳家佑醫師協助建立北醫OPMD cohort(白斑和OVH為主)、IRB申請及切片染色影像AI開發，
+%收案檢體包含:切片、血漿、口水、冷凍組織、buffy coat，建議收案時間為手術後確認非OSCC再與病患溝通收案
+
+% 1. Liu H, Liu X wei, Dong G, et al. P16 Methylation as an Early Predictor for Cancer Development From Oral Epithelial Dysplasia: A Double-blind Multicentre Prospective Study. EBioMedicine. 2015;2(5):432-437. doi:10.1016/j.ebiom.2015.03.015
+% oral epithelial dysplasia (OED) 
+Between 2023 and 2025, 200 patients will be chosen from cases of oral leukoplakia, verrucous hyperplasia, or lichen planus at \acrshort{tmuh}. Biopsy specimens are fixed in neutral buffered formalin, paraffin embedded, and H\&E stained. At least two senior pathologists should use criteria from the 2017 WHO Classification System to classify oral epithelial dysplasia of baseline lesions as mild, moderate, or severe~\cite{Gale2005, Ranganathan2019}. The sample size was calculated according to a suggestion from the prospective study~\cite{Cao2009}.
+%Peking University School of Stomatology (Central-A, n = 82), Capital Medical University School of Stomatology (Central-B, n = 68), and Fourth Military Medical University Hospital of Stomatology (Central-C, n = 31) 
+All of the participants have initial lesions that have never been treated with surgery, LASER, radiation therapy, or chemotherapy. Clinical features, lesion site, cigarette smoking, alcohol consumption, betel-nut chewing, and past medical history are all gathered. For at least three years, follow-up examinations will be conducted every three months in a double-blind fashion. If the clinician suspects a malignant event, a further examination and re-biopsy will be performed. Patients who do not require a re-biopsy during the follow-up examination period because of baseline lesion has clearly disappeared/regressed. TMU Joint Institutional Review Boards will approve the trial (TMU-IRB 111xxx), and all patients will provide written informed consent. This study will be also registered in the U.S. National Institutes of Health Clinical Trials Protocol Registration System in accordance with the criteria outlined by the International Committee of Medical Journal Editors (trial number NCTxxxxxxxx, available at \url{http://ClinicalTrials.gov}).
+
+%% %收案檢體包含:切片、血漿、口水、冷凍組織、buffy coat
+ %\textcircled{\raisebox{-0.8pt}{C}}
+Data should include clinical features and bio-specimen (i.g., pathological specimen in fresh state, saliva, and serum).
+All experimental protocols will be applied for approval under the IRB protocol
+with TMU Joint Institutional Review Board, and all experiments will be carried out in accordance with approved guidelines.
+%In three cohorts, the patient ages ranged from 25 to 81 (average age 58).
+%Patient specific information pertaining to race, tumor grade, and outcome were not explicitly recorded for this study.
+
+
+
 
 %%%
-\paragraph*{Whole-slide imaging} Construct a Deep Learning Platform of TCGA/TCIA and Taiwan datasets\\[0.5cm]
 
-There is 98 slides from 46 patients with HNSCC in TMU dataset.
+%\subparagraph*{Patient and tissue samples} % tissue microarray
+%% KVGH-IRB-XXXXX and TMU-IRB 99049; Written informed consent was obtained from all participants and was also reviewed by IRB Committee.
+% (demographic data in Supplementary Table S1)
+
+
+
+
+
+\subparagraph*{Tissue sample preparation} % for HE and IHC
+
+The fresh frozen tissue samples (CMH cohort (A) and TMUH cohort (C)) are maintained with the desired orientation on the cutting block using Optimum Cutting Temperature (OCT) polymer. A thin frozen section is cut at -$15\,^{\circ}\mathrm{C}$ by using a cryostat (Thermo Electron) and deposited on cold glass slides. The slide and tissue section are then quickly warmed, which let the tissue thaw-mounted onto the slide. Tissue sections are fixed by immersion in 70\% then 95\% ethanol bath each for 30 sec and allowed to dry for 40 min in a desiccator.
+%indium tin oxide (ITO)-coated conductive  (Bruker Daltonics)
+% tissue microarray
+
+Formalin-fixed paraffin embedded tissues (FFPE), obtained from cohort (A)(B)(C), are organized into block for H\&E staining as usual manner.
+%a set of serial tissue microarray (TMA) blocks while each samples contained one normal part and three tumor part derived from different tumor regions to represent its heterogeneity.  
+%All participants underwent a series of clinical evaluations then to be treatment according to NCCN guidelines~\citep{Pfishter2019}. The clinicopathological data was carefully recorded. The clinical staging was registered based on the American Joint Committee on Cancer (AJCC) TNM classification of \acrshort{hnscc}.
+%The survival analysis was evaluated by the Kaplan--Meier estimates and compared by the log-rank test.
+%%
+
+\subparagraph{Immunohistochemistry (IHC) staining}
+
+% FFPE tissue microarray (from TMUH cohort)
+The blocks of FFPE are sectioned at 3-\si{\um} slice thickness. Slides are heated for 1 hour at $60\,^{\circ}\mathrm{C}$ to deparaffinize in xylene, rehydrated in graded alcohol, and rinsed in distilled water. Antigen retrieval and immunohistochemistry staining are performed by using a Benchmark XT automated immunohistochemistry system (Ventana Medical Systems). 
+Slides are stained with primary antibodies at 1:200 or 1:400 dilution. Primary antibodies are detected by using an indirect biotin streptavidin system (iVIEW DAB Detection Kit, Ventana Medical Systems, Inc.) and tissue is counterstained in haematoxylin and eosin. Images of stained slides are retrieved by digital scanner (ScanScope CS2 Systems Aperio, CA, USA) and diagnosed and graded manually by one pathologist, Dr. Meng.
+
+% primary TMSB4X antibodies (Proteintech)
+% % 抗體 (10= 9 + FAT1)
+We assume those biomarkers, CK13, CK17, p53, Ki-67, EGFR, $\alpha$-SMA, CAMK2N1, FAT1, p16INK4a, and p14ARF, should be used in \acrshort{ihc} staining.
+%found within surgical margin (dysplasia zone) of \acrshort{oscc} specimen and \acrshort{ovh}.
+% p16INK4a and p14ARF for (PVL) proliferative verrucous leukoplakia
+
+%%%
+\paragraph*{Whole-slide imaging} Construct a deep learning platform of Taiwan datasets\\[0.5cm]
+
+% TCGA/TCIA and
+A quantitative tissue pathology (QTP) approach based on digital whole-slide images has enabled the profiling of a wide range of microscopic features at tissue, single cell and subcellular levels that are not visible to the naked eye. These phenotypes could be a reflection of its genetic carcinogenesis~\cite{Crawford2022}.
+
+% pickup severe one as a representative 挑最嚴重的為代表
+There is 3300 slides from 300 patients with \acrshort{ovh} or leukoplakia in datasets (A)(B)(C).
 %Slide Digitization and Pathologists Ground Truth for TMU dataset:
-H\&E stained histopathology slides will be digitized via a whole-slide scanner at 40x magnification for this study. An Aperio Scanscope CS2 scanner will be used to digitize cases, from the TMU cohort,
+The 300 H\&E stained pathology slides will be digitized via a whole-slide scanner at 40x magnification for this study, with 0.25 $\mu$m/pixel resolution (Aperio Scanscope CS2).
+The other 3000 slides with \acrshort{ich} stained (300 per antibody) will be scanned as the same manner.
+The SVS file will be obtained.
+%a digital slide image file created by an Aperio ScanScope slide scanner.
 %The Ventana iCoreo scanner was used for scanning the UHCMC/CWRU and NC data cohorts. 
-under 40x magnification corresponds 
-to Aperio's slides at 0.25 $\mu$
-m/pixel resolution.
+%under 40x magnification corresponds to Aperio's slides at 0.25 $\mu$m/pixel resolution.
 %and to Ventana’s slides at 0.23 μm/pixel.
 
 %https://wiki.cancerimagingarchive.net/display/Public/TCGA-HNSC
 %https://cancer.digitalslidearchive.org/#!/CDSA/hnsc/TCGA-BA-4076/TCGA-BA-4076-01A-01-BS1?slide=TCGA-BA-4076-01A-01-BS1.4aef481c-f634-4ffc-9fb3-609f59a8caf9.svs
 
-NCI's \acrfull{gdc} stores pathology SVS image.
-An SVS file is a digital slide image file created by an Aperio ScanScope slide scanner.
-The TCGA's HNSCC images is available at \url{https://github.com/texchi2/HE2RNA_code/blob/master/gdc_manifests/gdc_manifest.2018-06-26_diagnostic_TCGA-HNSC.txt}.
+NCI's \acrfull{gdc} stores SVS image of TCGA's HNSCC pathology slide (we transferred and saved them at \url{https://github.com/texchi2/HE2RNA_code/blob/master/gdc_manifests/gdc_manifest.2018-06-26_diagnostic_TCGA-HNSC.txt}).
 
 
 %https://portal.gdc.cancer.gov/image-viewer?caseId=b843df7e-db06-4d29-b00d-6a93effd9191&filters=%7B%22op%22%3A%22and%22%2C%22content%22%3A%5B%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22cases.project.project_id%22%2C%22value%22%3A%5B%22TCGA-HNSC%22%5D%7D%7D%2C%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22files.experimental_strategy%22%2C%22value%22%3A%5B%22Tissue%20Slide%22%5D%7D%7D%5D%7D&selectedId=45fffd2f-e282-4198-8c49-0247507ebb8a
@@ -1625,7 +1685,7 @@ The TCGA's HNSCC images is available at \url{https://github.com/texchi2/HE2RNA_c
 %*** A deep learning model to predict RNA-Seq expression of tumours from whole-slide images\cite{Schmauch2020}.
 %A HE2RNA model should be trained to systematically predict RNA-Seq profiles from whole-slide images\cite{Schmauch2020}.
 % . The application of deep-learning algorithms to histological
-The whole-slide images of pathology data has the high dimensionality (up to 100,000 × 100,000 pixels for a single image).
+The whole-slide image of pathology slide has high dimensionality (up to 100,000 × 100,000 pixels for a single image). It could be analyzed by deep learning algorithm.
 
 
 
@@ -1650,22 +1710,24 @@ The whole-slide images of pathology data has the high dimensionality (up to 100,
 %%%%%%%%
 %\begin{outline}
 % Dr Chi Transfer learning
-\subsubsection*{Aim 3:} Construct a deep learning platform to predict genomics \\[0.5cm]
+\subsubsection*{Aim 3:} Construct a deep learning platform to predict genotype alternations \\[0.5cm]
 
-\paragraph{Transfer Learning}
+\paragraph{Transfer learning in Artificial Intelligent (AI)}
 % deep learning model building
 
 %The small size of available datasets. => small case number
-HE2RNA workflow could divide the whole-slide images into squares of 112 × 112 $\mu$m (224 × 224 pixels) called "tiles", and use the Otsu algorithm\citep{Otsu1979} (as implemented in python package scikit-image, available at \url{https://scikit-image.org/docs/dev/api/skimage.html}) to select only those containing tissue, excluding the white background. 
-A maximum of 8000 such tiles from each slide are sampled then extracted 2048 features with a 50-layer ResNet model\citep{He2016a}  pretrained on the ImageNet dataset (available at https://www.image-net.org/challenges/LSVRC/index.php).
+A NCI's HE2RNA workflow could divide the whole-slide images into squares of 112 × 112 $\mu$m (224 × 224 pixels) called "tiles", and use the Otsu algorithm~\citep{Otsu1979} (as implemented in python package scikit-image, available at \url{https://scikit-image.org/docs/dev/api/skimage.html}) to select only those containing tissue, excluding the white background. 
+A maximum of 8000 such tiles from each slide are sampled then extracted 2048 features with a 50-layer ResNet model~\citep{He2016a} pretrained on the ImageNet dataset (available at \url{https://www.image-net.org/challenges/LSVRC/index.php}).
 The ResNet and HE2RNA model are developed by using the TensorFlow/Keras implementation with a architecture of \acrfull{cnn}.
 %Graph convolutional neural network (GCNN).
-The AI-driven computer program analyzes tissue by creating a map of thousands of tiles.
+This AI-driven computer program analyzes tissue by creating a map of thousands of tiles.
 A pathology slide could be represented as a 8000 × 2048 matrix.
 %For the first phase of this work (transcriptome prediction), we accelerated the training of our models through a simple preprocessing step inspired by simple linear iterative clustering (SLIC)65: 
-We use the k-means algorithm (as implemented in python package libkmcuda) to create 100 clusters (supertiles) of tiles on the basis of tile location on the slide, and we average the features of the tiles within each cluster. The use of these supertiles could reduce the dimensions of a slide to 100 × 2048. % training supertiles
-Transcriptome prediction model will be first trained on this reduced dataset, with all the TCGA data. Then, fine-tuning of "hyperparameters" will be achieved with full-scale data from \acrshort{hnscc} dataset by Bayesian optimization technique (Sequential Model-Based Optimization algorithms, SMBO)~\citep{Hutter2011}.
-The similar procedure of image process will be applied on TMU dataset.\\[0.5cm]
+THe k-means algorithm (as implemented in python package libkmcuda) could be used to create 100 clusters (supertiles) of tiles based on their location on the slide, and HE2RNA averages the features of the tiles within each cluster. 
+Use of supertiles could reduce the dimension of a slide to 100 x 2048 pixels.
+% training supertiles
+Transcriptome prediction model will be first trained on this reduced dataset, with all the TCGA data. Then, fine-tuning of "hyperparameters" will be achieved with full-scale data from \acrshort{hnscc} dataset by Bayesian optimization technique (i.g., Sequential Model-Based Optimization algorithms, SMBO)~\citep{Hutter2011}.
+The similar procedure of image process will be applied on datasets (A)(B)(C).\\[0.5cm]
 
 %Graph convolutional neural network (GCNN) will be used for feature extraction from whole-slide images.
 
@@ -1697,13 +1759,13 @@ $X_1, X_2, ...X_n$ are the features extracted by HE2RNA model from TCIA whole-sl
 %*transfer learning from TCGA model
 %torchvision, NanoMets Models
 %save checkpoint, load then deepcopy()
-We transfer HE2RNA model on TMU HNSCC dataset to predict RNA-Seq representation:\\[0.2cm]
+We transfer HE2RNA model on dataset (A)(B)(C) to predict their RNA-Seq representatives:\\[0.2cm]
 %Y (survival) ← X (slide represents gene expression)
 $\hat{Y}_{mrna} = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + ... + \beta_n X_n + \epsilon$\\[0.3cm]
 While $\hat{Y}_{mrna}$ is predicted RNA-Seq data, and
-$X_1, X_2, ...X_n$ are the features extracted from TMU whole-slide images of pathology.\\
-IL19 is one of our suggested candidate marker (through TCGA survival analysis).
-We want to validate that IL19 still has survival impact on TMU \acrshort{hnscc} dataset (please see Figure \ref{fig:HE2RNA}).
+$X_1, X_2, ...X_n$ are the features extracted from cohorts (A)(B)(C) whole-slide images of pathology.\\
+CAMK2N1 is one of our suggested candidate marker (through TCGA survival analysis~\citep{Chi2021}) (Figure~\ref{fig:HE2RNA}).
+% ***We want to validate that IL19 still has survival impact on TMU \acrshort{hnscc} dataset (please see Figure \ref{fig:HE2RNA}).
 
 %\subsubsection{Figure HE2RNA}
 %\smartdiagramset{uniform sequence color=true}
@@ -1743,7 +1805,7 @@ additional item bottom color=orange!60!yellow,
 %\smartdiagramset{module x sep=5}
 %\smartdiagram[flow diagram:horizontal]{TMU cohort (WSI/EHR), HE2RNA, RNA-Seq}
 \smartdiagramadd[flow diagram:horizontal]{
- TMU dataset (WSI), HE2RNA, RNA-Seq (Representation)
+ TMU dataset (WSI), HE2RNA, RNA-Seq (Representatives)
 }{
     above of module2/Model (transfer from TCIA),
     below of module3/%Survival Analysis 
@@ -1769,15 +1831,15 @@ additional item bottom color=orange!60!yellow,
 
 %\includegraphics[width=14cm]{Figure_HE2RNA.pdf}
 %\bcaption{}{} %\captionof{diag} for floating "diag"
-\bcaption{Workflow of RNA-Seq representation of TMU dataset}
+\bcaption{Workflow of RNA-Seq representatives of TMUH/CMH datasets}
 %\acrshort{hnscc} Cox's hazard ratio and \textit{P} value plot.
-{The deep learning model of HE2RNA, which was trained under TCGA/TCIA \acrshort{hnscc} dataset, could be applied for RNA-Seq prediction of TMU dataset. The representation will be used for subsequent survival analysis.
-The EHR of TMU dataset could also be used for subsequent survival analysis.\\
+{The deep learning model of HE2RNA, which was trained under TCGA/TCIA \acrshort{hnscc} dataset, could be applied for RNA-Seq predictive of TMUH/CMH datasets. The representatives will be used for subsequent survival analysis.\\
+%The EHR of TMU dataset could also be used for subsequent survival analysis.\\
 (
 TCGA: \acrlong{tcga};
 TCIA: \acrlong{tcia};
 WSI: whole-slide images of pathology; 
-EHR: \acrlong{ehr}; 
+%EHR: \acrlong{ehr}; 
 RNA-Seq: \acrlong{rnaseq}; 
 \acrshort{rnn}: \acrlong{rnn}
 )
@@ -1822,10 +1884,13 @@ Aim 4. To analyze the effect of mutated FAT1 on the reciprocal relationship of Y
 %To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: sp1, sp2, and sp3
 
 
-\paragraph{Modelling by Dr Chi2022}
+\paragraph{Modelling by Dr Chi}
 % survival modelling by Dr Chi2022
 %% TCGA new holistic features %%%%%
 %Our previous \acrshort{hnscc} study\cite{Chi2020} 
+Forty-two features will be collected and analyzed as potential independent risk factors for malignant transformation. 
+The features will be selected using the 'least absolute shrinkage and selection operator' (LASSO) method for dimensional reduction.
+
 Our preliminary research data summarizes that 20 candidate biomarkers, clinical T stage, and surgical margin are independent prognosis factors.
 The prognosis model with coefficients is established from \acrshort{tcga} \acrshort{hnscc} cohort. The important input $X_1...X_n$ should be patients' features: age, candidate gene expressions, clinical T stage, and surgical margin so far.
 When we consider the survival prediction model in a holistic manner,
@@ -2024,7 +2089,7 @@ It will be submitted for further diagnostic method for personalized medicine of 
 The results shown here are in whole based upon data generated by the \acrshort{tcga} Research Network: https://www.cancer.gov/tcga.
 The tables were generated by latex code with the help from https://www.tablesgenerator.com/latex\_tables\#.
 %https://github.com/JDMCreator/LaTeXTableEditor (accessed at https://www.latex-tables.com/v1/\\index.html).
-We sincerely want to express our thanks to the \acrshort{ovh} patients who donated their data, and help from TMU Joint Institute Review Board.
+We sincerely want to express our thanks to the \acrshort{ovh} patients who donated their data, and help from TMU Joint Institutional review board.
 % *** URL Accessed 20 May 2013.
 
 
@@ -2195,7 +2260,7 @@ We sincerely want to express our thanks to the \acrshort{ovh} patients who donat
     %    \centering
 %\begin{tabular}{@{}c@{}}
 %\centering
-主持人個人資料表\\
+副主持人個人資料表\\
 %\end{tabular}
 \end{center}
 
@@ -2228,8 +2293,8 @@ We sincerely want to express our thanks to the \acrshort{ovh} patients who donat
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 學校名稱                                          & 國別     & 主修學門系所                                  & 學位 & 起訖年月(西元年/月)       \\ \hline
-Taipei Medical University and Academia Sinica & Taiwan & PhD candidate in Translational Medicine & 肄業 & 2013/02 - Present \\ \hline
-Taipei Medical University                     & Taiwan & MS in Biomedical Informatics            & 晉讀 & 2011/09 - 2013/01 \\ \hline
+Taipei Medical University and Academia Sinica & Taiwan & PhD in Translational Medicine & 博士 & 2013/02 - 2022/01 \\ \hline
+Taipei Medical University                     & Taiwan & MS in Biomedical Informatics            & 結業 & 2011/09 - 2013/01 \\ \hline
 Taipei Medical University                     & Taiwan & BS in Dentistry                         & 學士 & 1988/09 - 1994/06 \\ \hline
 \end{tabular}%
 }
@@ -2245,7 +2310,7 @@ Taipei Medical University                     & Taiwan & BS in Dentistry        
 \begin{tabular}{|l|l|l|l|}
 \hline
 服務機構                               & 服務部門/系所                          & 職稱                   & 起訖年月(西元年/月)       \\ \hline
-Taipei Municipal Wanfang Hospital  & Oral and Maxillofacial Surgery   & Director             & 2021/04 - Present \\ \hline
+Taipei Municipal Wanfang Hospital  & Oral and Maxillofacial Surgery   & Director             & 2021/04 - 2022/04 \\ \hline
 Taipei Medical University Hospital & Oral and Maxillofacial Surgery   & Attending physician & 2002/01 - Present \\ \hline
 Taipei Medical University Hospital & Taiwan Medical Mission in Africa & Attending physician & 2009/05 - 2012/01 \\ \hline
 \end{tabular}%
@@ -2263,7 +2328,9 @@ Taipei Medical University Hospital & Taiwan Medical Mission in Africa & Attend
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|l|l|}
 \hline
-\begin{tabular}[c]{@{}l@{}}Programming\\ Procient in: R, Python.\\ Familiar with: Matlab, C++.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Languages\\ Chinese, English (uent)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Sports:\\ Swimming, water rescue, \\ SCUBA diving, bicycle cycling,\\ moutaineering\end{tabular} & \begin{tabular}[c]{@{}l@{}}Mindfulness\\ meditation\end{tabular} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Programming in:\\ R, Python, Matlab, SAS, deep learning.\\
+Translational Medicine
+\end{tabular} & \begin{tabular}[c]{@{}l@{}}Languages\\ Chinese, English \end{tabular} & \begin{tabular}[c]{@{}l@{}}Sports:\\ Swimming, water rescue, \\ SCUBA diving, bicycle cycling,\\ moutaineering\end{tabular} & \begin{tabular}[c]{@{}l@{}}Mindfulness\\ meditation\end{tabular} \\ \hline
 \end{tabular}%
 }
 \end{table}
@@ -2288,14 +2355,21 @@ Taipei Medical University Hospital & Taiwan Medical Mission in Africa & Attend
 
 \textbf{Publication:}\\
 \begin{outline}
-\1 Chi, L.-H. H. et al. Global Proteomics-based Identification and Validation of Thymosin Beta-4 X-Linked as a Prognostic Marker for Head and Neck Squamous Cell Carcinoma. Sci. Rep. 7, 9031 (2017).[SCI]
+\1 Chi L-H, Chang W-M, Chang Y-C, et al. Global Proteomics-based Identification and Validation of Thymosin Beta-4 X-Linked as a Prognostic Marker for Head and Neck Squamous Cell Carcinoma. Sci Rep. 2017;7(1):9031. doi:10.1038/s41598-017-09539-w.[SCI]
+
+\1 Chi L-H, Wu ATH, Hsiao M, Li Y-CCJ. A Transcriptomic Analysis of Head and Neck Squamous Cell Carcinomas for Prognostic Indications. J Pers Med. 2021;11(8):782. doi:10.3390/jpm11080782. [SCI]
+
+\1 Chi L-H. Global Transcriptomics and Proteomics Analyses for Biomarker Identification and Validation in Head and Neck Squamous Cell Carcinoma. PhD Progr Transl Med. Published online 2022. [Ph.D. Dissertation]
 
 \end{outline}
 
-We applied the matrix-assisted laser desorption/ionization (MALDI) imaging mass spectrometry (IMS) and liquid chromatography with tandem mass spectrometry (LC-MS/MS) to identify tumor-associated biomarkers of \acrshort{hnscc}. The gene thymosin beta-4 X-linked (TMSB4X) is a candidate biomarker in HNSCC whose functions resulted in enhanced proliferation and metastasis in vitro and in vivo\citep{Chi2017}.
-This publication has been cited by cancer research of Roška and his colleague, published on Oncotarget\citep{Roska2020}, \citep{Chu2019a}, \citep{Makowiecka2019a}, and by research of epidermal morphogenesis\citep{Padmanabhan2020}.
+Chi and his colleagues~\citep{Chi2017} applied the matrix-assisted laser desorption/ionization (MALDI) imaging mass spectrometry (IMS) and liquid chromatography with tandem mass spectrometry (LC-MS/MS) to identify tumor-associated biomarkers of \acrshort{hnscc}. The gene thymosin beta-4 X-linked (TMSB4X) is a candidate biomarker in HNSCC whose functions resulted in enhanced proliferation and metastasis in vitro and in vivo.
+That publication has been cited by cancer research of Roška and his colleague, published on Oncotarget~\citep{Roska2020, Chu2019a, Makowiecka2019a}, and by research of epidermal morphogenesis~\citep{Padmanabhan2020}.
 
-
+In two articles~\citep{Chi2021, Chi2022}, Chi has emphasized that a breakthrough improvement of \acrshort{oscc} therapies should depend on "1) adequate surgical margin and radiotherapy guided by pathology, 2) predictive biomarkers, and 3) holistic cancer care". 
+%Four validated biomarkers (TMSB4X, CAMK2N1, CALML5, and FCGBP), clinical tumor size, and surgical margin status all are independent prognosis factors in HNSCC. Overexpression of TMSB4X is associated with a poor prognosis of overall survival (OS) and recurrence-free survival (RFS) of those patients. TMSB4X knockdown in the HNSCC cell line reduced proliferation, invasion, and cervical lymph node metastasis in vitro and in vivo. More- over, CAMK2N1, CALML5, and FCGBP, are also substantially linked with patients’ OS. Holistic cancer care considers the importance of the spirit, emotion, body, and social relationships. Ultimately, holistic cancer therapy will be a comprehensive tailored personalized medication.
+The betel-nut chewing, alcohol \acrfull{aldh2} mutation should be the major concern as a variety of \acrshort{hnscc} in Taiwan.
+Pathology images should be analyzed with deep learning platform for a transcriptome representatives of mRNA learned by NCI's HE2RNA project~\citep{Schmauch2020}. Chi has a hypothesis that top-down research by deep learning algorithm~\citep{Huang2020} could find biomarkers surrounding the surgical margin.
 
 \end{CJK*}
 
@@ -2319,7 +2393,7 @@ This publication has been cited by cancer research of Roška and his colleague, 
 %\bibliography{IEEEabrv, pvalueTex, TMSB4X, TCGA_margin_cutoff, SLC2A4_metabolism.bib, Holistic, Deep_Learning-Radiomics, Deep_Learning}
 
 % all merged at most_merged, repeated entry removed
-\bibliography{dissertation2022_Tex.bib}
+\bibliography{dissertation2022_Tex.bib, Deep_IHC_2023.bib, Tex_publications_since2002.bib}
 %most_merged}
 % by
 % $ bibtool -f '%s($key)' -Ac -s -v /Users/texchi/Documents/Documents\ -\ Mac\ mini/Holistic.bib /Users/texchi/Documents/Documents\ -\ Mac\ mini/Deep_Learning.bib /Users/texchi/Documents/Documents\ -\ Mac\ mini/pvalueTex.bib /Users/texchi/Documents/Documents\ -\ Mac\ mini/SLC2A4_metabolism.bib /Users/texchi/Documents/Documents\ -\ Mac\ mini/TMSB4X.bib /Users/texchi/Documents/Documents\ -\ Mac\ mini/TCGA_margin_cutoff.bib -o most_merged.bib$
