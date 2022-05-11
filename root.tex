@@ -998,6 +998,8 @@ The expressions for CK17 and CK13 are reciprocal in oral dysplasia lesions and t
 % Results: the main findings
 %\textbf{Preliminary Results:}
 Using pvalueTex~\citep{Chi2021} on the \acrshort{tcga} \acrshort{hnscc} cohort, we scanned human protein-coding genes (20,500) programmatically. After adjustment with other confounders, the clinical tumor stage and the surgical margin involvement are independent risk factors in patient survival. 
+% *** usually safety margin: OVH 5 mm, SCC 10 mm safety margin
+
 %According to the resulting tables with Bonferroni adjusted \textit{P} value under optimal cutoff as well as hazard ratio $(>=1.5)$, 
 %There were ten candidate biomarkers, named as DKK1, CAMK2N1, STC2, PGK1, SURF4, USP10, NDFIP1, FOXA2, STIP1, and DKC1, which are 
 And overexpression of CAMK2N1 is significantly associated with the poor prognosis of \acrfull{os} (Table~\ref{table:table2}). 
@@ -1645,7 +1647,7 @@ Formalin-fixed paraffin embedded tissues (FFPE), obtained from cohort (A)(B)(C),
 
 % FFPE tissue microarray (from TMUH cohort)
 The blocks of FFPE are sectioned at 3-\si{\um} slice thickness. Slides are heated for 1 hour at $60\,^{\circ}\mathrm{C}$ to deparaffinize in xylene, rehydrated in graded alcohol, and rinsed in distilled water. Antigen retrieval and immunohistochemistry staining are performed by using a Benchmark XT automated immunohistochemistry system (Ventana Medical Systems). 
-Slides are stained with primary antibodies at 1:200 or 1:400 dilution. Primary antibodies are detected by using an indirect biotin streptavidin system (iVIEW DAB Detection Kit, Ventana Medical Systems, Inc.) and tissue is counterstained in haematoxylin and eosin. Images of stained slides are retrieved by digital scanner (ScanScope CS2 Systems Aperio, CA, USA) and diagnosed and graded manually by one pathologist, Dr. Meng.
+Slides are stained with primary antibodies at 1:200 or 1:400 dilution. Primary antibodies are detected by using an indirect biotin streptavidin system (iVIEW DAB Detection Kit, Ventana Medical Systems, Inc.) and tissue is counterstained in haematoxylin and eosin. Images of stained slides are retrieved by digital scanner (ScanScope CS2 Systems Aperio, CA, USA) and diagnosed and graded manually by one pathologist, Dr. Ling-Cheng Mong.
 
 % primary TMSB4X antibodies (Proteintech)
 % % 抗體 (10= 9 + FAT1)
@@ -1656,6 +1658,7 @@ We assume those biomarkers, CK13, CK17, p53, Ki-67, EGFR, $\alpha$-SMA, CAMK2N1,
 %%%
 \paragraph*{Whole-slide imaging} Construct a deep learning platform of Taiwan datasets %\\[0.5cm]
 
+% **** 病理切片 去背
 % TCGA/TCIA and
 A quantitative tissue pathology (QTP) approach based on digital whole-slide images has enabled the profiling of a wide range of microscopic features at tissue, single cell and subcellular levels that are not visible to the naked eye. These phenotypes could be a reflection of its genetic carcinogenesis~\cite{Crawford2022}.
 
@@ -1694,7 +1697,7 @@ The whole-slide image of pathology slide has high dimensionality (up to 100,000 
 %%%%
 %%%%%%%%%%%%%%%%
 % Dr Wang's GWAS
-\subsubsection*{Aim 2:}
+\subsubsection*{Aim 2:}\\[0.5cm]
 %To identify genetic variants associated with malignant transformation of \acrshort{ovh} by implementing genome-wide association testing (GWAS)
 
 %王紋璋老師需要buffy coat檢體抽DNA進行GWAS分析，一片chip可做96檢體，希望盡量湊足200個檢體的量來做分析。
@@ -1713,6 +1716,7 @@ The whole-slide image of pathology slide has high dimensionality (up to 100,000 
 \subsubsection*{Aim 3:} Construct a deep learning platform to predict genotype alternations \\[0.5cm]
 
 \paragraph{Transfer learning in Artificial Intelligent (AI)}
+% 觸類旁通
 % deep learning model building
 
 %The small size of available datasets. => small case number
@@ -1840,7 +1844,7 @@ additional item bottom color=orange!60!yellow,
 
 %\includegraphics[width=14cm]{Figure_HE2RNA.pdf}
 %\bcaption{}{} %\captionof{diag} for floating "diag"
-\bcaption{Workflow of RNA-Seq representatives of TMUH/CMH datasets}
+\bcaption{Workflow of RNA-Seq representatives of TMUH/CMH datasets.}
 %\acrshort{hnscc} Cox's hazard ratio and \textit{P} value plot.
 {The deep learning model of HE2RNA, which was trained under TCGA/TCIA \acrshort{hnscc} dataset, could be applied for RNA-Seq predictive of TMUH/CMH datasets. The representatives will be used for subsequent gene mutation/expression analysis.\\
 %The EHR of TMU dataset could also be used for subsequent survival analysis.\\
@@ -1862,7 +1866,7 @@ RNA-Seq: \acrlong{rnaseq};
 
 
 %%%
-\paragraph{Mutation/Expression of biomarkers: FAT1} %, CAMK2N1}
+\paragraph{Mutation/expression profile of FAT1} %, CAMK2N1}
 
 % ****deep learning can HELP SP1
 %HE2DNA, HE2RNA
@@ -1880,6 +1884,7 @@ It might incorporate whole-slide images of pathology of TMUH/CMH cohorts with th
 %Aim 1. 
 It will also be validated in progressive and non-progressive \acrshort{ovh} samples using DNA-Seq on targeted gene.
 %deep learning might help mutation representatives by "HE2DNA" model.\\
+
 %Aim 2. 
 The HE2RNA model will also be used to compare the transcriptome of FAT1 in wild-type versus mutant \acrshort{ovh} tissues.
 %Aim 3. To dissect the cooperative effect of FAT1 and TP53 gene mutation on OVH transformation. \\
@@ -1894,45 +1899,59 @@ The HE2RNA model will also be used to compare the transcriptome of FAT1 in wild-
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%
-% by Dr Wang's and Dr Chi's Integration and modelling
-\subsubsection*{Aim 4:}
+% by Dr Wang's and Dr Chi's Integration and modeling
+\subsubsection*{Aim 4:}\\[0.5cm]
 %To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: sp1, sp2, and sp3
 
 
-\paragraph{Modelling by Dr Chi}
+\paragraph{Feature engineering by Deep learning}
 
 %HE2DNA, HE2RNA, HE2Displasia
 
-% survival modelling by Dr Chi2022
+% ***explainable by
+% 1) silency map
+% 2) *** auto encoder 2048 to 512 dimensions （visual subjectively 人眼就會發現 moth size, wing span, dark color ….) 
+%傳統分類的名詞定義 by human、features from nature
+
+% unsupervised learning 
+
+HE2Displasia and \acrfull{gcnn} models will be conducted for survival analysis to predict malignant transformation of \acrshort{ovh} and even leukoplakia.
+A survival time is defined as a progressive \acrshort{ovh} becoming cancer during the follow-up period.
+%non-progressive OVH
+
+
+% survival modeling by Dr Chi2022
 %% TCGA new holistic features %%%%%
 %Our previous \acrshort{hnscc} study\cite{Chi2020} 
 Forty-two features will be collected and analyzed as potential independent risk factors for malignant transformation. 
 The features will be selected using the 'least absolute shrinkage and selection operator' (LASSO) method for dimensional reduction.
 
-Our preliminary research data summarizes that 20 candidate biomarkers, clinical T stage, and surgical margin are independent prognosis factors.
-The prognosis model with coefficients is established from \acrshort{tcga} \acrshort{hnscc} cohort. The important input $X_1...X_n$ should be patients' features: age, candidate gene expressions, clinical T stage, and surgical margin so far.
-When we consider the survival prediction model in a holistic manner,
-ground truth Y (e.x. patient's survival):\\[0.5cm]
+%Our preliminary research data summarizes that 20 candidate biomarkers, clinical T stage, and surgical margin are independent prognosis factors.
+The predictive model with coefficients will be established from cohorts (A)(B). The important input $X_1...X_n$ should be patients' features: age, candidate gene mutations/expressions, and surgical margin so far.
+When we consider the survival prediction model,
+ground truth Y (i.e., malignant transformation):\\[0.5cm]
 %Y$:\\[0.3cm]
 $Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + ... + \beta_n X_n + \epsilon$\\[0.3cm]
-Actually, gene expression is not an independent $X_{mrna}$. It could be influenced with other factors (for example):\\[0.3cm]
-$X_{body}, X_{stress}, X_{fear}, X_{meaningOfLife}, X_{inflammation}, X_{empathy}$\\[0.3cm]
-That is because there is much work to be done in investigating the functional mind-body network\citep{Rogers1959}.
+Actually, FAT1 gene expression is not an independent $X_{mrna}$. It could be influenced with other factors (for example):\\[0.3cm]
+%$X_{body}, X_{stress}, X_{fear}, X_{meaningOfLife}, X_{inflammation}, X_{empathy}$\\[0.3cm]
+$X_{CK13}, X_{CK17}, X_{p53}, X_{Ki-67}, X_{p53}, X_{CAMK2N1}, ... $\\[0.3cm]
+That is because there is much interaction in gene regulatory network. 
+%to be done in investigating the functional mind-body network\citep{Rogers1959}.
 %We wish the TCGA does collect more holistic features from their participants in the future.
 %依舊是以管窺天
 % https://link.springer.com/referenceworkentry/10.1007%2F978-1-4419-1428-6_575
 %癌症與身心靈的重要關係：中醫、citation? emotional centered approach
-We suggest TCGA should cover more holistic features:
-The cortisol is one of the most common objective outcomes studied in psychoneuroimmunological (PNI) factor. Interleukin, cytokines, lymphocytes (CD4+, CD8+), CD56+, vitals signs, telomere length, telomere activity, and heart rate variability (HRV) are others.
-The subjective psychosocial measures should include depression, stress, quality of life, anxiety, fatigue, mindfulness, mood, and specific spiritual growth (i.e., the meaning of life)\citep{Hsiao2012}.
+%We suggest TCGA should cover more holistic features:
+%The cortisol is one of the most common objective outcomes studied in psychoneuroimmunological (PNI) factor. Interleukin, cytokines, lymphocytes (CD4+, CD8+), CD56+, vitals signs, telomere length, telomere activity, and heart rate variability (HRV) are others.
+%The subjective psychosocial measures should include depression, stress, quality of life, anxiety, fatigue, mindfulness, mood, and specific spiritual growth (i.e., the meaning of life)\citep{Hsiao2012}.
 %冤親債主的意念 unknown X factors 回到我們的文章
-Since psychological benefit (reduction of stress, fatigue, sleep disturbance, and depressive symptoms) also optimizes immune function (higher natural killer cell activity, higher \acrshort{ifng}, lower TNF-alpha, lower IL-6) in terms of better survival of patients from cancer.
+%Since psychological benefit (reduction of stress, fatigue, sleep disturbance, and depressive symptoms) also optimizes immune function (higher natural killer cell activity, higher \acrshort{ifng}, lower TNF-alpha, lower IL-6) in terms of better survival of patients from cancer.
 
 % holistic EHR
-Moreover, we encourage physicians to write their \acrshort{ehr} in a "holistic way".
+%Moreover, we encourage physicians to write their \acrshort{ehr} in a "holistic way".
 % Deep Patient:  
-Thus, deep learning can convert EHR to the Fast Healthcare Interoperability Resources (FHIR) format\citep{Rajkomar2018}\citep{HealthLevelSeven2019} for handling free-text notes by physicians.
-Deep learning can also derive patient representations that offer improved clinical predictions\citep{Miotto2016}.
+%Thus, deep learning can convert EHR to the Fast Healthcare Interoperability Resources (FHIR) format~\citep{Rajkomar2018}~\citep{HealthLevelSeven2019} for handling free-text notes by physicians.
+Thus, deep learning can derive patient representations and gene network that offer improved clinical predictions~\citep{Miotto2016}.
 %=> Level 4 Record-keeping and Data Exchange for the healthcare process (clinical data) %Under HL7, RESTful
 %Allergy, Problem,
 %Procedure,
@@ -1956,10 +1975,11 @@ Deep learning can also derive patient representations that offer improved clinic
 %https://mos2718.github.io/FHIRspec/Index.html
 %https://www.hl7.org/fhir/patient.html
 %https://mos2718.github.io/FHIRspec/Spec/Patient/EHR_Patient.docx
-Once the holistic feature is available, a graph convolutional neural network (GCNN) is mandatory for further survival analysis\citep{Ching2018a}.
+Once clinical features and models for pathology images are available, a graph convolutional neural network (GCNN) is mandatory for survival analysis~\citep{Ching2018a} in our study.
 
-In Taipei Medical University Hospital, holistic-enabled EHR has been designed in the daily-work for charting our outpatients with psycho-social-spiritual evaluation\citep{Ling-ChengMong2021}:\\
+%In Taipei Medical University Hospital, holistic-enabled EHR has been designed in the daily-work for charting our outpatients with psycho-social-spiritual evaluation~\citep{Ling-ChengMong2021}:\\
 
+\comm{
 \begin{outline}
 
 \1 Emotional: stable/depression/ anxiety/ agitated/ perplexed\\
@@ -1971,6 +1991,8 @@ In Taipei Medical University Hospital, holistic-enabled EHR has been designed in
 \1 Medical relationship: bad experience of dental treatment/ loss confidence to dentist/ anxious to treatment/ side-effects/ litigation experience\\[0.1cm]
 
 \end{outline}
+} % end of \comm
+
 %In personal history section of admission note for inpatient:\\
 %<Habits>\\
 %-Tobacco: \underline{ }\underline{ } pack/day for \underline{ }\underline{ } years\\
@@ -1993,12 +2015,14 @@ In Taipei Medical University Hospital, holistic-enabled EHR has been designed in
 %\1 Aim 3: Biomarkers validation cohort for 10 candidates from pvalueTex project
 
 
-Deep learning can convert \acrfull{ehr} to the Fast Healthcare Interoperability Resources (FHIR) format\citep{Rajkomar2018}\citep{HealthLevelSeven2019} for handling free-text notes by physicians.
-% RNN recurrent neural network
-\acrfull{rnn} will deal with "holistic features" of \acrshort{ehr} obtained from Taipei Medical University Clinical Research Database (TMUCRD).
+%Deep learning can convert \acrfull{ehr} to the Fast Healthcare Interoperability Resources (FHIR) format\citep{Rajkomar2018}\citep{HealthLevelSeven2019} for handling free-text notes by physicians.
+% RNN recurrent neural network \acrfull{rnn} will deal with "holistic features" of \acrshort{ehr} obtained from Taipei Medical University Clinical Research Database ***(TMUCRD).
 % https://ods.tmu.edu.tw/portal_c3_cnt.php?owner_num=c3_69585&button_num=c3&folder_id=3714
-These patient's features should include physical, pathological, psychological data, and even more spiritual information investigated by physicians.
-The "SUB\_DESC", coded by the coding book (data schema) of TMUCRD, should store psychological and spiritual information in EHR.
+
+
+%These patient's features should include physical, pathological, psychological data, and even more spiritual information investigated by physicians.
+%The "SUB\_DESC", coded by the coding book (data schema) of TMUCRD, should store psychological and spiritual information in EHR.
+
 % 攜入(linked my data) with 特定對象識別代碼(如身分證字號、病歷號碼)
 % => biobank 代為 linking (收費?)
 %申請資料欄位 *
@@ -2020,19 +2044,44 @@ The "SUB\_DESC", coded by the coding book (data schema) of TMUCRD, should store 
 
 %\begin{outline}
 Whole-slide images are the surrogate of expression data of RNA-Seq.
-From the result of Aim 1, the transcriptomic representation of TMU dataset (n=46, obtained at TMU Joint Biobank) could be applied to validate those candidates discovered by our previous study.
+From the result of Aim 3, the transcriptomic representatives of TMUH/CMH datasets
+%(n=46, obtained at TMU Joint Biobank) 
+could be applied to validate those candidates discovered by our previous study: FAT1, CAMK2N1.
 % Biomarkers validation cohort for 10 candidates from pvalueTex project
-Moreover, the result of Aim 2 (features extracted from holistic \acrshort{ehr} of TMUH) will be used for survival analysis (see Figure \ref{fig:HE2RNA}) by conventional Cox proportional hazard regression and \acrshort{gcnn} (see Figure \ref{fig:GCNN}). % try Ipe; or Inkscape
+Moreover, the result of Aim 4 (features extracted from pathology images) will be used for survival analysis 
+%(Figure ~\ref{fig:HE2RNA}) by conventional Cox proportional hazard regression and 
+by \acrshort{gcnn} (Figure \ref{fig:GCNN}). % try Ipe; or Inkscape
 % modifying % Figure 5 HE2RNA workflow: EHR -> survival analysis
 
 
 
+
+%%%%%%%%%%%%%%
+% ***explainable by
+% 1) silency map
+% 2) *** auto encoder 2048 to 512 dimensions （visual subjectively 人眼就會發現 moth size, wing span, dark color ….) 
+%傳統分類的名詞定義 by human、features from nature
+% unsupervised learning 
+
+HE2Displasia model could be applied on an autoencoder for explainable machine learning.
+An autoencoder is a type of unsupervised learning for unlabeled data.
+Autoencoder with cox regression (AutoCox)~\citep{Torkey2021} combines an explainable deep learning and Cox Proportional Hazards Modeling. Code is available at GitHub: \url{https://github.com/Mostafa-Samy-Atlam/Autoencoder-with-survival-analysis-methods}, accessed on May 2022.
+%%%
+As a result, AutoCox will inform us on how to estimate the malignant transformation of an \acrlong{ovh} based on "visual subjectively features" learned from pathology images.
+
+%%%%%%%%%%%%%%
+
+
+
+% figure by Ipe app
 % make Figure 6
 \begin{figure}[hp]
 \centering
 \includegraphics[width=14cm]{GCNN_survival.pdf}
-\bcaption{Overview of the proposed \acrshort{gcnn} for survival analysis}
-{\\We suggest that the TMU dataset should collect "holistic features" in electric healthcare records (EHR), which include physical, pathological, psychological data, and spiritual information. Combined with RNA-Seq representation, whole-slide-images pathology and holistic EHR, the \acrfull{gcnn} should extract high-dimensional information for \acrshort{hnscc} survival prediction.}
+\bcaption{Overview of the proposed workflow for survival analysis}
+{\\
+%We suggest that the TMU dataset should collect "holistic features" in electric healthcare records (EHR), which include physical, pathological, psychological data, and spiritual information. Combined with RNA-Seq representation, 
+With whole-slide-images pathology, the \acrfull{gcnn} should extract high-dimensional information for \acrshort{ovh} survival prediction.}
 \label{fig:GCNN}
 \end{figure}
 
@@ -2049,9 +2098,9 @@ Moreover, the result of Aim 2 (features extracted from holistic \acrshort{ehr} o
 %poster 
 %https://wiki.cancerimagingarchive.net/download/attachments/1966514/TCGA_TCIA_Poster_111511_HHFa_WIDE.pptx?version=1&modificationDate=1323207330686&api=v2
 
-The Cox proportional hazards regression is the widely accepted approach for modeling survival while accounting for confounding factors\cite{Magen2019}. Univariate and multivariate Cox proportional regression model\cite{Andersen1982}, using the "coxph" function in R package "survival", will be applied to calculate hazard ratio, \acrfull{ci95} and its significance, and to estimate the independent contributions of each clinicopathological features to the overall survival.
-Results are considered statistically significant when a two-sided \textit{P} value $<$ 0.05, or a lower threshold if indicated.
-The \acrfull{fdr} ($< 0.05$) could be used to pick up the optimal \textit{P} value to ensure the control for type I error of multiple survival test during the survival analysis.
+%The Cox proportional hazards regression is the widely accepted approach for modeling survival while accounting for confounding factors\cite{Magen2019}. Univariate and multivariate Cox proportional regression model\cite{Andersen1982}, using the "coxph" function in R package "survival", will be applied to calculate hazard ratio, \acrfull{ci95} and its significance, and to estimate the independent contributions of each clinicopathological features to the overall survival.
+%Results are considered statistically significant when a two-sided \textit{P} value $<$ 0.05, or a lower threshold if indicated.
+%The \acrfull{fdr} ($< 0.05$) could be used to pick up the optimal \textit{P} value to ensure the control for type I error of multiple survival test during the survival analysis.
 %There were also multiple correlated tests of null hypotheses in the Kaplan-Meier family during our global scanning of protein-coding genes. The stringent Bonferroni correction could result in an adjusted \textit{P} value to ensure the control for type I error. 
 
 %Cox regression tables, were exported to ".xlsx" and ".Rda" files (by R package "r2excel") for subsequent biomarker selection.
@@ -2068,10 +2117,22 @@ The \acrfull{fdr} ($< 0.05$) could be used to pick up the optimal \textit{P} val
 
 
 %\clearpage
-\paragraph{Modelling by Dr Wang}
+\paragraph{Modeling by Dr Wang}
 
-The candidate biomarkers, clinical tumor size, surgical margin status and some holistic features will be suggested as prognosis factors in \acrshort{oscc} through analysis of Chi-Mei and TMUH datasets.
+The candidate biomarkers, dysplasia grading, surgical margin status and saliva extract will be suggested as risk factors in malignant transformation of \acrshort{ovh} through analysis of Chi-Mei and TMUH datasets.
 
+\begin{outline}
+
+
+\1 Statistical tools for genetic association testing 
+\1 Cox regression analyses
+\1 Kaplan--Meier analyses \1 Statistical tools for risk prediction models 
+\1 Cox regression analyses
+with backward stepwise elimination approach
+\1 Nomogram prediction model
+\1 The receiver operating characteristic (ROC) curve analysis
+
+\end{outline}
 
 \clearpage
 
