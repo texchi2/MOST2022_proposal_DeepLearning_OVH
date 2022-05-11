@@ -1569,7 +1569,7 @@ From \acrshort{ovh} and \acrshort{oscc}, a deep-learning-based algorithm could e
 %central issue 1 with preliminary data (key data); fallback approaches %先以概要式的背景介紹破題，點出研究目標的重要性，然後用邏輯之陳述將如何達成目標的策略和方法講清楚。請務必注意：每個研究目標基本上需具備其獨立性 (Independence)，但其重要性卻要在目標之間有所連結，且要能回應總體目標之研究顯著性
 
 
-\clearpage
+%\clearpage
 
 % Dr Chi
 \paragraph*{Cohort collection} Construct %Chi-Mei and TMUH
@@ -1654,7 +1654,7 @@ We assume those biomarkers, CK13, CK17, p53, Ki-67, EGFR, $\alpha$-SMA, CAMK2N1,
 % p16INK4a and p14ARF for (PVL) proliferative verrucous leukoplakia
 
 %%%
-\paragraph*{Whole-slide imaging} Construct a deep learning platform of Taiwan datasets\\[0.5cm]
+\paragraph*{Whole-slide imaging} Construct a deep learning platform of Taiwan datasets %\\[0.5cm]
 
 % TCGA/TCIA and
 A quantitative tissue pathology (QTP) approach based on digital whole-slide images has enabled the profiling of a wide range of microscopic features at tissue, single cell and subcellular levels that are not visible to the naked eye. These phenotypes could be a reflection of its genetic carcinogenesis~\cite{Crawford2022}.
@@ -1764,7 +1764,15 @@ We transfer HE2RNA model on dataset (A)(B)(C) to predict their RNA-Seq represent
 $\hat{Y}_{mrna} = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \beta_3 X_3 + ... + \beta_n X_n + \epsilon$\\[0.3cm]
 While $\hat{Y}_{mrna}$ is predicted RNA-Seq data, and
 $X_1, X_2, ...X_n$ are the features extracted from cohorts (A)(B)(C) whole-slide images of pathology.\\
-CAMK2N1 is one of our suggested candidate marker (through TCGA survival analysis~\citep{Chi2021}) (Figure~\ref{fig:HE2RNA}).
+%CAMK2N1 is one of our suggested candidate marker (through TCGA survival analysis~\citep{Chi2021}).
+The deep learning model of HE2RNA, which was trained under TCGA/TCIA \acrshort{hnscc} dataset, could be applied for RNA-Seq predictive of TMUH/CMH datasets. 
+% HE2RNA
+The representatives will be used for subsequent gene expression analysis (Figure~\ref{fig:HE2RNA}).
+% HE2Displasia
+A deep learning model, HE2Displasia, will also be trained for digital grading system for oral epithelial dysplasia.
+% HE2DNA
+A deep learning model, HE2DNA, will also be trained for a representative of DNA mutation.
+Those DNA/RNA representatives will be used for subsequent gene mutation/expression analysis.
 % ***We want to validate that IL19 still has survival impact on TMU \acrshort{hnscc} dataset (please see Figure \ref{fig:HE2RNA}).
 
 %\subsubsection{Figure HE2RNA}
@@ -1805,7 +1813,7 @@ additional item bottom color=orange!60!yellow,
 %\smartdiagramset{module x sep=5}
 %\smartdiagram[flow diagram:horizontal]{TMU cohort (WSI/EHR), HE2RNA, RNA-Seq}
 \smartdiagramadd[flow diagram:horizontal]{
- TMU dataset (WSI), HE2RNA, RNA-Seq (Representatives)
+ TMUH/CMH datasets (WSI), HE2RNA, RNA-Seq (Representatives)
 }{
     above of module2/Model (transfer from TCIA),
     below of module3/%Survival Analysis 
@@ -1813,9 +1821,10 @@ additional item bottom color=orange!60!yellow,
 \smartdiagramconnect{to-}{module2/additional-module1}
 \smartdiagramconnect{-to}{module3/additional-module2}
 
+% \acrshort{rnn}, Survival Analysis
 \vspace*{10mm}
 \smartdiagramadd[flow diagram:horizontal]{
- TMU dataset (EHR), \acrshort{rnn}, Survival Analysis
+ TMUH/CMH datasets (WSI), IHC, Validation
 }{}%{
 %    above of module2/Model (transfer from TCIA),
 %    below of module3/Survival Analysis 
@@ -1833,7 +1842,7 @@ additional item bottom color=orange!60!yellow,
 %\bcaption{}{} %\captionof{diag} for floating "diag"
 \bcaption{Workflow of RNA-Seq representatives of TMUH/CMH datasets}
 %\acrshort{hnscc} Cox's hazard ratio and \textit{P} value plot.
-{The deep learning model of HE2RNA, which was trained under TCGA/TCIA \acrshort{hnscc} dataset, could be applied for RNA-Seq predictive of TMUH/CMH datasets. The representatives will be used for subsequent survival analysis.\\
+{The deep learning model of HE2RNA, which was trained under TCGA/TCIA \acrshort{hnscc} dataset, could be applied for RNA-Seq predictive of TMUH/CMH datasets. The representatives will be used for subsequent gene mutation/expression analysis.\\
 %The EHR of TMU dataset could also be used for subsequent survival analysis.\\
 (
 TCGA: \acrlong{tcga};
@@ -1853,22 +1862,28 @@ RNA-Seq: \acrlong{rnaseq};
 
 
 %%%
-\paragraph{Expression/mutation of biomarkers CAMK2N1, FAT1}
+\paragraph{Mutation/Expression of biomarkers: FAT1} %, CAMK2N1}
+
+% ****deep learning can HELP SP1
+%HE2DNA, HE2RNA
+
 %\end{outline}
 %central issue 2 with preliminary data (Cox model); fallback approaches % 需有充分的文獻分析和縝密的論述來補足，使得 “convincing power” 依然強而有力
 
 %To construct a deep learning platform of genomics (mutation and expression) from pathology images
 
-Our preliminary data (biomarker candidates) could be served as the bridge between the prognosis of patients and their pathology images of specimen.
-We will develop a deep-learning-based data mining as well as a validation platform. It might incorporate whole-slide images of pathology of \acrshort{hnscc} from the Cancer Imaging Archive (TCIA) and from Joint Biobank of Taipei Medical University (TMU dataset).
-
-
-***From sp1 Dr Wu\\
-Aim 1. To verify the FAT1 gene mutation in an independent cohort of progressive and non progressive OVH samples using targeted gene NGS.
-deep learning might help) mutation representatives by "HE2DNA" model.\\
-Aim 2. To compare the transcriptome of FAT1 wild-type and mutant OVH tissues. \\
-Aim 3. To dissect the cooperative effect of FAT1 and tp53 gene mutation on OVH  transformation. \\
-Aim 4. To analyze the effect of mutated FAT1 on the reciprocal relationship of YAP1 and tp53  pathways in progressive OVH cells by the analysis of YAP1 and p53-regulated transcriptome and genome-binding regions.
+%Our preliminary data (biomarker candidates) could be served as the bridge between the prognosis of patients and their pathology images of specimen.
+We will develop a deep-learning-based model (HE2DNA) as well as a validation platform. 
+It might incorporate whole-slide images of pathology of TMUH/CMH cohorts with the mutation status of FAT1, TP53.
+%\acrshort{hnscc} from the Cancer Imaging Archive (TCIA) and from Joint Biobank of Taipei Medical University (TMU dataset).
+%***From sp1 Dr Wu\\
+%Aim 1. 
+It will also be validated in progressive and non-progressive \acrshort{ovh} samples using DNA-Seq on targeted gene.
+%deep learning might help mutation representatives by "HE2DNA" model.\\
+%Aim 2. 
+The HE2RNA model will also be used to compare the transcriptome of FAT1 in wild-type versus mutant \acrshort{ovh} tissues.
+%Aim 3. To dissect the cooperative effect of FAT1 and TP53 gene mutation on OVH transformation. \\
+%Aim 4. To analyze the effect of mutated FAT1 on the reciprocal relationship of YAP1 and tp53  pathways in progressive OVH cells by the analysis of YAP1 and p53-regulated transcriptome and genome-binding regions.
 
 
 
@@ -1885,6 +1900,9 @@ Aim 4. To analyze the effect of mutated FAT1 on the reciprocal relationship of Y
 
 
 \paragraph{Modelling by Dr Chi}
+
+%HE2DNA, HE2RNA, HE2Displasia
+
 % survival modelling by Dr Chi2022
 %% TCGA new holistic features %%%%%
 %Our previous \acrshort{hnscc} study\cite{Chi2020} 
