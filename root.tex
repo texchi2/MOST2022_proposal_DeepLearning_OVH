@@ -1904,7 +1904,7 @@ The HE2RNA model will also be used to compare the transcriptome of FAT1 in wild-
 %To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: sp1, sp2, and sp3
 
 
-\paragraph{Feature engineering by Deep learning}
+\paragraph{Feature engineering by explainable deep learning}
 
 %HE2DNA, HE2RNA, HE2Displasia
 
@@ -2078,10 +2078,10 @@ As a result, AutoCox will inform us on how to estimate the malignant transformat
 \begin{figure}[hp]
 \centering
 \includegraphics[width=14cm]{GCNN_survival_AutoCox.png}
-\bcaption{Overview of the proposed workflow for survival analysis}
+\bcaption{Overview of the proposed workflow for explainable survival analysis}
 {\\
 %We suggest that the TMU dataset should collect "holistic features" in electric healthcare records (EHR), which include physical, pathological, psychological data, and spiritual information. Combined with RNA-Seq representation, 
-With whole-slide-images pathology, the \acrfull{gcnn} should extract high-dimensional information for \acrshort{ovh} survival prediction.}
+With whole-slide-images pathology, the \acrfull{gcnn} should extract high-dimensional information for \acrshort{ovh} survival prediction. Predictors should be "seen" by AutoCox algorithm.}
 \label{fig:GCNN}
 \end{figure}
 
