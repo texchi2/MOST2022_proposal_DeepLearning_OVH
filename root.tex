@@ -180,6 +180,8 @@
 \newacronym{fdr}{FDR}{false discovery rate}
 
 \newacronym{hpa}{HPA}{the Human Protein Atlas}
+% The Health Promotion Administration (HPA) in Taiwan
+\newacronym{Thpa}{HPA}{Health Promotion Administration}
 
 \newacronym{oscc}{OSCC}{squamous cell carcinoma}
 \newacronym{ovh}{OVH}{oral verrucous hyperplasia}
@@ -461,10 +463,11 @@ A predictive biomarker for \acrshort{ovh} could provide early warning before mal
 \textbf{Methods:}
 
 R script was used to develop a comprehensive workflow, named "pvalueTex", running on the Rstudio platform. It includes data retrieving and pre-processing, feature selection, cutoff mining engine, Kaplan-Meier survival analysis, Cox proportional hazard modeling to discover prognostic biomarkers.
-We further plan to develop a deep-learning based data mining as well as validation platform. It might incorporate whole-slide images of pathology from cohort of Taipei Medical University (TMU).
+We further plan to develop a deep-learning based data mining as well as validation platform. It might incorporate whole-slide images of pathology from cohort of Taipei Medical University (TMU) and Chi-Mei Hospital.
 %the Cancer Imaging Archive (TCIA) and Taipei Medical University (TMU) biobank.
 %RNA-Seq data of \acrfull{tcga} for survival analysis. 
 Convolutional neural network (CNN) will be used for feature extraction from whole-slide images.
+Graph convolutional neural network (GCNN) and explainable autoencoder will deal with "survival analysis". 
 %Recurrent neural network (RNN) will deal with "holistic features" from electric healthcare records (EHR) of Taipei Medical University Hospital (TMUH).
 These patient's features should include physical, pathological, psychological data, and even more spiritual information investigated by physicians.
 During their follow-up period, a "survival analysis" should also be used to build a predictive model of malignant transformation. 
@@ -487,9 +490,9 @@ During their follow-up period, a "survival analysis" should also be used to buil
 \textbf{Conclusions:}
 %Those 11 validated biomarkers (DKK1, CAMK2N1, STC2, PGK1, SURF4, NDFIP1, STIP1, DKC1, ZNF557, ZNF266, and FCGBP), 
 The candidate biomarkers, clinical tumor size, and surgical margin status are suggested prognosis factors in \acrshort{hnscc} through TCGA analysis.
-Using those biomarkers, we will analyze the transcriptomic representation of \acrshort{ovh} in TMU cohort. 
+Using those biomarkers, we will analyze the transcriptomic/mutational representatives of \acrshort{ovh} in our cohorts. 
 %could be applied to validate those candidates by independent TMU cohort (n=46, obtained at TMU Joint Biobank).
-We will conclude that combining \acrshort{rnaseq} expression data with pathology images will aid in the development of a predictive model for early detection of \acrshort{oscc}.
+We will conclude that combining genomics data with pathology images will aid in the development of a predictive model for early detection of \acrshort{oscc}.
 % pathology images (by NCI)
 % pvalueTex, equipped with an optimal cutoff finder, 
 
@@ -506,23 +509,25 @@ We will conclude that combining \acrshort{rnaseq} expression data with pathology
 \textbf{Keyword:}
 %\keyword{
 Head and Neck Squamous Cell Carcinoma (HNSCC);
+Oral Squamous Cell Carcinoma (OSCC);
 Oral Verrucous Hyperplasia (\acrshort{ovh});
 %Genome Database\sep
-%the Cancer Genome Atlas (TCGA);
-%the Cancer Imaging Archive (TCIA);
+the Cancer Genome Atlas (TCGA);
+the Cancer Imaging Archive (TCIA);
 RNA-sequencing;
 Survival Analysis;
 %Optimal Cutoff;
-Biomarker Discovery; %\sep
+%Biomarker Discovery; %\sep
 %Tumor Type-agnostic Therapy\sep
 %Immuno-Oncology\sep
 %Targeted Therapy\sep
 %Systemic Therapy\sep
 Surgical Margin;
-Deep Learning;
+Deep Learning; Explainable;
 Graph Neural Network (GNN);
 Graph Convolutional Neural Network (GCNN);
-Recurrent Neural Network (RNN); 
+%Recurrent Neural Network (RNN);
+
 %Electric Healthcare Records (EHR);
 Holistic Cancer Care;
 %Therapeutic Relationship;
@@ -537,19 +542,28 @@ Holistic Cancer Care;
 %頭頸部鱗狀細胞癌數位病理影像與全人照護電子病歷的深度學習
 以深度學習及風險預測模式探討口腔疣狀增生惡轉風險\\[0.3cm]
 
-頭頸部鱗狀細胞癌 (\acrfull{hnscc}) 在全世界都是重要的健康問題。手術、放射治療和全身性治療(化療、免疫)仍然是這些患者的標準治療方式。要如何有突破性的發展，取決於發掘有效的預後生物標記，以分群來制定精準治療計劃。
-利用\acrfull{tcga}資料庫的生存分析，是找尋頭頸部鱗狀細胞癌生物標記最常用的方法。
-我們已使用R語言開發命名為"pvalueTex"的程式(可在Rstudio server 平台執行)，功能包括數據檢索、資料處理、特徵選擇、資料挖礦引擎、Kaplan-Meier 存活分析、Cox比例風險模型，以用來系統性大規模搜尋預後生物標記。
-我們接下來計劃開發深度學習(Deep Learning)數據挖掘和驗證平台。使用癌症數位病理影像(\acrfull{tcia}, 已與TCGA串連)，及臺北醫學大學(TMU) 生物資料庫的46名口腔癌個案，在取得H\&E病理切片數位掃描檔後，配合臺北醫學大學附屬醫院電子病歷，以AI人工智慧演算法，來做存活分析。
+頭頸部鱗狀細胞癌 (\acrfull{hnscc}) 在全世界都是重要的問題。手術、放射治療和全身性治療(化療、免疫)仍然是這些患者的標準治療方式。如何減少死亡率，取決於有效的預後生物標記(創新療法)，並早期預警口腔黏膜病變的癌化(加強預防)。
+
+自2008年至2018年，臺灣男性罹患頭頸部鱗狀細胞癌的一年存活率為79.56\% 至81.62\%（健康促進管理局癌症登記處的統計數據，網址https://cris.hpa.gov.tw/pagepub/Home.aspx，2022年5月查詢）。2009年到2014年，男性患者的的五年存活率一直沒有進步(從55.13\%到56.03\%)。
+
+利用The Cancer Genome Atlas (\acrshort{tcga})資料庫做存活分析，是找尋頭頸部鱗狀細胞癌生物標記最常用的方法。癌症的生物標記已被用於診斷、預測病情與疾病的預後。預測性標記有助於選擇有利的治療方式。例如，腫瘤切除手術後，若是手術切緣不足、頸部淋巴結轉移，則應進行術後的放射治療，以增加治療的成功率。
+
+口腔疣狀增生(\acrfull{ovh})是一種外形為疣狀(或乳頭狀)的癌前病變；這種病變日後有機會轉化為疣狀癌 (verrucous carcinoma, VC)或鱗狀細胞癌(squamous cell carcinoma, SCC)。我們的目標是找出預測性生物標記，期望無需頻繁切片，就能早期預警正在癌化中的口腔疣狀增生。
+
+我們使用R語言開發"pvalueTex"程式，可執行資料檢索、資料處理、特徵選擇、資料探勘、Kaplan--Meier存活分析、Cox比例風險模型，以用來大規模搜尋生物標記。我們接下來計劃開發深度學習(Deep Learning)資料探勘和驗證平台，利用數位病理影像(\acrfull{tcia}, 與TCGA串連)，及臺北醫學大學(TMU)生物資料庫中，口腔疣狀增生的病理切片數位影像，以AI人工智慧演算法，來做存活分析，預測(癌)惡轉變化。
 %它包含來自癌症影像檔案 (TCIA) 和臺北醫學大學 (TMU) 生物資料庫的病理學全幻燈片圖像。
 %\acrfull{tcga} 的 %RNA-Seq 數據用於生存分析。
-深度學習的卷積神經網絡(\acrfull{cnn})可由數位病理影像中提取特徵。
-而循環神經網絡(\acrfull{rnn})將處理電子病歷的"全人照護特徵"。
+深度學習的卷積神經網路(\acrfull{cnn})可由數位病理影像中提取特徵。
+圓論卷積神經網路(\acrfull{gcnn})則處理電子病歷的"全人照護特徵"。
 這些患者的特徵應該包括身體、病理、心理狀態，社會關係，甚至全人照顧醫師所紀錄的靈性紀錄。\\
 結論：
 %那些 11 個經過驗證的生物標誌物（DKK1、CAMK2N1、STC2、PGK1、SURF4、NDFIP1、STIP1、DKC1、ZNF557、ZNF266 和 FCGBP），
-通過TCGA分析，候選生物標記、臨床腫瘤大小和手術切緣狀態都會是頭頸部鱗狀細胞癌患者的重要預後因素。
-而進一步分析\acrshort{tcia}和TMU的癌細胞基因表現量、數位病理影像和全人照護特徵，將有助於驗證候選基因對預後的影響，以發展未來頭頸部鱗狀細胞癌的精準治療。
+通過TCGA分析，我們得到生物標記，並確認臨床腫瘤大小和手術切緣狀態，都會是頭頸部鱗狀細胞癌患者的重要預後因素。
+使用這些生物標誌物，我們將分析口腔疣狀增生檢體的基因變化，結合數位病理影像，以開發鱗狀細胞癌的早期預警模型。
+%而進一步分析\acrshort{tcia}和TMU的癌細胞基因表現量、數位病理影像和全人照護特徵，將有助於驗證候選基因對預後的影響，以發展未來頭頸部鱗狀細胞癌的精準治療。
+
+關鍵詞: 頭頸部鱗狀細胞癌; 口腔鱗狀細胞癌; 口腔疣狀增生; 存活分析; 手術切緣; 手術切緣; 卷積神經網路; 圓論卷積神經網路; 全人照顧。
+
 \end{CJK*}
 
 \end{abstract}
@@ -1427,6 +1441,7 @@ Specific Aims %特定研究目標 (specific aims), 執行策略不能互相綁�
 
 \begin{ganttchart}[
     bar label node/.style={text width=5cm,align=right,font=\scriptsize\RaggedLeft,anchor=east},
+    expand chart=\textwidth,
     x unit=0.8cm,
     y unit title=0.4cm,
     y unit chart=0.6cm, %0.5
@@ -1447,67 +1462,68 @@ Specific Aims %特定研究目標 (specific aims), 執行策略不能互相綁�
     group height=.3,
     group peaks height=.2,
     bar incomplete/.append style={fill=green}
-   ]{2023-01}{2024-05} % {2026-12}
+   ]{2022-01}{2023-12} % {2026-12}
    
    \gantttitlecalendar{year, month}\\ %=name
    \ganttbar[
     progress=10,
     bar progress label font=\small\color{barblue},
-    bar progress label node/.append style={right=4pt},
+    bar progress label node/.append style={left=4pt},
     bar label font=\normalsize\color{barblue},
     name=pp
-   ]{IRB application}{2022-08}{2023-01} \\ % name=pp
+   ]{IRB application}{2022-06}{2022-08} \\ % name=pp
    
 \ganttset{progress label text={}, link/.style={black, -to}}
 
 % aim1
 % \textcircled{\raisebox{-0.9pt}{1}}
-\ganttgroup{Aim 1}{2023-01}{2024-05} \\
+\ganttgroup{Aim 1}{2022-09}{2023-12} \\
 %\ganttbar[progress=0, name=T1A]{Construct \acrshort{ovh} and leukoplakia cohorts}{2023-01}{2023-01} \\
 % ganttlinkedbar
 \ganttbar[progress=30, name=T1A]{Retrospective cohorts \textcircled{\raisebox{-0.9pt}{A}} and \textcircled{\raisebox{-0.9pt}{B}}
-}{2023-01}{2023-07} \\
-\ganttbar[progress=0, name=T1B]{Prospective cohort \textcircled{\raisebox{-0.8pt}{C}}}{2023-01}{2024-04} \\
-
-\ganttnewline
-
-% aim2
-\ganttgroup{Aim 2}{2023-01}{2023-12} \\
-\ganttbar[progress=2, name=T2A]{Implementing genome-wide association testing (GWAS)}{2023-02}{2023-12} \\ % 因Covid-19，臨床研究資料庫獨立作業區2021.05.19暫停服務
+}{2022-09}{2023-07} \\
+\ganttbar[progress=0, name=T1B]{Prospective cohort \textcircled{\raisebox{-0.8pt}{C}}}{2022-10}{2023-12} \\
 
 %\ganttnewline
+
+% aim2
+\ganttgroup{Aim 2}{2022-9}{2023-12} \\
+\ganttbar[progress=2, name=T2A]{Implementing genome-wide association testing (GWAS)}{2022-9}{2023-12} \\ % 因Covid-19，臨床研究資料庫獨立作業區2021.05.19暫停服務
+
+\ganttnewline
 %\ganttlinkedbar[progress=0, name=T2B]{Development of source code (RNN)}{2023-02}{2023-12} \\
 
 
-\ganttnewline
+%\ganttnewline
 % aim3  of genomics $\&$ (mutation and expression)
-\ganttgroup{Aim 3}{2023-01}{2024-05} \\
-  \ganttbar[progress=0, name=T3A]{Construct a deep learning platform for pathology images}{2023-04}{2024-04}
+\ganttgroup{Aim 3}{2022-09}{2023-12} \\
+  \ganttbar[progress=0, name=T3A]{Construct a deep learning platform for pathology images}{2022-09}{2023-12}
   \ganttnewline
-  \ganttnewline
+%  \ganttnewline
   
 % aim4
-\ganttgroup{Aim 4}{2023-01}{2024-05} \\ %[group top shift =2] to avoid vertically overlap of bars
-  \ganttbar[progress=0, name=T4A]{Integration data $\&$ development of risk prediction models}{2023-07}{2024-05}
+\ganttgroup{Aim 4}{2023-7}{2024-2} \\ %[group top shift =2] to avoid vertically overlap of bars
+  \ganttbar[progress=0, name=T4A]{Integration data $\&$ development of risk prediction models}{2023-07}{2024-2}
   % , bar top shift =1.8
   
 
 % linkers
 % ***[link bulge=1, link mid=0.3] H and V
 
-%  \ganttset{link/.style={green}}
-%  \ganttlink[link mid=.4]{pp}{T1A}
-%  \ganttlink[link mid=.159]{pp}{T1B}
+% IRB
+  \ganttset{link/.style={green}}
+  \ganttlink[link mid=.3]{pp}{T1A}
+  \ganttlink[link mid=.3]{pp}{T1B}
   
 \ganttset{link/.style={black}}
-  \ganttlink[link mid=0.4]{T1A}{T2A}
-  \ganttlink[link mid=0.22]{T1B}{T2A}
+  \ganttlink[link mid=0.54]{T1A}{T2A}
+  \ganttlink[link mid=0.3]{T1B}{T2A}
 \ganttset{link/.style={brown}}
-  \ganttlink[link mid=0.7]{T1A}{T3A}
+  \ganttlink[link mid=0.71]{T1A}{T3A}
   \ganttlink[link mid=0.65]{T1B}{T3A}
 \ganttset{link/.style={red}}
-  \ganttlink[link mid=0.6]{T2A}{T4A} % .159
-  \ganttlink[link mid=0.2]{T3A}{T4A}
+  \ganttlink[link mid=0.72]{T2A}{T4A} % .159
+  \ganttlink[link mid=0.3]{T3A}{T4A}
 %  \ganttlink[link mid=.159]{T2A}{T4A}
 \end{ganttchart}
 
