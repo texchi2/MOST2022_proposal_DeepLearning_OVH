@@ -149,7 +149,7 @@
 \newcommand{\aimone}{To construct \acrshort{ovh} and leukoplakia datasets from Chi-Mei Hospital and \acrfull{tmuh}}
 \newcommand{\aimtwo}{To identify genetic variants associated with malignant transformation of \acrshort{ovh} by implementing genome-wide association testing (GWAS)}
 \newcommand{\aimthree}{To construct a deep learning platform of genomics (mutation and expression) from pathology images}
-\newcommand{\aimfour}{To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: sp1, sp2, and sp3}
+\newcommand{\aimfour}{To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: SP1, SP2, and SP3}
 
 
 % --------------------------------------------------------------------------------
@@ -437,8 +437,7 @@ Head and neck squamous cell carcinoma (\acrshort{hnscc}) represents a significan
 
 %According to the National Comprehensive Cancer Network (NCCN) guidelines (Version 3.2021~\citep{Pfister2021}), the current treatment of \acrfull{hnscc} should include of surgery alone, radiation therapy alone, or a combination of the two with adjuvant chemotherapy.
 %Despite advancements in these therapies, the five-year survival rate for this disease has only marginally improved over the previous decade, and recurrent disease is seen in up to 50\% of all patients~\citep{Forastiere2001,Warnakulasuriya2009}.
-During 2008 to 2018 in Taiwan, the one-year survival rate for this disease among males is from 79.56\% to 81.62\%~(statistics from Cancer Registry of \acrlong{Thpa}, available at \url{https://cris.hpa.gov.tw/pagepub/Home.aspx}, accessed on May 2022).
-The five-year survival rate for this disease among males ranged from 55.13 percent to 56.03 percent between 2009 and 2014.
+%During 2008 to 2018 in Taiwan, the one-year survival rate for this disease among males is from 79.56\% to 81.62\%~(statistics from Cancer Registry of \acrlong{Thpa}, available at \url{https://cris.hpa.gov.tw/pagepub/Home.aspx}, accessed on May 2022). The five-year survival rate for this disease among males ranged from 55.13 percent to 56.03 percent between 2009 and 2014.
 
 The survival analysis of the \acrfull{tcga} dataset is a well-known method to discover biomarkers of \acrshort{hnscc}. 
 Biomarkers of cancer have been utilized for diagnostic, predictive or prognostic purposes. 
@@ -446,6 +445,8 @@ A predictive marker helps to select which specific treatment benefits a better s
 For example, adjuvant radiation therapy should be done after tumor-ablative surgery in positive surgical margin or metastatic lymph node from the neck dissection. %; it  to select a particular treatment over another.
 %It guides to determine which further treatment (e.g., ).
 
+Clinically visible oral potentially malignant disorders (OPMDs) precede the most of \acrshort{oscc} cases. Oral submucosal fibrosis (OSF), oral verrucous hyperplasia (OVH), and oral lichen planus (OLP) are among the OPMDs, with OVH holds the greatest risk of malignant transformation. 
+The key clinical challenge is how to properly care patients with OVH for oral cancer prevention and early identification. One important strategy for dealing with this clinical situation should be the establishment of risk prediction models for malignant transformation.
 Oral verrucous hyperplasia (\acrshort{ovh}) is a pre-malignant  mucosal lesion with a predominantly verrucous or papillary surface; this lesion can subsequently transform into verrucous carcinoma (VC) or squamous cell carcinoma (SCC).
 A predictive biomarker for \acrshort{ovh} could provide early warning before malignant transformation without the need for frequent biopsies.
 %OPMDs include lesions or conditions that involve morphological, color, and consistency changes in the oral mucosa and indicate the risk of malignant progression. 
@@ -461,8 +462,9 @@ A predictive biomarker for \acrshort{ovh} could provide early warning before mal
 
 %Methods: how the study was performed and statistical tests used
 \textbf{Methods:}
+The identification of risk factors is used to construct risk prediction models. The likelihood of malignant transformation in OVH patients may be influenced by genetic variations and/or gene-environment interactions. There are not too many similar studies so far, and they are candidate gene studies. Using a microarray-based chip to acquire genotypic data for a large number of genetic variants across the human genome has been cost-effective. Genome-wide association testing is a simple and effective way to find disease-associated genetic variants that is not even constrained by current knowledge of the disorder.
 
-R script was used to develop a comprehensive workflow, named "pvalueTex", running on the Rstudio platform. It includes data retrieving and pre-processing, feature selection, cutoff mining engine, Kaplan-Meier survival analysis, Cox proportional hazard modeling to discover prognostic biomarkers.
+R script has also been used to develop a comprehensive workflow, named "pvalueTex", running on the Rstudio platform. It includes data retrieving and pre-processing, feature selection, cutoff mining engine, Kaplan-Meier survival analysis, Cox proportional hazard modeling to discover prognostic biomarkers.
 We further plan to develop a deep-learning based data mining as well as validation platform. It might incorporate whole-slide images of pathology from cohort of Taipei Medical University (TMU) and Chi-Mei Hospital.
 %the Cancer Imaging Archive (TCIA) and Taipei Medical University (TMU) biobank.
 %RNA-Seq data of \acrfull{tcga} for survival analysis. 
@@ -488,11 +490,12 @@ During their follow-up period, a "survival analysis" should also be used to buil
 %\thispagestyle{titlepage}
 % Conclusions: brief summary and potential implications
 \textbf{Conclusions:}
+Based on the risk indicators gathered from all subprojects, this subproject will construct risk prediction models for malignant transformation in OVH patients. The established risk prediction models should make clinical care of patients with OVH for \acrshort{oscc} detection and control screening efficient.
 %Those 11 validated biomarkers (DKK1, CAMK2N1, STC2, PGK1, SURF4, NDFIP1, STIP1, DKC1, ZNF557, ZNF266, and FCGBP), 
-The candidate biomarkers, clinical tumor size, and surgical margin status are suggested prognosis factors in \acrshort{hnscc} through TCGA analysis.
-Using those biomarkers, we will analyze the transcriptomic/mutational representatives of \acrshort{ovh} in our cohorts. 
+%The candidate biomarkers, clinical tumor size, and surgical margin status are suggested prognosis factors in \acrshort{hnscc} through TCGA analysis.
+%Using those biomarkers, we will analyze the transcriptomic/mutational representatives of \acrshort{ovh} in our cohorts. 
 %could be applied to validate those candidates by independent TMU cohort (n=46, obtained at TMU Joint Biobank).
-We will conclude that combining genomics data with pathology images will aid in the development of a predictive model for early detection of \acrshort{oscc}.
+%We will conclude that combining genomics data with pathology images will aid in the development of a predictive model for early detection of \acrshort{oscc}.
 % pathology images (by NCI)
 % pvalueTex, equipped with an optimal cutoff finder, 
 
@@ -508,6 +511,10 @@ We will conclude that combining genomics data with pathology images will aid in 
 % Keywords
 \textbf{Keyword:}
 %\keyword{
+\titlecap{genome-wide association study}; 
+\titlecap{malignant transformation};
+\titlecap{oral potentially malignant disorders}; 
+\titlecap{risk prediction model};
 Head and Neck Squamous Cell Carcinoma (HNSCC);
 Oral Squamous Cell Carcinoma (OSCC);
 Oral Verrucous Hyperplasia (\acrshort{ovh});
@@ -527,9 +534,8 @@ Deep Learning; Explainable;
 Graph Neural Network (GNN);
 Graph Convolutional Neural Network (GCNN);
 %Recurrent Neural Network (RNN);
-
 %Electric Healthcare Records (EHR);
-Holistic Cancer Care;
+Holistic Cancer Care.
 %Therapeutic Relationship;
 %Mindfulness Meditation\\[1cm]
 %}
@@ -544,13 +550,17 @@ Holistic Cancer Care;
 
 頭頸部鱗狀細胞癌 (\acrfull{hnscc}) 在全世界都是重要的問題。手術、放射治療和全身性治療(化療、免疫)仍然是這些患者的標準治療方式。如何減少死亡率，取決於有效的預後生物標記(創新療法)，並早期預警口腔黏膜病變的癌化(加強預防)。
 
-自2008年至2018年，臺灣男性罹患頭頸部鱗狀細胞癌的一年存活率為79.56\% 至81.62\%（健康促進管理局癌症登記處的統計數據，網址https://cris.hpa.gov.tw/pagepub/Home.aspx，2022年5月查詢）。2009年到2014年，男性患者的的五年存活率一直沒有進步(從55.13\%到56.03\%)。
+%自2008年至2018年，臺灣男性罹患頭頸部鱗狀細胞癌的一年存活率為79.56\% 至81.62\%（健康促進管理局癌症登記處的統計數據，網址https://cris.hpa.gov.tw/pagepub/Home.aspx，2022年5月查詢）。2009年到2014年，男性患者的的五年存活率一直沒有進步(從55.13\%到56.03\%)。
 
 利用The Cancer Genome Atlas (\acrshort{tcga})資料庫做存活分析，是找尋頭頸部鱗狀細胞癌生物標記最常用的方法。癌症的生物標記已被用於診斷、預測病情與疾病的預後。預測性標記有助於選擇有利的治療方式。例如，腫瘤切除手術後，若是手術切緣不足、頸部淋巴結轉移，則應進行術後的放射治療，以增加治療的成功率。
 
-口腔疣狀增生(\acrfull{ovh})是一種外形為疣狀(或乳頭狀)的癌前病變；這種病變日後有機會轉化為疣狀癌 (verrucous carcinoma, VC)或鱗狀細胞癌(squamous cell carcinoma, SCC)。我們的目標是找出預測性生物標記，期望無需頻繁切片，就能早期預警正在癌化中的口腔疣狀增生。
+大多數口腔癌病例在罹癌之前都有臨床上明顯的口腔潛在惡性疾病 (oral potentially malignant disorders, OPMDs)。OPMDs包括白斑、紅斑、口腔黏膜下纖維化、口腔疣狀增生（oral verrucous hyperplasia, OVH）和口腔扁平苔蘚，其中OVH惡轉風險最高。
+口腔疣狀增生(\acrfull{ovh})是一種外形為疣狀(或乳頭狀)的癌前病變；這種病變日後有機會轉化為疣狀癌 (verrucous carcinoma, VC)或鱗狀細胞癌(squamous cell carcinoma, SCC)。
+我們的目標是找出預測性生物標記，期望無需頻繁切片，就能早期預警正在癌化中的口腔疣狀增生。
 
-我們使用R語言開發"pvalueTex"程式，可執行資料檢索、資料處理、特徵選擇、資料探勘、Kaplan--Meier存活分析、Cox比例風險模型，以用來大規模搜尋生物標記。我們接下來計劃開發深度學習(Deep Learning)資料探勘和驗證平台，利用數位病理影像(\acrfull{tcia}, 與TCGA串連)，及臺北醫學大學(TMU)生物資料庫中，口腔疣狀增生的病理切片數位影像，以AI人工智慧演算法，來做存活分析，預測(癌)惡轉變化。
+風險因子的確認是開發風險預測模式的基礎。OVH患者惡轉風險可能會受到遺傳變異或基因-環境交互作用的影響。然而，到目前為止，相關的研究並不多，且均為候選基因研究。目前，使用以微陣列技術為基礎的晶片，獲取人類基因組中大量遺傳變異的基因型資料，是具高度成本效益的方法。以所得全基因組基因型資料進行全基因組關聯研究是尋找與疾病相關的遺傳變異的有效方法，且此研究方法不受限於當前對該疾病的理解。
+
+我們亦使用R語言開發"pvalueTex"程式，可執行資料檢索、資料處理、特徵選擇、資料探勘、Kaplan--Meier存活分析、Cox比例風險模型，以用來大規模搜尋生物標記。我們接下來計劃開發深度學習(Deep Learning)資料探勘和驗證平台，利用數位病理影像(\acrfull{tcia}, 與TCGA串連)，及臺北醫學大學(TMU)生物資料庫中，口腔疣狀增生的病理切片數位影像，以AI人工智慧演算法，來做存活分析，預測(癌)惡轉變化。
 %它包含來自癌症影像檔案 (TCIA) 和臺北醫學大學 (TMU) 生物資料庫的病理學全幻燈片圖像。
 %\acrfull{tcga} 的 %RNA-Seq 數據用於生存分析。
 深度學習的卷積神經網路(\acrfull{cnn})可由數位病理影像中提取特徵。
@@ -558,11 +568,11 @@ Holistic Cancer Care;
 這些患者的特徵應該包括身體、病理、心理狀態，社會關係，甚至全人照顧醫師所紀錄的靈性紀錄。\\
 結論：
 %那些 11 個經過驗證的生物標誌物（DKK1、CAMK2N1、STC2、PGK1、SURF4、NDFIP1、STIP1、DKC1、ZNF557、ZNF266 和 FCGBP），
-通過TCGA分析，我們得到生物標記，並確認臨床腫瘤大小和手術切緣狀態，都會是頭頸部鱗狀細胞癌患者的重要預後因素。
-使用這些生物標誌物，我們將分析口腔疣狀增生檢體的基因變化，結合數位病理影像，以開發鱗狀細胞癌的早期預警模型。
+%通過TCGA分析，我們得到生物標記，並確認臨床腫瘤大小和手術切緣狀態，都會是頭頸部鱗狀細胞癌患者的重要預後因素。使用這些生物標誌物，我們將分析口腔疣狀增生檢體的基因變化，結合數位病理影像，以開發鱗狀細胞癌的早期預警模型。
+以各子計畫所找到的風險因子為基礎，本子計畫將開發OVH患者惡轉風險預測模型。我們預期所開發的風險預測模型將有助於OVH患者的臨床管理，以預防和早期發現口腔癌。
 %而進一步分析\acrshort{tcia}和TMU的癌細胞基因表現量、數位病理影像和全人照護特徵，將有助於驗證候選基因對預後的影響，以發展未來頭頸部鱗狀細胞癌的精準治療。
 
-關鍵詞: 頭頸部鱗狀細胞癌; 口腔鱗狀細胞癌; 口腔疣狀增生; 存活分析; 手術切緣; 手術切緣; 卷積神經網路; 圓論卷積神經網路; 全人照顧。
+關鍵詞：口腔潛在惡性疾病;全基因組關聯研究;風險預測模式;惡轉; 頭頸部鱗狀細胞癌; 口腔鱗狀細胞癌; 口腔疣狀增生; 存活分析; 手術切緣; 手術切緣; 卷積神經網路; 圓論卷積神經網路; 全人照顧。
 
 \end{CJK*}
 
@@ -667,11 +677,14 @@ Holistic Cancer Care;
 The main risk factors for \acrshort{oscc} include carcinogens in tobacco and betel nut, alcohol, oncogenic viruses.
 The betel-nut chewing, alcohol \acrfull{aldh2} mutation should be the major concern as a variety of \acrshort{oscc} in Taiwan.
 In Asian population, \acrfull{aldh2} mutation plays a very important rule to enhance \acrshort{oscc}~\citep{Chien2019} by alcohol consumption.
+Wu and colleagues~\citep{Wu2018a} found that non-buccal/non-tongue OVH are especially at risk of malignant transformation in a observatory cohort study. 
 The oncogenic viruses such as \acrfull{hpv} and Epstein–Barr virus play a major carcinogenic role in tumors of the oropharynx and nasopharynx, respectively~\citep{Ferrarotto2017}.
 Moreover, physical irritations, ionized radiation and host susceptibility may also contribute to the etiology of \acrshort{oscc}~\citep{Ko1995,Znaori2003} (Figure~\ref{fig:DAG_etiology}).
 Primary prevention by minimizing exposure to known carcinogens is promising, but limited success is achieved due to addiction, economic, social or spiritual issues.
 The possible molecular mechanisms could be also related with the mind-brain-body axis~\citep{Berens2017}.
 
+Clinically visible oral potentially malignant disorders (OPMDs) precede the most of \acrshort{oscc} cases. Oral submucosal fibrosis (OSF), oral verrucous hyperplasia (OVH), and oral lichen planus (OLP) are among the OPMDs, with OVH holds the greatest risk of malignant transformation. 
+The malignant transformation rate in the OVH cohort was 24.55 per 1000 person-years, according to a recent study based on a nationwide oral cancer screening program in Taiwan~\citep{Chiu2021}.
 % This code uses the tikz package
 %\begin{frame}[fragile]
 %\frametitle{Directed acyclic graphs for %\acrshort{hnscc}}
@@ -965,10 +978,17 @@ From the intrinsic factors (such as age and gender), the accumulated genetic alt
 %%%%%
 
 
-\subsection{Molecular Oncology}
+\subsection{Risk Prediction Models}
+The key clinical challenge is how to properly care patients with OVH for oral cancer prevention and early identification. 
+One important strategy for dealing with this clinical situation should be the establishment of risk prediction models for malignant transformation. The development of risk prediction models are based on the identification of risk factors.
+
+%%%
+
+\subsubsection{Molecular Oncology}
 %%% from Chi2022 Ph.D. dissertation ***************
 %Prognostic significance of p53 mutation has been reported.
 %% **** TP53 gene => p53 protein; mutation of TP53 ***
+Genetic variations and/or gene-environment interactions, in addition to environmental and molecular variables, may influence the likelihood of malignant transformation in \acrshort{ovh} patients.
 Accumulative knowledge shows that some drivers could facilitate carcinogenesis in \acrshort{oscc}.
 For example, p53 is a tumour suppressor protein encoded by the TP53 gene.
 The transcription factor, p53, that is activated by many genotoxic insults and induces cellular apoptosis. 
@@ -992,6 +1012,8 @@ It is involved in cancer cells evading immunosurveillance~\citep{Stefanidakis200
 % 1. Joshi RS, Kanugula SS, Sudhir S, Pereira MP, Jain S, Aghi MK. The role of cancer-associated fibroblasts in tumor progression. Cancers (Basel). 2021;13(6):1-27. doi:10.3390/cancers13061399
 % some common CAF markers that have been identified include alpha smooth mus- cle actin (α-SMA), vimentin, fibroblast activation protein (FAP), fibroblast-specific protein 1 (FSP1), and platelet-derived growth factor receptor alpha/beta (PDGFR-α/β) => in HNSCC: α-SMA, PDPN, FAP, PDGFR-α, PDGFR-β, FSP1, NG2
 % α-SMA—alpha smooth muscle actin, FAP—fibroblast activation protein, PDGFRα—platelet derived growth factor receptor alpha, PDGFRβ—platelet derived growth factor receptor beta, NG2—neural/glial antigen 2, FSP1— fibroblast specific protein 1, PDPN—podoplanin, MFAP5—microfibrillar associated protein 5, POSTN—periostin, FGF-1—fibroblast growth factor 1.
+
+\subsubsection{Gene-environment Interaction in Oncology}
 Chronic mechanical and chemical irritation from betel nut chewing could increase myofibroblasts in terms of developing oral submucous fibrosis~\citep{Angadi2011} and \acrshort{oscc}.
 Myofibroblasts are contractile cells expressing \acrfull{acta2} (encoding alpha-smooth muscle actin, $\alpha$-SMA) when is stimulated by betel nut extract---arecoline---\textit{\fontfamily{lmss}\selectfont in vitro}~\citep{Chang2014}.
 A elevated \acrshort{acta2} expression is also associated with poor overall survival in \acrshort{oscc}~\citep{Marsh2011}.
@@ -1004,6 +1026,8 @@ The possibility of malignant transformation is influenced by the severity of epi
 Diagnostic markers are those that distinguish between different categories of lesions. They are obtained by comparing cross-sectional samples taken from various patients.
 Diagnostic biomarkers, such as KRT13 (type I cytoskeletal 13, encoding Cytokeratin13---CK13), KRT17 (type I cytoskeletal 17, encoding Cytokeratin 17---CK17), TP53 (encoding p53), and MKI67 (Marker Of Proliferation Ki-67, encoding Ki-67), are applied in routine pathological examination for dysplasia grading (semi quantitative) , and a confirmation of \acrshort{oscc}.
 The expressions for CK17 and CK13 are reciprocal in oral dysplasia lesions and that the CK17/p53 emergence is helpful to confirm a diagnosis of \acrshort{oscc}~\citep{Mikami2011}.
+
+ 
 
 
 
@@ -1296,17 +1320,17 @@ CI95\%: 95\% confidence interval;
 
 
 % from sp1 研究構想： Dr Wu 吳明恆老師 FAT1 versus TP53 **********
-%   (Head Neck 2018, Head Neck 2020 and Medicine 2021). 
-Wu and his colleagues (Wu et al., 2018, 2020, 2021) have serial studies for \acrshort{ovh} through whole-exome sequencing to identify a biomarker. 
+%   (Head Neck 2018, Head Neck 2020 and Medicine 2021). (Wu et al., 2020, 2021) Ming-Heng Wu
+Wu and his colleagues~\cite{Wu2018a} have studiy for \acrshort{ovh} through whole-exome sequencing to identify a biomarker. 
 They found a candidate biomarker for malignant transformation: \acrfull{fat1}.
 The \acrshort{fat1} missense mutation rate is higher in progressive \acrshort{ovh} (83.3\%) than in their non-progressive counter partner (22.2\%), while 6.25\% of TP53 is mutated in \acrshort{ovh}. 
 Missense mutation of FAT1 is also significantly associated with poor recurrence-free survival (RFS) of \acrshort{oscc}.
-
+%Based on a whole exome-sequencing analysis, we observed that FAT1 somatic mutation rate was strikingly higher in progressive OVH (83.3\%) than in non-progressive ones (22.2\%) and 
 %FAT1-regulated YAP1/Hippo pathways has been well addressed. 
 %As a result, this  project aims to verify FAT1 gene mutation in a large cohort of OVH patients and to investigate the FAT1 and tp53 relationships in OVH transformation. 
 %At the same time, the other ten genes were over-expressed in the better survival patients (with hazard ratio $<=0.5$), named as ZNF557, ZNF266, IL19, MYO1H, FCGBP, LOC148709, EVPLL, PNMA5, IQCN (previous name as KIAA1683), and NPB.
 
-As a result, we believe that FAT1-regulated YAP1/Hippo pathway drives malignant transformation in \acrshort{ovh}.
+As a result, we believe that FAT1-regulated YAP1/Hippo pathway drives malignant transformation in \acrshort{ovh}. FAT1 study will be further investigated in our subproject 1.
 We assume those biomarkers, CK13, CK17, p53, Ki-67, EGFR, $\alpha$-SMA, CAMK2N1, and FAT1, should be found within surgical margin (dysplasia zone) of \acrshort{oscc} specimen and \acrshort{ovh}.
 %*** validated by \acrfull{hpa}.
 Further investigation will be conducted by using deep learning of whole-slide pathology images.
@@ -1320,6 +1344,12 @@ Further investigation will be conducted by using deep learning of whole-slide pa
 %\section*{Figure}
 
 \clearpage
+
+\section{Genome-wide Association Testing}
+There are not too many similar studies so far, and they are candidate gene studies~\cite{Shridhar2016, Huang2019a, Chung2019}.
+%Huang et al., 2019
+Using a microarray-based chip to acquire genotypic data for a large number of genetic variants across the human genome has been cost-effective. Genome-wide association testing is a simple and effective way to find disease-associated genetic variants that is not even constrained by current knowledge of the disorder~\citep{Hosking2011}.
+
 
 \section{Deep Learning in Bioinformatics}
 
@@ -1362,15 +1392,17 @@ The transcriptomic representation learned by HE2RNA can also be transferred on o
 
 \section{Conclusion}
 
-Predictive markers are those that can suggest the risk of cancer without intervention. We will identify them by comparing pre-cancerous samples with follow-up results revealing malignant transformation.
+Predictive markers are those that can predict cancer risk even with proper intervention. We will find them by comparing pre-cancerous samples to outcomes that suggest malignant transformation. 
+
+Through a genome-wide approach, we aim to uncover genetic variations linked with \acrshort{ovh} malignant transformation and examine potential connections between genetic and environmental risk factors in this subproject 3.
 
 High-throughput RNA-sequencing (RNA-Seq) is a powerful tool to characterize and quantify transcriptomes. Even the cost of RNA-Seq is continuously dropping, 
 the budget of whole-genome transcriptomics study for survival analysis is still very high (USD350 to 500 per sample). %; 46 participants of HNSCC in TMU Joint Biobank, accessed on \today at http://ohr.tmu.edu.tw/front/jbb1/CaseNumber/pages.php?\\ID=dG11X29ociZDYXNlTnVtYmVy).
 % NCI HE2RNA
 By using the transcriptomic representation of RNA-Seq learned by NCI's HE2RNA project~\citep{Schmauch2020}, ST-Net (He et al., 2020) and HistoGene (Pang et al., 2021),
 %TCIA for whole-slide deep learning
-we could find and validate predictive biomarkers from pathology images by deep learning platform under R/Pytorch/Keras framework.\\[2.5cm]
-
+we could find and validate predictive biomarkers from pathology images by deep learning platform under R/Pytorch/Keras framework.
+Finally, using the risk factors acquired from all subprojects, this subproject will construct risk prediction models for malignant transformation in \acrshort{ovh} patients.\\[2.5cm]
 %To further improve the quality of spatial transcriptomics data, methods have been developed to leverage other data types in addition to scRNA-seq data. For example, xFuse [49] is a deep generative model that integrates in situ RNA capturing data with histology image data to infer transcriptome-wide expression maps. 
 %The quantification of gene expression both within and between the original capture locations enhances the resolution of spatial transcriptomics data. 
 %HistoGene [62] is another deep learning model to leverage information learned from spatial transcriptomics data to predict gene expression for tissue sections where only histology images are available. HistoGene [62] outperforms other approaches that were designed to predict gene expression profiles from whole-slide images, including % **a multilayer perceptron-based method HE2RNA [79] and 
@@ -1397,8 +1429,9 @@ Specific Aims %特定研究目標 (specific aims), 執行策略不能互相綁�
 %TCGA/TCIA and TMU dataset\\
 %Survival Analysis\\
 
-\1 Aim 2: \aimtwo 
+\1 Aim 2: \aimtwo
 %To identify genetic variants associated with malignant transformation of \acrshort{ovh} by implementing genome-wide association testing (GWAS)
+
 
 %王紋璋老師需要buffy coat檢體抽DNA進行GWAS分析，一片chip可做96檢體，希望盡量湊足200個檢體的量來做分析。
 
@@ -1552,7 +1585,7 @@ with collection of clinical data and bio-specimen (i.g., pathological specimen, 
 
 \item \textbf{Aim 2}: \aimtwo. 
 % (GWAS) Dr Wang
-
+And also investigate the potential interactions between genetic and environmental risk factors.
 
 \item \textbf{Aim 3}: \aimthree.
 From \acrshort{ovh} and \acrshort{oscc}, a deep-learning-based algorithm could extract clinical features and interpret pathology whole-slide images.
@@ -1573,8 +1606,13 @@ From \acrshort{ovh} and \acrshort{oscc}, a deep-learning-based algorithm could e
 
 \end{itemize}
 
-\vspace{3em}
+
+
+We expect to improve risk prediction models that will aid clinical care for patients with \acrshort{ovh} in terms of cancer prevention and early diagnosis.
+
 \end{minipage}
+
+\vspace{3em}
 %%%%%%%%%
 
 %\begin{outline}
@@ -1713,11 +1751,24 @@ The whole-slide image of pathology slide has high dimensionality (up to 100,000 
 %%%%
 %%%%%%%%%%%%%%%%
 % Dr Wang's GWAS
-\subsubsection*{Aim 2:}\\[0.5cm]
+\subsubsection*{Aim 2:} Use genome-wide association study (GWAS) to test genotype alternations\\[0.5cm]
 %To identify genetic variants associated with malignant transformation of \acrshort{ovh} by implementing genome-wide association testing (GWAS)
 
 %王紋璋老師需要buffy coat檢體抽DNA進行GWAS分析，一片chip可做96檢體，希望盡量湊足200個檢體的量來做分析。
 
+\paragraph{Genotype Data}
+The GWAS will be conducted by using Axiom Genome-Wide TWB 2.0 Array Plate (Thermo Fisher Scientific, Inc., Santa Clara, CA,USA), which contains 686,463 markers~\citep{Wei2021}. The genotyping will be implemented by the Taiwan National Center for Genomic Medicine (\url{http://ncgm.sinica.edu.tw/affymetrix_prep_requirements_c_01.html}). The genotypic data quality control will be carried out from two aspects. Firstly, markers with high proportion of missing genotype ($> 0.05$), significant deviation from Hardy-Weinberg equilibrium (\textit{p} $< \num{10E-4}$), or low minor allele frequency ($< 0.01$) will be excluded. Then subjects with high proportion of missing genotypes ($> 0.01$), sex error, or contamination will be excluded. Furthermore, based on the cleaned genotyped data, genotype information at untyped marked will be deduced by genotype imputation through the Michigan imputation server ~\citep{Das2016}. For imputed data, markers with low imputation score ($< 0.3$), high proportion of missing genotype ($> 0.05$), significant deviation from Hardy-Weinberg equilibrium (\textit{p} $< \num{10E-4}$), or low minor allele frequency ($< 0.01$) will be excluded. 
+
+\paragraph{Association testing of individual markers} % confounders: dysplasia grading
+The phenotypes considered in our GWAS include "whether malignant transformation occur" and "the time from detection of OVH to malignant transformation" and the logistic regression and Cox proportional hazard model will be used to test for associations of genetic markers with these two phenotypes, respectively. For both phenotypes, the test of genetic association will be adjusted for gender, age of \acrshort{ovh} detection, betel-nut chewing, smoking, alcohol drinking, advanced oral submucous fibrosis, non-buccal and non-tongue lesions, dysplasia grading, as well as the top ten principal components. Computation of the principal components is based on cleaned genotypic data through implementing principal component analysis. 
+
+\paragraph{Gene-environment interaction effects}
+In addition to test for association of individual genetic markers, we would like to investigate gene-environment interaction effects on the phenotypes. Here, the environmental factors examined include betel-nut chewing, smoking, and alcohol drinking. Given a specific environmental factor, the gene-environment interaction effect will be examined by two approaches as follows. 
+In the first approach, an interaction variable of the specific environmental factor and genetic marker will be used as an additional covariate in above logistic regression and Cox proportional hazard model. Then we look for marker with significant interaction variable. 
+In the second approach, we will perform a stratified analysis. Specifically, the whole study sample is separated into two groups: one group is exposed to a specific environmental factor; the other group is not exposed to this specific environmental factor. The logistic regression and Cox proportional hazard model, which test for association of individual markers, will be implemented in each group. Then we look for marker whose results of association testing are significantly different in these two groups. 
+
+\paragraph{Validation}
+Significant associations observed at genotyped or imputed markers will be validated by re-genotyping through different genotyping platform such as TaqMan or sequenom. 
 
 %%%%%%%%%%%%%%%%%
 
@@ -1918,6 +1969,8 @@ The HE2RNA model will also be used to compare the transcriptome of FAT1 in wild-
 % by Dr Wang's and Dr Chi's Integration and modeling
 \subsubsection*{Aim 4:}\\[0.5cm]
 %To develop risk prediction model for malignant transformation of \acrshort{ovh} by integrating risk factors identified from all sub-projects: sp1, sp2, and sp3
+
+The candidate biomarkers, dysplasia grading, surgical margin status and saliva extract will be suggested as risk factors in malignant transformation of \acrshort{ovh} through analysis of Chi-Mei and TMUH datasets.
 
 
 \paragraph{Feature engineering by explainable deep learning}
@@ -2133,20 +2186,42 @@ With whole-slide-images pathology, the \acrfull{gcnn} should extract high-dimens
 
 
 %\clearpage
-\paragraph{Modeling by Dr Wang}
+\paragraph{Nomograms for malignant transformation of OVH}
+%Modeling by Dr Wang}
 
-The candidate biomarkers, dysplasia grading, surgical margin status and saliva extract will be suggested as risk factors in malignant transformation of \acrshort{ovh} through analysis of Chi-Mei and TMUH datasets.
+
+%Nomograms for malignant transformation of OVH
+Based on the factors associated with malignant transformation of \acrshort{ovh} identified from all subprojects SP1, SP2, and SP3, we would like to construct nomograms for predicting risk of malignant transformation in the \acrshort{ovh} cohort. The nomogram approach provides a simple graphical representation of a predictive model and estimate a probability of a specific clinical event according to the profile of an individual patient, which is a predictive tool widely used in clinical practice. 
+The typical workflow of conducting a nomogram prediction model consists of the following steps~\citep{Iasonos2008}:
 
 \begin{outline}
 
+\1 To identify the patient population
+\1 To define the outcome
+\1 To identify potential covariates
+\1 To construct the nomogram
+\1 To validate the constructed model
+\end{outline}
 
-\1 Statistical tools for genetic association testing 
-\1 Cox regression analyses
+In this study, the target population consists of patients who had OVH but who had not yet developed oral cancer. We will consider two outcomes. The first one is the occurrence of malignant transformation; the second one is the time to malignant transformation. For the first outcome, we implement multiple logistic regression model to construct the nomogram. For the second outcome, we perform Cox proportional hazard model to construct the nomogram. 
+Typically, the accuracy of a nomogram is assessed by a concordance index (c-index), which quantifies the level of concordance between predicted and actual probabilities of having the specified event. Furthermore, a 10-ford cross-validation will be implemented to address and prevent model overfit~\citep{Iasonos2008}. 
+
+\paragraph{Summary of Statistics considerations}
+\begin{outline}
+
+
+\1 Statistical tools for genetic association testing (GWAS) 
 \1 Kaplan--Meier analyses \1 Statistical tools for risk prediction models 
 \1 Cox regression analyses
 with backward stepwise elimination approach
+\1 Explainable deep learning (machine learining) algorithm
 \1 Nomogram prediction model
+    \2 Cox proportional hazard regression model
+    \2 Multiple logistic regression model
 \1 The receiver operating characteristic (ROC) curve analysis
+\1 Concordance index (c-index) for model evaluation
+%, which quantifies the level of concordance between predicted and actual probabilities of having the specified event
+\1 K-fold cross-validation for prevention of model overfit
 
 \end{outline}
 
@@ -2166,21 +2241,27 @@ with backward stepwise elimination approach
 %1.預期完成之工作項目
 \begin{outline}
 
+\1 We expect to obtain some genetic markers associated with malignant transformation of \acrshort{ovh}.
 
-\1 Validation of candidate biomarkers of \acrshort{ovh}.
+\1 We expect to find some gene-environment interaction effects on malignant transformation of \acrshort{ovh}.
+
+\1 We will construct nomograms for malignant transformation of \acrshort{ovh}.
+
+%\1 Validation of candidate biomarkers of \acrshort{ovh}.
 %2.對於學術研究、國家發展及其他應用方面預期之貢獻
-It will be submitted for further diagnostic method for personalized medicine of \acrshort{ovh}.
+%It will be submitted for further diagnostic method for personalized medicine of \acrshort{ovh}.
 % 分析\acrshort{tcia}和TMU的癌細胞基因表現量、數位病理影像和全人照護特徵，將有助於驗證候選基因對預後的影響，以發展未來頭頸部鱗狀細胞癌的精準治療計劃。
 
 %) or \cntext{精準醫療}
 %3.對於參與之工作人員，預期可獲之訓練
-\1 We will improve our programming skill of R, PyTorch(Python) and C ++.
+\1 We will improve our programming skill of R, PyTorch (Python) and C ++ for deep learning.
 %4.預期完成之研究成果及績效(如期刊論文、研討會論文、專書、技術報告、專利或技術移轉等質與量之預期績效)。請詳述其必要性以及預期成果等。
 \1 We will finish manuscripts for journal publication.
 
 % 致謝詞 acknowledgments in US
 % acknowledgements in British
-\1 Acknowledgments: We thank the staff of the Clinical Data Center, Office of Data Science, Taipei Medical University, Taiwan, for statistical consultation, analysis/interpretation of data, and technical support.
+\1 Acknowledgments: We thank the staff of the Clinical Data Center, Office of Data Science, Taipei Medical University, Taiwan, for statistical consultation, analysis/interpretation of data, and technical support. 
+We also thank the National Center for Genome Medicine for the technical support in the genotyping.
 The results shown here are in whole based upon data generated by the \acrshort{tcga} Research Network: https://www.cancer.gov/tcga.
 The tables were generated by latex code with the help from https://www.tablesgenerator.com/latex\_tables\#.
 %https://github.com/JDMCreator/LaTeXTableEditor (accessed at https://www.latex-tables.com/v1/\\index.html).
