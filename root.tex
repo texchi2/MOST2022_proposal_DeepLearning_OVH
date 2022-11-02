@@ -1499,12 +1499,12 @@ Specific Aims %特定研究目標 (specific aims), 執行策略不能互相綁�
    
    \gantttitlecalendar{year, month}\\ %=name
    \ganttbar[
-    progress=10,
+    progress=100,
     bar progress label font=\small\color{barblue},
     bar progress label node/.append style={left=4pt},
     bar label font=\normalsize\color{barblue},
     name=pp
-   ]{IRB application}{2022-06}{2022-08} \\ % name=pp
+   ]{IRB application}{2022-05}{2022-10} \\ % name=pp
    
 \ganttset{progress label text={}, link/.style={black, -to}}
 
@@ -1529,9 +1529,12 @@ Specific Aims %特定研究目標 (specific aims), 執行策略不能互相綁�
 
 %\ganttnewline
 % aim3  of genomics $\&$ (mutation and expression)
-\ganttgroup{Aim 3}{2022-09}{2023-12} \\
-  \ganttbar[progress=0, name=T3A]{Construct a deep learning platform for pathology images}{2022-09}{2023-12}
-  \ganttnewline
+\ganttgroup{Aim 3}{2022-08}{2023-12} \\
+  \ganttbar[progress=20, name=T3A]{Construct a deep learning platform for pathology images}{2022-08}{2023-12}
+      \ganttnewline
+  \ganttbar[progress=30, name=T3B]{$=>$Train models on TWCC super computer}{2022-10}{2022-12}
+  \ganttbar[progress=0, name=T3C]{}{2023-09}{2023-12}
+    \ganttnewline
 %  \ganttnewline
   
 % aim4
